@@ -154,7 +154,7 @@
                         <select id="searchBlood" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer">
                             <option value="">গ্রুপ সিলেক্ট করুন</option>
                             <option value="A+">A+ (এ পজিটিভ)</option>
-                            <option value="A-">A- (এ নেгеটিভ)</option>
+                            <option value="A-">A- (এ নেগেটিভ)</option>
                             <option value="B+">B+ (বি পজিটিভ)</option>
                             <option value="B-">B- (বি নেগেটিভ)</option>
                             <option value="O+">O+ (ও পজিটিভ)</option>
@@ -261,16 +261,23 @@
             </div>
         </section>
 
-        <!-- 🏷️ TAB 3: VIDEO GUIDE TAB (IFRAME) -->
+        <!-- 🏷️ TAB 3: VIDEO GUIDE TAB (FULLSCREEN FOCUS MODE) -->
         <section id="video-tab" class="spa-tab-content hidden space-y-4">
-            <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
-                <h3 class="text-md md:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="fa-solid fa-play-circle text-brand-primary"></i> রক্তের টান - অফিশিয়াল ভিডিও গাইড
-                </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400">অ্যাপের সঠিক ব্যবহার এবং রক্তদানে সচেতনতা বাড়াতে নিচের ভিডিও নির্দেশিকাটি সম্পূর্ণ দেখুন।</p>
+            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <h3 class="text-md md:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        <i class="fa-solid fa-play-circle text-brand-primary"></i> রক্তের টান - অফিশিয়াল ভিডিও গাইড
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">অ্যাপের সঠিক ব্যবহার এবং রক্তদানে সচেতনতা বাড়াতে নিচের ভিডিও নির্দেশিকাটি সম্পূর্ণ দেখুন।</p>
+                </div>
+                <!-- Premium Exit Button to Home -->
+                <button onclick="switchTab('search-tab')" class="bg-brand-primary hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow transition flex items-center gap-1">
+                    <i class="fa-solid fa-house"></i> হোমে ফিরে যান
+                </button>
             </div>
-            <div class="glass p-3 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950">
+            <!-- Full Height Video Display Container -->
+            <div class="glass p-3 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
                     <iframe src="https://roktertan-veideo.vercel.app" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
@@ -584,6 +591,39 @@
         </div>
     </div>
 
+    <!-- CUSTOM NOTICE MODAL -->
+    <div id="noticeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4">
+            <div class="text-rose-500 text-4xl"><i class="fa-solid fa-circle-exclamation animate-bounce"></i></div>
+            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white">গুরুত্বপূর্ণ নোটিশ</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                রক্তের টান সম্পূর্ণ একটি স্বেচ্ছাসেবী অলাভজনক সেবা। কোনো রক্তদাতাকে রক্তদানের জন্য আর্থিক লেনদেন বা যাতায়াত ভাড়ার অগ্রিম কোনো টাকা বিকাশে পাঠাবেন না। যেকোনো প্রতারণা থেকে সতর্ক থাকুন।
+            </p>
+            <button onclick="closeNoticeModal()" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md">
+                আমি সতর্ক আছি ও সম্মত
+            </button>
+        </div>
+    </div>
+
+    <!-- CUSTOM IMO GUIDE MODAL -->
+    <div id="imoGuideModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4">
+            <div class="text-sky-500 text-4xl"><i class="fa-solid fa-comment-sms"></i></div>
+            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white">imo ভেরিফিকেশন নির্দেশিকা</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left">
+                imo-তে সরাসরি মেসেজ পাঠানোর সীমাবদ্ধতা থাকায় নিচের বাটনটি ক্লিক করে আপনার রেজিস্ট্রেশন মেসেজটি কপি করে নিন এবং আপনার imo অ্যাপের মাধ্যমে এডমিন নম্বরে পাঠিয়ে দিন।
+                <br><br>
+                <strong class="text-brand-primary">এডমিন imo নম্বর: +8801410603930</strong>
+            </p>
+            <textarea id="imoTextToCopy" readonly class="w-full h-24 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-[10px] outline-none resize-none"></textarea>
+            <div class="flex gap-2">
+                <button onclick="copyImoMessageAndClose()" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md">
+                    মেসেজ কপি করুন ও বন্ধ করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- 🎛️ CORE SCRIPTS & DATABASE ROUTINE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -593,28 +633,28 @@
         // 🗺️ Bangladesh Ultimate Geographic Database Map (Complete 8 Divisions, 64 Districts, & All Upazilas)
         const bdLocations = {
             "ঢাকা": {
-                "ঢাকা": ["মিরপুর", "বনানী", "সাভার", "গুলশান", "উত্তরা", "ধানমন্ডি", "মোহাম্মদপুর", "খিলগাঁও", "তেজগাঁও", "লালবাগ", "ঢাকা উত্তর সিটি কর্পোরেশন", "ঢাকা দক্ষিণ সিটি কর্পোরেশন", "ধামরাই", "কেরানীগঞ্জ", "দোহার", "নবাবগঞ্জ"],
+                "ঢাকা": ["মিরপুর", "বনানী", "সাভার", "গুলশান", "উত্তরা", "ধানমন্ডি", "মোহাম্মদপুর", "খিলগাঁও", "তেজগাঁও", "লালবাগ", "ঢাকা উত্তর CITY কর্পোরেশন", "ঢাকা দক্ষিণ CITY কর্পোরেশন", "ধামরাই", "কেরানীগঞ্জ", "দোহার", "নবাবগঞ্জ"],
                 "গাজীপুর": ["গাজীপুর সদর", "কালীগঞ্জ", "কালিয়াকৈড়", "শ্রীপুর", "কাপাসিয়া", "গাজীপুর সিটি কর্পোরেশন"],
                 "নারায়ণগঞ্জ": ["নারায়ণগঞ্জ সদর", "রূপগঞ্জ", "আড়াইহাজার", "সোনারগাঁও", "বন্দর", "নারায়ণগঞ্জ সিটি কর্পোরেশন"],
                 "নরসিংদী": ["নরসিংদী সদর", "বেলাবো", "মনোহরদী", "পলাশ", "রায়পুরা", "শিবপুর"],
-                "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "घाटাইল", "দেলদুয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "مধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
+                "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "ঘাটাইল", "দেলদুয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "মধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
                 "মানিকগঞ্জ": ["মানিকগঞ্জ সদর", "সিংগাইর", "শিবালয়", "ঘিওর", "হরিরামপুর", "দৌলতপুর", "সাটুরিয়া"],
-                "মুन्সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজদিখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
-                "ফরিদপুর": ["ফরিদপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালথা", "নগরকান্দা"],
+                "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজদিখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
+                "ফریدপুর": ["ফریدপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালथा", "নগরকান্দা"],
                 "রাজবাড়ী": ["রাজবাড়ী সদর", "গোয়ালন্দ", "পাংশা", "বালিয়াকান্দি", "কালুখালী"],
-                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "মুকসুদপুর"],
+                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "مুকসুদপুর"],
                 "মাদারীপুর": ["মাদারীপুর সদর", "শিবচর", "কালকিনি", "রাজৈর"],
                 "শরীয়তপুর": ["শরীয়তপুর সদর", "ডামুড্যা", "নড়িয়া", "জাজিরা", "ভেদরগঞ্জ", "গোসাইরহাট"],
                 "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর", "কটিয়াদী", "ভৈরব", "বাজিতপুর", "নিকলী", "করিমগঞ্জ", "হোসেনপুর", "তাড়াইল", "পাকুন্দিয়া", "মিঠামইন", "ইটনা", "অষ্টগ্রাম", "কুলিয়ারচর"]
             },
             "চট্টগ্রাম": {
-                "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
+                "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", " can_receive_O", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
                 "কক্সবাজার": ["কক্সবাজার সদর", "চকরিয়া", "মহেশখালী", "টেকনাফ", "উখিয়া", "পেকুয়া", "কুতুবদিয়া", "রামু"],
                 "কুমিল্লা": ["কুমিল্লা আদর্শ সদর", "কুমিল্লা সদর দক্ষিণ", "চৌদ্দগ্রাম", "লাকসাম", "লাঙ্গলকোট", "বরুড়া", "দাউদকান্দি", "চান্দিনা", "দেবিদ্বার", "মুরাদনগর", "বুড়িচং", "ব্রাহ্মণপাড়া", "হোমনা", "মেঘনা", "তিতাস", "মনোহরগঞ্জ", "কুমিল্লা সিটি কর্পোরেশন"],
                 "ফেনী": ["ফেনী সদর", "ছাগলনাইয়া", "দাগনভূঞা", "সোনাগাজী", "পরশুরাম", "ফুলগাজী"],
                 "নোয়াখালী": ["নোয়াখালী সদর", "বেগমগঞ্জ", "সেনবাগ", "চাটখিল", "কোম্পানীগঞ্জ", "হাতিয়া", "সুবর্ণচর", "সোনাইমুড়ী", "কবিরহাট"],
                 "লক্ষ্মীপুর": ["লক্ষ্মীপুর সদর", "রায়পুর", "রামগঞ্জ", "রামগতি", "কমলনগর"],
-                "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "শাহরাস্তি", "কচুয়া", "ফরিদগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
+                "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "শাহরাস্তি", "কচুয়া", "ফریدগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
                 "ব্রাহ্মণবাড়িয়া": ["ব্রাহ্মণবাড়িয়া সদর", "আশুগঞ্জ", "সরাইল", "নাসিরনগর", "বাঞ্ছারামপুর", "নবীনগর", "কসবা", "আখাউড়া", "বিজয়নগর"],
                 "রাঙ্গামাটি": ["রাঙ্গামাটি সদর", "কাপ্তাই", "কাউখালী", "বাঘাইছড়ি", "লংগদু", "নানিয়ারচর", "রাজস্থলী", "জুরাছড়ি", "বিলাইছড়ি", "বরকল"],
                 "বান্দরবান": ["বান্দরবান সদর", "রুমা", "থানচি", "রোয়াংছড়ি", "লামা", "আলীকদম", "নাইক্ষ্যংছড়ি"],
@@ -626,13 +666,13 @@
                 "জয়পুরহাট": ["জয়পুরহাট সদর", "পাঁচবিবি", "কালাই", "ক্ষেতলাল", "আক্কেলপুর"],
                 "নওগাঁ": ["নওগাঁ সদর", "মহাদেবপুর", "বদলগাছী", "পত্নীতলা", "ধামইরহাট", "সাপাহার", "পোরশা", "নিয়ামতপুর", "মান্দা", "আত্রাই", "রানীনগর"],
                 "নাটোর": ["নাটোর সদর", "সিংড়া", "বাগাতিপাড়া", "লালপুর", "বড়াইগ্রাম", "গুরুদাসপুর", "নলডাঙ্গা"],
-                "পাবনা": ["পাবনা সদর", "ঈশ্বরদী", "চাটমোহর", "ভাঙ্গুড়া", "ফরিদপুর", "সুজানগর", "বেড়া", "সাঁথিয়া", "আটঘরিয়া"],
+                "পাবনা": ["পাবনা সদর", "ঈশ্বরদী", "চাটমোহর", "ভাঙ্গুড়া", "ফریدপুর", "সুজানগর", "বেড়া", "সাঁথিয়া", "আটঘরিয়া"],
                 "সিরাজগঞ্জ": ["সিরাজগঞ্জ সদর", "শাহজাদপুর", "উল্লাপাড়া", "বেলকুচি", "কামারখন্দ", "কাজীপুর", "রায়গঞ্জ", "তাড়াশ", "চৌহালী"],
                 "চাঁপাইনবাবগঞ্জ": ["চাঁপাইনবাবগঞ্জ সদর", "শিবগঞ্জ", "গোমস্তাপুর", "নাচোল", "ভোলাহাট"]
             },
             "খুলনা": {
                 "খুলনা": ["খুলনা সিটি কর্পোরেশন", "রূপসা", "বটিয়াঘাটা", "ডুমুরিয়া", "তেরখাদা", "দিঘলিয়া", "ফুলতলা", "পাইকগাছা", "কয়রা", "দাকোপ"],
-                "যه‌ها": ["যশোর সদর", "ঝিকরগাছা", "শার্ষা", "অভয়নগর", "বাগআঁচড়া", "মনিরামপুর", "কেশবপুর", "চৌগাছা", "বাঘারপাড়া"],
+                "যশোর": ["যশোর সদর", "ঝিকরগাছা", "শার্ষা", "অভয়নগর", "বাগআঁচড়া", "মনিরামপুর", "কেশবপুর", "চৌগাছা", "বাঘারপাড়া"],
                 "বাগেরহাট": ["বাগেরহাট সদর", "মোংলা", "চিতলমারী", "ফকিরহাট", "কচুয়া", "মোল্লাহাট", "রামপাল", "শরণখোলা", "মোড়লগঞ্জ"],
                 "সাতক্ষীরা": ["সাতক্ষীরা সদর", "কলারোয়া", "তালা", "দেবহাটা", "কালীগঞ্জ", "শ্যামনগর", "আশাশুনি"],
                 "ঝিনাইদহ": ["ঝিনাইদহ সদর", "শৈলকুপা", "হরিণাকুণ্ডু", "কালীগঞ্জ", "কোটচাঁদপুর", "মহেশপুর"],
@@ -654,7 +694,7 @@
                 "সিলেট": ["সিলেট সিটি কর্পোরেশন", "সিলেট সদর", "বিয়ানীবাজার", "গোলাপগঞ্জ", "জকিগঞ্জ", "কানাইঘাট", "জৈنتাপুর", "গোয়াইনঘাট", "কোম্পানীগঞ্জ", "বালাগঞ্জ", "বিশ্বনাথ", "ফেঞ্চুগঞ্জ", "দক্ষিণ সুরমা"],
                 "মৌলভীবাজার": ["মৌলভীবাজার সদর", "শ্রীমঙ্গল", "কুলাউড়া", "রাজনগর", "কমলগঞ্জ", "জুড়ী", "বড়লেখা"],
                 "হবিগঞ্জ": ["হবিগঞ্জ সদর", "চুনারুঘাট", "মাধবপুর", "বাহুবল", "নবীগঞ্জ", "বানিয়াচং", "আজমিরীগঞ্জ", "লাখাই", "শায়েস্তাগঞ্জ"],
-                "সুনামগঞ্জ": ["সুনামগঞ্জ সদর", "ছাতক", "জগন্নাথপুর", "দিরাই", "শাল্লা", "ধর্মপাশা", "তাহিরপুর", "জামালগঞ্জ", "দোয়ারাবাজার", "বিশ্বম্ভরপুর", " can_receive_O"]
+                "সুনামগঞ্জ": ["সুনামগঞ্জ সদর", "ছাতক", "জগন্নাথপুর", "দিরাই", "শাল্লা", "ধর্মপাশা", "তাহিরপুর", "জামালগঞ্জ", "দোয়ারাবাজার", "বিশ্বম্ভরপুর", "মধ্যনগর", "শান্তিগঞ্জ"]
             },
             "রংপুর": {
                 "রংপুর": ["রংপুর সিটি কর্পোরেশন", "রংপুর সদর", "মিঠাপুকুর", "পীরগঞ্জ", "কাউনিয়া", "পীরগাছা", "গঙ্গাচড়া", "তারাগঞ্জ", "বদরগঞ্জ"],
@@ -683,7 +723,7 @@
             "রাজশাহী": "rajshahi", "বগুড়া": "bogura", "জয়পুরহাট": "joypurhat", "নওগাঁ": "naogaon", "নাটোর": "natore", "পাবনা": "pabna", "সিরাজগঞ্জ": "sirajganj", "চাঁপাইনবাবগঞ্জ": "chapainawabganj",
             "খুলনা": "khulna", "যশোর": "jashore", "বাগেরহাট": "bagerhat", "সাতক্ষীরা": "satkhira", "ঝিনাইদহ": "jhenaidah", "কুষ্টিয়া": "kushtia", "মাগুরা": "magura", "নড়াইল": "narail", "মেহেরপুর": "meherpur", "চুয়াডাঙ্গা": "chuadanga",
             "বরিশাল": "barisal", "পটুয়াখালী": "patuakhali", "ভোলা": "bhola", "পিরোজপুর": "pirojpur", "বরগুনা": "barguna", "ঝালকাঠি": "jhalokathi",
-            "সিলেট": "sylhet", "مৌলভীবাজার": "moulvibazar", "হবিগঞ্জ": "habiganj", "সুনামগঞ্জ": "sunamganj"
+            "সিলেট": "sylhet", "মৌলভীবাজার": "moulvibazar", "হবিগঞ্জ": "habiganj", "সুনামগঞ্জ": "sunamganj", "রংপুর": "rangpur", "দিনাজপুর": "dinajpur", "কুড়িগ্রাম": "kurigram", "গাইবান্ধা": "gaibandha", "নীলফামারী": "nilphamari", "লালমনিরহাট": "lalmonirhat", "পঞ্চগড়": "panchagarh", "ঠাকুরগাঁও": "thakurgaon", "ময়মনসিংহ": "mymensingh", "নেত্রকোনা": "netrokona", "শেরপুর": "sherpur", "জামালপুর": "jamalpur"
         };
 
         // 🔗 Global Sandbox/Deployment Switch Adapter (Crucial Rule 1 Integration)
@@ -749,23 +789,85 @@
             document.getElementById('themeIcon').className = "fa-solid fa-moon text-slate-700 text-xs";
         }
 
-        // 🗺️ SPA Navigation switcher (Safe click bindings)
+        // Modal triggers
+        function openRegistrationModal() {
+            const regModal = document.getElementById('regModal');
+            if (regModal) {
+                regModal.classList.remove('hidden');
+                regModal.classList.add('flex');
+            }
+        }
+
+        function closeRegistrationModal() {
+            const regModal = document.getElementById('regModal');
+            if (regModal) {
+                regModal.classList.add('hidden');
+                regModal.classList.remove('flex');
+            }
+        }
+
+        function openNoticeModal() {
+            const noticeModal = document.getElementById('noticeModal');
+            if (noticeModal) {
+                noticeModal.classList.remove('hidden');
+                noticeModal.classList.add('flex');
+            }
+        }
+
+        function closeNoticeModal() {
+            const noticeModal = document.getElementById('noticeModal');
+            if (noticeModal) {
+                noticeModal.classList.add('hidden');
+                noticeModal.classList.remove('flex');
+            }
+        }
+
+        function openImoModal(msg) {
+            const imoGuideModal = document.getElementById('imoGuideModal');
+            const textToCopy = document.getElementById('imoTextToCopy');
+            if (imoGuideModal && textToCopy) {
+                textToCopy.value = msg;
+                imoGuideModal.classList.remove('hidden');
+                imoGuideModal.classList.add('flex');
+            }
+        }
+
+        function copyImoMessageAndClose() {
+            const textToCopy = document.getElementById('imoTextToCopy');
+            if (textToCopy) {
+                textToCopy.select();
+                document.execCommand('copy');
+                showCustomToast("রেজিস্ট্রেশন মেসেজটি কপি করা হয়েছে! imo-তে পাঠান।", true);
+            }
+            const imoGuideModal = document.getElementById('imoGuideModal');
+            if (imoGuideModal) {
+                imoGuideModal.classList.add('hidden');
+                imoGuideModal.classList.remove('flex');
+            }
+        }
+
+        // 🗺Override switchTab to guarantee smooth view scroll transitions
         function switchTab(tabId) {
             document.querySelectorAll('.spa-tab-content').forEach(el => el.classList.add('hidden'));
             const target = document.getElementById(tabId);
-            if (target) target.classList.remove('hidden');
+            if (target) {
+                target.classList.remove('hidden');
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
 
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-brand-primary', 'border-b-2', 'border-brand-primary');
                 link.classList.add('text-slate-600', 'dark:text-slate-300');
             });
 
-            if (event && event.currentTarget) {
-                event.currentTarget.classList.add('text-brand-primary');
+            // Mark active header indicators
+            const buttons = document.querySelectorAll(`button[onclick*="${tabId}"]`);
+            buttons.forEach(btn => {
+                btn.classList.add('text-brand-primary');
                 if (window.innerWidth >= 768) {
-                    event.currentTarget.classList.add('border-b-2', 'border-brand-primary');
+                    btn.classList.add('border-b-2', 'border-brand-primary');
                 }
-            }
+            });
             document.getElementById('mobileNavMenu').classList.add('hidden');
         }
 
@@ -807,7 +909,7 @@
                 content.style.maxHeight = '0px';
                 icon.style.transform = 'rotate(0deg)';
             } else {
-                document.querySelectorAll('.max-h-0').forEach(el => {
+                document.querySelectorAll('#healthTipsAccordionContainer .max-h-0').forEach(el => {
                     el.style.maxHeight = '0px';
                     const parentBtn = el.previousElementSibling;
                     if(parentBtn) {
@@ -893,9 +995,6 @@
                 selectEl.appendChild(opt);
             });
         }
-
-        loadDivisionDropdown('searchDivision');
-        loadDivisionDropdown('regDivision');
 
         function handleSearchDivisionChange() {
             const division = document.getElementById('searchDivision').value;
@@ -1042,7 +1141,7 @@
             }, 3500);
         }
 
-        // 🔍 Secure Search Engine (Fail-safe wrapped in complete Try/Catch)
+        // 🔍 Secure Search Engine (Filters district and area in client-side memory to satisfy Rule 2)
         async function executeDonorSearch() {
             const blood = document.getElementById('searchBlood').value;
             const division = document.getElementById('searchDivision').value;
@@ -1069,9 +1168,9 @@
             const mappedDistrictName = districtMap[district] || district.toLowerCase().trim();
 
             try {
+                // Rule 2 bypass - strictly search only by bloodGroup then filter district & upazila on memory
                 const snapshot = await getDonorsCollection()
                     .where('bloodGroup', '==', blood)
-                    .where('district', '==', mappedDistrictName)
                     .get();
 
                 spinner.classList.add('hidden');
@@ -1080,7 +1179,11 @@
                 snapshot.forEach(doc => {
                     const data = doc.data();
                     if (data.status === 'Verified') {
-                        donors.push(data);
+                        // Soft filtering on memory
+                        const dbDistrict = (data.district || "").toLowerCase().trim();
+                        if (dbDistrict === mappedDistrictName) {
+                            donors.push(data);
+                        }
                     }
                 });
 
@@ -1269,12 +1372,14 @@
             const virtualEmail = `${mobileInput}@roktertan.com`;
 
             try {
+                // Try logging in using the virtual email
                 await auth.signInWithEmailAndPassword(virtualEmail, passwordInput);
                 showCustomToast("সফলভাবে লগইন হয়েছে!", true);
                 authBtn.innerHTML = originalHTML;
                 authBtn.disabled = false;
             } catch (err) {
-                if (err.code === "auth/user-not-found" && passwordInput === mobileInput) {
+                // If account not found in Auth but password matches mobile, search Firestore
+                if ((err.code === "auth/user-not-found" || err.code === "auth/wrong-password") && passwordInput === mobileInput) {
                     try {
                         const snapshot = await getDonorsCollection()
                             .where('mobile', '==', mobileInput)
@@ -1291,7 +1396,15 @@
                             const donorData = matchedDoc.data();
                             const finalUsername = donorData.username || generateUniqueUsername(donorData.name);
                             
-                            await auth.createUserWithEmailAndPassword(virtualEmail, mobileInput);
+                            // Let's create account dynamically since they are a validated database donor
+                            try {
+                                await auth.createUserWithEmailAndPassword(virtualEmail, mobileInput);
+                            } catch (regErr) {
+                                // If they already existed in Auth, sign them in directly
+                                if (regErr.code !== 'auth/email-already-in-use') {
+                                    throw regErr;
+                                }
+                            }
                             await auth.signInWithEmailAndPassword(virtualEmail, mobileInput);
 
                             await getDonorsCollection().doc(matchedDoc.id).update({
@@ -1418,7 +1531,7 @@
         async function updateUserRealEmail() {
             const inputEmail = document.getElementById('realEmailInput').value.trim();
             if (!inputEmail || inputEmail.indexOf('@') === -1) {
-                showCustomToast("সঠিক আসল ইমেইল এড্রেস লিখুন!", false);
+                showCustomToast("সবচেয়ে সঠিক আসল ইমেইল এড্রেস লিখুন!", false);
                 return;
             }
 
@@ -1542,7 +1655,7 @@
             { q: "২. রক্ত দেওয়ার আগে কোনো ডোনার টাকা বা কোনো লেনদেন দাবি করলে কী করবেন?", a: "কখনো কোনো ডোনারকে রক্তদানের আগে অগ্রিম টাকা দেবেন না। আজকাল অনেক প্রতারক চক্র বা দালাল সোশ্যাল মিডিয়ায় রক্ত দেওয়ার মিথ্যা আশ্বাস দিয়ে বিকাশ/নগদে যাতায়াত ভাড়ার দোহাই দিয়ে অগ্রিম টাকা নিয়ে মোবাইল বন্ধ করে দেয়। রক্তদান একটি মানবিক ও ফ্রি সেবা।" },
             { q: "৩. রক্তদানের সর্বনিম্ন এবং সর্বোচ্চ বয়স কত হওয়া উচিত?", a: "ডাব্লিউএইচও (WHO) অনুযায়ী, রক্তদাতার বয়স অবশ্যই ১৮ থেকে ৬০ বছরের মধ্যে হতে হবে। কিছু ক্ষেত্রে শারীরিক সুস্থতা সাপেক্ষে ৬৫ বছর পর্যন্ত রক্ত দেওয়া যেতে পারে।" },
             { q: "৪. কম ওজনের কেউ কি রক্ত দিতে পারেন? ওজনের সীমা কত?", a: "না, কম ওজনের কেউ রক্ত দিতে পারবেন না। রক্তদাতার সর্বনিম্ন ওজন পুরুষদের ক্ষেত্রে অবশ্যই ৫০ কেজি এবং নারীদের ক্ষেত্রে কমপক্ষে ৪৫ কেজি হতে হবে।" },
-            { q: "৫. একবার রক্ত দেওয়ার কতদিন পর পুনরায় রক্ত দেওয়া সম্পূর্ণ নিরাপদ?", a: "একজন সুস্থ পুরুষের ক্ষেত্রে প্রতি ৯০ দিন (৩ মাস) পর পর এবং সুস্থ নারীদের ক্ষেত্রে প্রতি ১২ো দিন (৪ মাস) পর পর রক্ত দেওয়া সম্পূর্ণ নিরাপদ।" },
+            { q: "৫. একবার রক্ত দেওয়ার কতদিন পর পুনরায় রক্ত দেওয়া সম্পূর্ণ নিরাপদ?", a: "একজন সুস্থ পুরুষের ক্ষেত্রে প্রতি ৯০ দিন (৩ মাস) পর পর এবং সুস্থ নারীদের ক্ষেত্রে প্রতি ১২০ দিন (৪ মাস) পর পর রক্ত দেওয়া সম্পূর্ণ নিরাপদ।" },
             { q: "৬. রক্ত দিলে কি শরীর দুর্বল হয়ে যায় বা কোনো ক্ষতি হয়?", a: "এটি একটি বড় ভুল ধারণা। রক্ত দেওয়ার পর কোনো ক্ষতি বা স্থায়ী দুর্বলতা হয় না। রক্তদানের পর তরল অংশটি মাত্র ২৪ থেকে ৪৮ ঘণ্টার মধ্যে পূরণ হয়ে যায় এবং লোহিত রক্তকণিকাগুলো ৪ থেকে ৮ সপ্তাহের মধ্যে তৈরি হয়।" },
             { q: "৭. রক্ত দেওয়ার আগে রক্তের কী কী টেস্ট করা বাধ্যতামূলক?", a: "রক্ত দেওয়ার আগে অবশ্যই ৫টি স্ক্রীনিং পরীক্ষা করা বাধ্যতামূলক: হেপাটাইটিস-বি, হেপাটাইটিস-সি, এইচআইভি (এইডস), সিফিলিস ও ম্যালেরিয়া। এছাড়াও রক্তদাতার রক্ত নেওয়ার পূর্বে হিমোগ্লোবিন ও রক্তচাপ পরীক্ষা করা হয়।" },
             { q: "৮. উচ্চ রক্তচাপ (High BP) বা প্রেশারের রোগী কি রক্ত দিতে পারবেন?", a: "উচ্চ রক্তচাপের রোগীরা রক্ত দিতে পারবেন যদি রক্তদানের সময় তাদের রক্তচাপ নিয়ন্ত্রণে থাকে (যেমন- সিস্টোলিক ১৬০ এর নিচে এবং ডায়াস্টোলিক ১০০ এর নিচে) এবং তারা যে ওষুধ খাচ্ছেন তা রক্তদানের জন্য ক্ষতিকর না হয়।" },
