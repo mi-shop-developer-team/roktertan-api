@@ -61,49 +61,49 @@
             position: relative;
             overflow: hidden;
             border-radius: 20px;
-            box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.4), 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 25px 40px -5px rgba(0, 0, 0, 0.5), 0 15px 20px -5px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             box-sizing: border-box;
             padding: 24px;
         }
 
-        /* Dual-Line Dashed Golden Border - Brought further inside to create outer frame solid margin */
+        /* Solid and Bold Double Golden Borders (Brought inward to create outer margins) */
         .id-card-border-outer {
             position: absolute;
-            inset: 18px;
-            border: 2px dashed rgba(245, 158, 11, 0.8);
-            border-radius: 12px;
+            inset: 16px;
+            border: 2px dashed rgba(245, 158, 11, 0.9);
+            border-radius: 14px;
             pointer-events: none;
             z-index: 5;
         }
 
         .id-card-border-inner {
             position: absolute;
-            inset: 23px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
+            inset: 21px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
             pointer-events: none;
             z-index: 4;
         }
         
         /* 10 Unique Elegant ID Card Themes (Solid layered & Deep majestic colors) */
-        .theme-1 { background: linear-gradient(135deg, #3f0312 0%, #1c0007 100%); } /* Dark Crimson Velvet */
-        .theme-2 { background: linear-gradient(135deg, #01122b 0%, #000412 100%); } /* Dark Navy Royal */
-        .theme-3 { background: linear-gradient(135deg, #01241b 0%, #000d09 100%); } /* Deep Emerald Jade */
-        .theme-4 { background: linear-gradient(135deg, #240a52 0%, #0b021d 100%); } /* Royal Violet Velvet */
-        .theme-5 { background: linear-gradient(135deg, #3b1502 0%, #140700 100%); } /* Premium Bronze */
-        .theme-6 { background: linear-gradient(135deg, #182232 0%, #0a111b 100%); } /* Midnight Slate */
-        .theme-7 { background: linear-gradient(135deg, #0f4c5c 0%, #05222a 100%); } /* Dark Ocean Blue */
-        .theme-8 { background: linear-gradient(135deg, #581c5c 0%, #300333 100%); } /* Royal Orchid Purple */
-        .theme-9 { background: linear-gradient(135deg, #121214 0%, #050505 100%); } /* Absolute Charcoal Dark */
-        .theme-10 { background: linear-gradient(135deg, #162e16 0%, #051405 100%); } /* Forest Shadow */
+        .theme-1 { background: linear-gradient(135deg, #400414 0%, #150005 100%); } /* Dark Crimson Velvet */
+        .theme-2 { background: linear-gradient(135deg, #01142e 0%, #00030f 100%); } /* Dark Navy Royal */
+        .theme-3 { background: linear-gradient(135deg, #012b1b 0%, #000a06 100%); } /* Deep Emerald Jade */
+        .theme-4 { background: linear-gradient(135deg, #260a54 0%, #0a011a 100%); } /* Royal Violet Velvet */
+        .theme-5 { background: linear-gradient(135deg, #3d1502 0%, #120500 100%); } /* Premium Bronze */
+        .theme-6 { background: linear-gradient(135deg, #1b2635 0%, #090f19 100%); } /* Midnight Slate */
+        .theme-7 { background: linear-gradient(135deg, #0f4e5e 0%, #041f27 100%); } /* Dark Ocean Blue */
+        .theme-8 { background: linear-gradient(135deg, #5c1b60 0%, #2b0233 100%); } /* Royal Orchid Purple */
+        .theme-9 { background: linear-gradient(135deg, #141416 0%, #040404 100%); } /* Absolute Charcoal Dark */
+        .theme-10 { background: linear-gradient(135deg, #183018 0%, #041204 100%); } /* Forest Shadow */
 
         /* Concentric circle and heartbeat line watermarks to fill gaps */
         .card-concentric-circles {
             position: absolute;
-            width: 240px;
-            height: 240px;
-            border: 1.5px solid rgba(245, 158, 11, 0.1);
+            width: 250px;
+            height: 250px;
+            border: 1.5px solid rgba(245, 158, 11, 0.12);
             border-radius: 50%;
             top: 50%;
             left: 45%;
@@ -124,7 +124,7 @@
             right: 170px;
             bottom: -35px;
             font-size: 160px;
-            opacity: 0.05;
+            opacity: 0.06;
             color: #ffffff;
             z-index: 1;
             pointer-events: none;
@@ -133,10 +133,10 @@
 
         .heartbeat-waveform {
             position: absolute;
-            left: 25px;
-            bottom: 60px;
-            width: 140px;
-            opacity: 0.07;
+            left: 28px;
+            bottom: 75px;
+            width: 150px;
+            opacity: 0.08;
             z-index: 1;
             pointer-events: none;
         }
@@ -151,10 +151,10 @@
             pointer-events: none;
         }
 
-        /* Profile Photo Frame with Golden Dotted Rings (Drawn beautifully to prevent overflow) */
+        /* Profile Photo Frame with Golden Dotted Rings */
         .profile-photo-container {
-            width: 82px;
-            height: 82px;
+            width: 86px;
+            height: 86px;
             border: 2px dashed rgba(245, 158, 11, 0.9);
             border-radius: 50%; 
             background-color: #0b0f17;
@@ -348,7 +348,7 @@
             <div id="resultsSection" class="hidden space-y-4">
                 <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
                     <h3 class="text-sm md:text-md font-bold flex items-center gap-2 text-slate-950 dark:text-white">
-                        <i class="fa-solid fa-list-check text-rose-500"></i> রক্তদাতার তালিকা (<span id="resultsCount">০</span> জন পাওয়া গেছে)
+                        <i class="fa-solid fa-list-check text-rose-500"></i>  রক্তদাতার তালিকা (<span id="resultsCount">০</span> জন পাওয়া গেছে)
                     </h3>
                     <button onclick="resetSearchSection()" class="text-xs font-semibold text-slate-500 hover:text-slate-850 dark:hover:text-white flex items-center gap-1">
                         <i class="fa-solid fa-circle-xmark"></i> তালিকা বন্ধ করুন
@@ -367,7 +367,7 @@
 
             <div class="glass p-5 rounded-3xl shadow-md border border-white/30 space-y-4">
                 <h3 class="text-xs md:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="fa-solid fa-arrows-spin text-brand-primary"></i>  রক্ত আদান-প্রদান সামঞ্জস্যতা হাব (Compatibility)
+                    <i class="fa-solid fa-arrows-spin text-brand-primary"></i> রক্ত আদান-প্রদান সামঞ্জস্যতা হাব (Compatibility)
                 </h3>
                 <p class="text-xs text-slate-600 dark:text-slate-300">যেকোনো একটি রক্তের গ্রুপ নির্বাচন করে দেখুন তারা কাদের রক্ত দিতে পারবে এবং কাদের থেকে গ্রহণ করতে পারবে:</p>
                 
@@ -463,7 +463,7 @@
                     </div>
 
                     <button onclick="handleUserAuthentication()" id="authActionButton" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-bold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-1.5 text-sm">
-                        <i class="fa-solid fa-right-to-bracket"></i> প্রোফাইলে প্রবেশ করুন
+                        <i class="fa-solid fa-right-to-bracket"></i>  প্রোফাইলে প্রবেশ করুন
                     </button>
                 </div>
 
@@ -521,7 +521,7 @@
                 <!-- Right ID Card Section (Landscape & Themes with Adaptive Scaling) -->
                 <div class="lg:col-span-7 flex flex-col items-center justify-start space-y-5 w-full">
                     <h3 class="text-xs md:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1">
-                        <i class="fa-solid fa-id-badge text-brand-primary"></i>  ডিজিটাল ডোনার আইডি কার্ড 
+                        <i class="fa-solid fa-id-badge text-brand-primary"></i>  ডিজিটাল ডোনার আইডিカード 
                     </h3>
 
                     <!-- Mobile Responsive Scaler Wrapper -->
@@ -538,56 +538,56 @@
                                 
                                 <!-- Decorative Heartbeat waveform icon in BG to fill gaps -->
                                 <svg class="heartbeat-waveform" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 15H30L35 5L42 25L48 10L52 18L56 15H100" stroke="rgba(245, 158, 11, 0.25)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M0 15H30L35 5L42 25L48 10L52 18L56 15H100" stroke="rgba(245, 158, 11, 0.28)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
 
                                 <!-- Left Area: Avatar & Details (Wider, Spacious, Multi-layered) -->
-                                <div class="relative z-10 flex flex-row items-center justify-between w-[310px] h-full pl-6 pr-2 select-none">
-                                    <div class="flex flex-col justify-between h-full py-4">
+                                <div class="relative z-10 flex flex-row items-center justify-between w-[320px] h-full pl-7 pr-2 select-none">
+                                    <div class="flex flex-col justify-between h-full py-4.5">
                                         <!-- Logo & Brand Header -->
-                                        <div class="flex items-center gap-2 mb-1">
-                                            <div class="bg-rose-600 text-white p-1 rounded-full flex items-center justify-center w-5.5 h-5.5 shadow-md">
-                                                <i class="fa-solid fa-droplet text-[9px] animate-pulse"></i>
+                                        <div class="flex items-center gap-2 mb-1 shrink-0">
+                                            <div class="bg-rose-600 text-white p-1 rounded-full flex items-center justify-center w-6 h-6 shadow-md border border-white/20">
+                                                <i class="fa-solid fa-droplet text-[10px] animate-pulse"></i>
                                             </div>
                                             <div>
-                                                <h4 class="text-[12px] font-black tracking-wider text-amber-400 uppercase leading-none">রক্তের টান</h4>
-                                                <span class="text-[7.5px] text-white/70 block font-bold tracking-tight">RokterTan — ডোনার কার্ড</span>
+                                                <h4 class="text-[13px] font-black tracking-wider text-amber-400 uppercase leading-none">রক্তের টান</h4>
+                                                <span class="text-[8px] text-white/80 block font-bold tracking-tight">RokterTan — ডোনার কার্ড</span>
                                             </div>
                                         </div>
 
                                         <!-- Rahnuma Grid Detailed List (With safe spacing to prevent name clipping) -->
-                                        <div class="space-y-1.5 text-left pt-1">
+                                        <div class="space-y-2 text-left pt-2 flex-grow">
                                             <div class="space-y-0.5">
-                                                <span class="text-[7.5px] uppercase font-bold text-amber-400 block tracking-wider leading-none">রক্তদাতা:</span>
-                                                <h2 class="text-[13px] font-extrabold text-white tracking-wide truncate max-w-[170px] leading-tight" id="cardUserName">লোড হচ্ছে...</h2>
+                                                <span class="text-[8px] uppercase font-bold text-amber-400 block tracking-wider leading-none">রক্তদাতা:</span>
+                                                <h2 class="text-[15px] font-extrabold text-white tracking-wide truncate max-w-[190px] leading-snug whitespace-nowrap" id="cardUserName">লোড হচ্ছে...</h2>
                                             </div>
 
                                             <div class="space-y-0.5">
-                                                <span class="text-[7.5px] uppercase font-bold text-amber-400 block tracking-wider leading-none">অর্জিত উপাধি:</span>
-                                                <span id="cardUserRank" class="text-[10px] font-black text-amber-100 leading-none block">নতুন রক্তদাতা</span>
+                                                <span class="text-[8px] uppercase font-bold text-amber-400 block tracking-wider leading-none">অর্জিত উপাধি:</span>
+                                                <span id="cardUserRank" class="text-[11.5px] font-black text-amber-100 leading-none block whitespace-nowrap">নতুন রক্তদাতা</span>
                                             </div>
 
                                             <div class="space-y-0.5">
-                                                <span class="text-[7.5px] uppercase font-bold text-amber-400 block tracking-wider leading-none">সর্বশেষ দান:</span>
-                                                <span id="cardLastDonationDateText" class="text-[9px] font-bold text-white/95 leading-none block">কখনো রক্ত দেননি</span>
+                                                <span class="text-[8px] uppercase font-bold text-amber-400 block tracking-wider leading-none">সর্বশেষ দান:</span>
+                                                <span id="cardLastDonationDateText" class="text-[10px] font-bold text-white/95 leading-none block whitespace-nowrap">কখনো রক্ত দেননি</span>
                                             </div>
                                         </div>
 
                                         <!-- Beautiful Golden Quote / Tagline to fill horizontal empty spaces -->
-                                        <div class="text-left mt-1 max-w-[190px]">
-                                            <p class="text-[7.5px] font-medium italic text-amber-200/90 leading-tight">"একটি রক্তবিন্দু, মানবতার এক মহান সিন্ধু — রক্তের টানে হোক রক্তদান"</p>
+                                        <div class="text-left mt-1 max-w-[200px] shrink-0">
+                                            <p class="text-[8.5px] font-extrabold italic text-amber-200/95 leading-tight whitespace-nowrap">"একটি রক্তবিন্দু, মানবতার এক মহান সিন্ধু — রক্তের টানে হোক রক্তদান"</p>
                                         </div>
 
                                         <!-- Web Address URL -->
-                                        <div class="pt-1 flex items-center gap-1.5">
-                                            <i class="fa-solid fa-globe text-amber-400 text-[8px]"></i>
-                                            <span class="text-[8px] text-white/90 font-black tracking-tight">emergencyroktolagbe.vercel.app</span>
+                                        <div class="pt-1.5 flex items-center gap-1.5 shrink-0">
+                                            <i class="fa-solid fa-globe text-amber-400 text-[9px]"></i>
+                                            <span class="text-[9px] text-white/90 font-black tracking-tight whitespace-nowrap">emergencyroktolagbe.vercel.app</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Right Area: Golden Ring Photo Frame & Premium Counter Box (Rahnuma Style) -->
-                                <div class="relative z-10 flex-grow h-full flex flex-col justify-between items-center py-5 pr-6 pl-1 select-none">
+                                <div class="relative z-10 flex-grow h-full flex flex-col justify-between items-center py-5 pr-7 pl-1 select-none">
                                     <!-- Photo Container (Centered perfectly) -->
                                     <div class="flex flex-col items-center">
                                         <div id="idCardPhotoContainer" class="profile-photo-container">
@@ -596,21 +596,21 @@
                                     </div>
 
                                     <!-- Right Box: Success Counter Block (Rahnuma Style) -->
-                                    <div class="w-full bg-black/45 border border-amber-500/40 p-2.5 rounded-xl text-center backdrop-blur-md relative mt-2">
+                                    <div class="w-full bg-black/45 border border-amber-500/40 p-2.5 rounded-xl text-center backdrop-blur-md relative mt-2.5">
                                         <!-- Top subtle tagline -->
-                                        <span class="text-[7.5px] uppercase font-extrabold text-amber-400 tracking-widest block leading-none mb-1">রক্তের গ্রুপ</span>
+                                        <span class="text-[8px] uppercase font-extrabold text-amber-400 tracking-widest block leading-none mb-1">রক্তের গ্রুপ</span>
                                         <!-- Highlight Counter / Blood group text -->
-                                        <span id="cardBloodGroup" class="text-2xl font-black text-rose-500 leading-none drop-shadow-md">O+</span>
+                                        <span id="cardBloodGroup" class="text-2.5xl font-black text-rose-500 leading-none drop-shadow-md">O+</span>
                                         <!-- Verification subtag -->
-                                        <span class="text-[7px] font-black text-emerald-400 uppercase tracking-wider block mt-1"><i class="fa-solid fa-circle-check"></i> ভেরিফাইড ডোনার</span>
+                                        <span class="text-[7.5px] font-black text-emerald-400 uppercase tracking-wider block mt-1"><i class="fa-solid fa-circle-check"></i>  ভেরিফাইড ডোনার</span>
                                     </div>
                                 </div>
                                 
                                 <!-- Card bottom invitation message & serial ID (To invite people to our website) -->
-                                <div class="absolute bottom-2 left-6 z-20 text-[6.5px] text-white/55 font-bold tracking-wide select-none max-w-[200px] truncate">
+                                <div class="absolute bottom-2.5 left-7 z-20 text-[7px] text-white/65 font-extrabold tracking-wide select-none max-w-[200px] truncate">
                                     ফ্রি ডোনার কার্ড করতে আজই আমাদের সাইটে আসুন।
                                 </div>
-                                <div class="absolute bottom-2 right-6 z-20 text-[7px] text-amber-400/70 font-mono tracking-widest select-none">
+                                <div class="absolute bottom-2.5 right-7 z-20 text-[7.5px] text-amber-400/80 font-mono tracking-widest select-none">
                                     <span id="cardVerificationID">RT-VERIFIED-XXXX</span>
                                 </div>
 
@@ -640,7 +640,7 @@
                         </div>
 
                         <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-2xl border border-slate-200 dark:border-slate-700">
-                            <p class="font-bold text-slate-800 dark:text-slate-200 mb-2"><i class="fa-solid fa-palette"></i> আইডি কার্ডের ডিজাইন নির্বাচন করুন</p>
+                            <p class="font-bold text-slate-800 dark:text-slate-200 mb-2"><i class="fa-solid fa-palette"></i>  আইডি কার্ডের ডিজাইন নির্বাচন করুন</p>
                             <div class="flex gap-2 overflow-x-auto p-1 no-scrollbar">
                                 <button onclick="setCardTheme(1)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-1"></button>
                                 <button onclick="setCardTheme(2)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-2"></button>
@@ -878,26 +878,26 @@
                 "নরসিংদী": ["নরসিংদী সদর", "বেলাবো", "মনোহরদী", "পলাশ", "রায়পুরা", "শিবপুর"],
                 "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "ঘাটাইল", "দেলদুয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "مধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
                 "মানিকগঞ্জ": ["মানিকগঞ্জ সদর", "সিংগাইর", "শিবালয়", "ঘিওর", "হরিরামপুর", "দৌলতপুর", "সাটুরিয়া"],
-                "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজদিখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
+                "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজдиখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
                 "ফরিদপুর": ["ফরিদপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালথা", "নগরকান্দা"],
                 "রাজবাড়ী": ["রাজবাড়ী সদর", "গোয়ালন্দ", "পাংশা", "বালিয়াকান্দি", "কালুখালী"],
-                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "মুকসুদপুর"],
+                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "مुकসুদপুর"],
                 "মাদারীপুর": ["মাদারীপুর সদর", "শিবচর", "কালকিনি", "রাজৈর"],
                 "শরীয়তপুর": ["শরীয়তপুর সদর", "ডামুড্যা", "নড়িয়া", "জাজিরা", "ভেদরগঞ্জ", "গোসাইরহাট"],
                 "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর", "কটিয়াদী", "ভৈরব", "বাজিতপুর", "নিকলী", "করিমগঞ্জ", "হোসেনপুর", "তাড়াইল", "পাকুন্দিয়া", "মিঠামইন", "ইটনা", "অষ্টগ্রাম", "কুলিয়ারচর"]
             },
             "চট্টগ্রাম": {
-                "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
+                "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
                 "কক্সবাজার": ["কক্সবাজার সদর", "চকরিয়া", "মহেশখালী", "টেকনাফ", "উখিয়া", "পেকুয়া", "কুতুবদিয়া", "রামু"],
-                "কুমিল্লা": ["কুমিল্লা আদর্শ সদর", "কুমিল্লা সদর দক্ষিণ", "চৌদ্দগ্রাম", "লাকসাম", "লাঙ্গলকোট", "বরুড়া", "দাউদকান্দি", "চান্দিনা", "দেবিদ্বার", "মুরাদনগর", "বুড়িচং", "ব্রাহ্মণপাড়া", "হোমনা", "মেঘনা", "তিতাস", "মনোহরগঞ্জ", "কুমিল্লা সিটি কর্পোরেশন"],
+                "কুমিল্লা": ["কুমিল্লা आदर्श সদর", "কুমিল্লা সদর দক্ষিণ", "চৌদ্দগ্রাম", "লাকসাম", "লাঙ্গলকোট", "বরুড়া", "দাউদকান্দি", "চান্দিনা", "দেবিদ্বার", "মুরাদনগর", "বুড়িচং", "ব্রাহ্মণপাড়া", "হোমনা", "মেঘনা", "তিতাস", "মনোহরগঞ্জ", "কুমিল্লা সিটি কর্পোরেশন"],
                 "ফেনী": ["ফেনী সদর", "ছাগলনাইয়া", "দাগনভূঞা", "সোনাগাজী", "পরশুরাম", "ফুলগাজী"],
                 "নোয়াখালী": ["নোয়াখালী সদর", "বেগমগঞ্জ", "সেনবাগ", "চাটখিল", "কোম্পানীগঞ্জ", "হাতিয়া", "সুবর্ণচর", "সোনাইমুড়ী", "কবিরহাট"],
                 "লক্ষ্মীপুর": ["লক্ষ্মীপুর সদর", "রায়পুর", "রামগঞ্জ", "রামগতি", "কমলনগর"],
-                "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "শাহরাস্তি", "কচুয়া", "ফরিদগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
+                "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "شاہরাস্তি", "কচুয়া", "ফরিদগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
                 "ব্রাহ্মণবাড়িয়া": ["ব্রাহ্মণবাড়িয়া সদর", "আশুগঞ্জ", "সরাইল", "নাসিরনগর", "বাঞ্ছারামপুর", "নবীনগর", "কসবা", "আখাউড়া", "বিজয়নগর"],
                 "রাঙ্গামাটি": ["রাঙ্গামাটি সদর", "কাপ্তাই", "কাউখালী", "বাঘাইছড়ি", "লংগদু", "নানিয়ারচর", "রাজস্থলী", "জুরাছড়ি", "বিলাইছড়ি", "বরকল"],
                 "বান্দরবান": ["বান্দরবান সদর", "রুমা", "থানচি", "রোয়াংছড়ি", "লামা", "আলীকদম", "নাইক্ষ্যংছড়ি"],
-                "খাগড়াছড়ি": ["খাগড়াছড়ি সদর", "দীঘিনালা", "পানছড়ি", "মাটিরাঙ্গা", "মহালছড়ি", "মানিকছড়ি", "রামগড়", "গুইমারা", "লক্ষ্মীছড়ি"]
+                "খাগড়াছড়ি": ["খাগড়াছড়ি সদর", "দীঘিনালা", "পানছড়ি", "মাটিরাঙ্গা", "মহালছড়ি", "মানিকছড়ি", "রামগড়", "গুইমারা", "লক্ষ্মীছড়ি"]
             },
             "রাজশাহী": {
                 "রাজশাহী": ["রাজশাহী সিটি কর্পোরেশন", "পবা", "গোদাগাড়ী", "তানোর", "বাঘা", "চারঘাট", "দুর্গাপুর", "মোহনপুর", "পুঠিয়া", "বাগমারা"],
@@ -912,7 +912,7 @@
             "খুলনা": {
                 "খুলনা": ["খুলনা সিটি কর্পোরেশন", "রূপসা", "বটিয়াঘাটা", "ডুমুরিয়া", "তেরখাদা", "দিঘলিয়া", "ফুলতলা", "পাইকগাছা", "কয়রা", "দাকোপ"],
                 "যশোর": ["যশোর সদর", "ঝিকরগাছা", "শার্ষা", "অভয়নগর", "বাগআঁচড়া", "মনিরামপুর", "কেশবপুর", "চৌগাছা", "বাঘারপাড়া"],
-                "বাগেরহাট": ["বাগেরহাট সদর", "মোংলা", "চিতলমারী", "ফকিরহাট", "কচুয়া", "মোল্লাহাট", "রামপাল", "শরণখোলা", "মোড়লগঞ্জ"],
+                "বাগেরহাট": ["বাগেরহাট সদর", "মোংলা", "চিতলমারী", "ফকিরহাট", "কচুয়া", "مোল্লাহাট", "রামপাল", "শরণখোলা", "মোড়লগঞ্জ"],
                 "সাতক্ষীরা": ["সাতক্ষীরা সদর", "কলারোয়া", "তালা", "দেবহাটা", "কালীগঞ্জ", "শ্যামনগর", "আশাশুনি"],
                 "ঝিনাইদহ": ["ঝিনাইদহ সদর", "শৈলকুপা", "হরিণাকুণ্ডু", "কালীগঞ্জ", "কোটচাঁদপুর", "মহেশপুর"],
                 "কুষ্টিয়া": ["কুষ্টিয়া সদর", "কুমারখালী", "খোকসা", "মিরপুর", "ভেড়ামারা", "দৌলতপুর"],
@@ -925,7 +925,7 @@
                 "বরিশাল": ["বরিশাল সিটি কর্পোরেশন", "বরিশাল সদর", "বাকেরগঞ্জ", "বাবুগঞ্জ", "উজিরপুর", "বানারীপাড়া", "গৌরনদী", "মুলাদী", "হিজলা", "মেহেন্দিগঞ্জ", "কাউখালী"],
                 "পটুয়াখালী": ["পটুয়াখালী সদর", "গলাচিপা", "বাউফল", "কলাপাড়া", "দুমকি", "মির্জাগঞ্জ", "দশমিনা", "রঙ্গাবালী"],
                 "ভোলা": ["ভোলা সদর", "দৌলতখান", "বোরহানউদ্দিন", "তজুমদ্দিন", "লালমোহন", "চরফ্যাশন", "মনপুরা"],
-                "পিরোজপুর": ["পিরোজপুর সদর", "ভান্ডারিয়া", "মঠবাড়িয়া", "নেছারাবাদ", "নাজিরপুর", "কাউখালী", "ইন্দুরকানী"],
+                "পিরোজপুর": ["পিরোজপুর সদর", "ভান্ডারিয়া", "مঠবাড়িয়া", "নেচারাবাদ", "নাজিরপুর", "কাউখালী", "ইন্দুরকানী"],
                 "বরগুনা": ["বরগুনা সদর", "আমতলী", "পাথরঘাটা", "বেতাগী", "বামনা", "তালতলী"],
                 "ঝালকাঠি": ["ঝালকাঠি সদর", "নলছিটি", "রাজাপুর", "কাঠালিয়া"]
             },
@@ -937,7 +937,7 @@
             },
             "রংপুর": {
                 "রংপুর": ["রংপুর সিটি কর্পোরেশন", "রংপুর সদর", "মিঠাপুকুর", "পীরগঞ্জ", "কাউনিয়া", "পীরগাছা", "গঙ্গাচড়া", "তারাগঞ্জ", "বদরগঞ্জ"],
-                "দিনাজপুর": ["দিনাজপুর সদর", "পার্বতীপুর", "বীরগঞ্জ", "কাহারোল", "বোচাগঞ্জ", "বিরামপুর", "ফুলবাড়ী", "হাকিমপুর", "নবাবগঞ্জ", "ঘোড়াঘাট", "চিরিরবন্দর", "خانসামা"],
+                "দিনাজপুর": ["দিনাজপুর সদর", "পার্বতীপুর", "বীরগঞ্জ", "কাহারোল", "বোচাগঞ্জ", "বিরামপুর", "ফুলবাড়ী", "হাকিমপুর", "নবাবগঞ্জ", "ঘোড়াঘাট", "চিরিরবন্দর", "খানসামা"],
                 "কুড়িগ্রাম": ["কুড়িগ্রাম সদর", "উলিপুর", "নাগেশ্বরী", "ভুরুঙ্গামারী", "রাজারহাট", "চিলমারী", "রৌমারী", "চর রাজিবপুর", "ফুলবাড়ী"],
                 "গাইবান্ধা": ["গাইবান্ধা সদর", "গোবিন্দগঞ্জ", "পলাশবাড়ী", "সাদুল্লাপুর", "সুন্দরগঞ্জ", "সাঘাটা", "ফুলছড়ি"],
                 "নীলফামারী": ["নীলফামারী সদর", "সৈয়দপুর", "ডোমার", "ডিমলা", "জলঢাকা", "কিশোরগঞ্জ"],
@@ -947,7 +947,7 @@
             },
             "ময়মনসিংহ": {
                 "ময়মনসিংহ": ["ময়মনসিংহ সিটি কর্পোরেশন", "ময়মনসিংহ সদর", "ভালুকা", "ত্রিশাল", "গফরগাঁও", "মুক্তাগাছা", "ঈশ্বরগঞ্জ", "নান্দাইল", "ফুলপুর", "তারাকান্দা", "হালুয়াঘাট", "ধোবাউড়া", "ফুলবাড়ীয়া"],
-                "নেত্রকোনা": ["নেত্রকোনা সদর", "মোহনগঞ্জ", "مদন", "খালিয়াজুরী", "পূর্বধলা", "দুর্গাপুর", "কলমাকান্দা", "বারহাট্টা", "আটপাড়া", "কেন্দুয়া"],
+                "নেত্রকোনা": ["নেত্রকোনা সদর", "মোহনগঞ্জ", "মদন", "খালিয়াজুরী", "পূর্বধলা", "দুর্গাপুর", "কলমাকান্দা", "বারহাট্টা", "আটপাড়া", "কেন্দুয়া"],
                 "শেরপুর": ["শেরপুর সদর", "নকলা", "নালিতাবাড়ী", "ঝিনাইগাতী", "শ্রীবরদী"],
                 "জামালপুর": ["জামালপুর সদর", "সরিষাবাড়ী", "মেলান্দহ", "ইসলামপুর", "দেওয়ানগঞ্জ", "বকশীগঞ্জ", "مাদারগঞ্জ"]
             }
@@ -955,14 +955,14 @@
 
         const districtMap = {
             "ঢাকা": "dhaka", "গাজীপুর": "gazipur", "নারায়ণগঞ্জ": "narayanganj", "নরসিংদী": "narsingdi", "টাঙ্গাইল": "tangail",
-            "মানিকগঞ্জ": "manikganj", "মুন্সিগঞ্জ": "munshiganj", "ফরিদপুর": "faridpur", "রাজবাড়ী": "rajbari", "গোপালগঞ্জ": "gopalganj",
-            "مাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
+            "মানিকগঞ্জ": "manikganj", "মুन्সিগঞ্জ": "munshiganj", "ফরিদপুর": "faridpur", "রাজবাড়ী": "rajbari", "গোপালগঞ্জ": "gopalganj",
+            "মাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
             "চট্টগ্রাম": "chittagong", "কক্সবাজার": "coxsbazar", "কুমিল্লা": "comilla", "ফেনী": "feni", "নোয়াখালী": "noakhali",
             "লক্ষ্মীপুর": "lakshmipur", "চাঁদপুর": "chandpur", "ব্রাহ্মণবাড়িয়া": "brahmanbaria", "রাঙ্গামাটি": "rangamati", "বান্দরবান": "bandarban", "খাগড়াছড়ি": "khagrachhari",
             "রাজশাহী": "rajshahi", "বগুড়া": "bogura", "জয়পুরহাট": "joypurhat", "নওগাঁ": "naogaon", "নাটোর": "natore", "পাবনা": "pabna", "সিরাজগঞ্জ": "sirajganj", "চাঁপাইনবাবগঞ্জ": "chapainawabganj",
             "খুলনা": "khulna", "যশোর": "jashore", "বাগেরহাট": "bagerhat", "সাতক্ষীরা": "satkhira", "ঝিনাইদহ": "jhenaidah", "কুষ্টিয়া": "kushtia", "মাগুরা": "magura", "নড়াইল": "narail", "মেহেরপুর": "meherpur", "চুয়াডাঙ্গা": "chuadanga",
             "বরিশাল": "barisal", "পটুয়াখালী": "patuakhali", "ভোলা": "bhola", "পিরোজপুর": "pirojpur", "বরগুনা": "barguna", "ঝালকাঠি": "jhalokathi",
-            "সিলেট": "sylhet", "مৌলভীবাজার": "moulvibazar", "হবিগঞ্জ": "habiganj", "sুনামগঞ্জ": "sunamganj", "রংপুর": "rangpur", "দিনাজপুর": "dinajpur", "কুড়িগ্রাম": "kurigram", "গাইবান্ধা": "gaibandha", "নীলফামারী": "nilphamari", "লালমনিরহাট": "lalmonirhat", "পঞ্চগড়": "panchagarh", "ঠাকুরগাঁও": "thakurgaon", "ময়মনসিংহ": "mymensingh", "নেত্রকোনা": "netrokona", "শেরপুর": "sherpur", "জামালপুর": "jamalpur"
+            "সিলেট": "sylhet", "মৌলভীবাজার": "moulvibazar", "হবিগঞ্জ": "habiganj", "সুনামগঞ্জ": "sunamganj", "রংপুর": "rangpur", "দিনাজপুর": "dinajpur", "কুড়িগ্রাম": "kurigram", "গাইবান্ধা": "gaibandha", "নীলফামারী": "nilphamari", "লালমনিরহাট": "lalmonirhat", "পঞ্চগড়": "panchagarh", "ঠাকুরগাঁও": "thakurgaon", "ময়মনসিংহ": "mymensingh", "নেত্রকোনা": "netrokona", "শেরপুর": "sherpur", "জামালপুর": "jamalpur"
         };
 
         const isPreviewEnv = (typeof __app_id !== 'undefined');
@@ -1057,6 +1057,7 @@
             document.getElementById('imoGuideModal').classList.add('flex');
         }
 
+        // Copy functionality using iframe-compatible fallback
         function copyImoMessageAndClose() {
             const textToCopy = document.getElementById('imoTextToCopy');
             textToCopy.select();
@@ -1511,7 +1512,7 @@
             document.getElementById('compatDisplay').classList.remove('hidden');
         }
 
-        // 🌟 ১০ অক্ষরের প্রফেশনাল ইউনিক কোড জেনারেশন (অ্যাডভান্সড র্যান্ডম কোড)
+        // 🌟 ১০ অক্ষরের প্রফেশনাল ইউনিক কোড জেনারেশন (rt_ প্রিপিক্স সহ)
         function generate10CharReferralCode() {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let referralCode = 'rt_'; 
@@ -1546,7 +1547,7 @@
 
             const generatedUsername = generate10CharReferralCode();
 
-            // Referrer Tracking
+            // Referrer Tracking Points Addition
             const referrerCode = sessionStorage.getItem('roktertan_referrer_code');
             if (referrerCode) {
                 try {
@@ -1692,7 +1693,7 @@
             const rankData = getRankDetails(shareCount);
             const rankEl = document.getElementById('cardUserRank');
             rankEl.textContent = rankData.title;
-            rankEl.className = `text-[10px] font-black leading-none block ${rankData.color}`;
+            rankEl.className = `text-[11.5px] font-black leading-none block ${rankData.color}`;
             
             setTimeout(adjustIdCardScaling, 100);
         }
@@ -1795,7 +1796,7 @@
                     zoomPercentVal.textContent = "১০০%";
                     
                     imgEl.onload = function() {
-                        const containerSize = 82;
+                        const containerSize = 86;
                         if (imgEl.naturalWidth > imgEl.naturalHeight) {
                             imgEl.style.height = containerSize + "px";
                             imgEl.style.width = "auto";
@@ -1884,7 +1885,7 @@
                 imgEl.src = savedPhoto;
                 
                 imgEl.onload = function() {
-                    const containerSize = 82;
+                    const containerSize = 86;
                     if (imgEl.naturalWidth > imgEl.naturalHeight) {
                         imgEl.style.height = containerSize + "px";
                         imgEl.style.width = "auto";
@@ -1930,7 +1931,7 @@
 
         window.addEventListener('resize', adjustIdCardScaling);
 
-        // 🪪 ID CARD DOWNLOAD ENGINE (With ultra HD settings)
+        // 🪪 ID CARD DOWNLOAD ENGINE (Scaled to ~300KB output with maximum legibility)
         function downloadPngIdCard() {
             const cardEl = document.getElementById('renderableIdCard');
             showCustomToast("আইডি কার্ড প্রসেস হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...", true);
@@ -1940,11 +1941,13 @@
             const originalTransform = scaler.style.transform;
             const originalContainerHeight = container.style.height;
 
+            // Reset layout temporarily during render
             scaler.style.transform = 'scale(1)';
             container.style.height = '280px';
 
+            // Custom configuration to ensure the download is exceptionally sharp (~300KB target)
             html2canvas(cardEl, {
-                scale: 3, 
+                scale: 2.2, // Perfect balance for sharp details and ~300KB output size
                 useCORS: true,
                 allowTaint: true,
                 backgroundColor: null,
@@ -1973,6 +1976,7 @@
             });
         }
 
+        // Copy referral link utility
         function copyReferralLinkToClipboard(btn) {
             const input = document.getElementById('referralLinkInput');
             input.select();
@@ -2004,7 +2008,7 @@
             { q: "২. রক্ত দেওয়ার আগে কোনো ডোনার টাকা বা কোনো লেনদেন দাবি করলে কী করবেন?", a: "কখনো কোনো ডোনারকে রক্তদানের আগে অগ্রিম টাকা দেবেন না। আজকাল অনেক প্রতারক চক্র বা দালাল সোশ্যাল মিডিয়ায় রক্ত দেওয়ার মিথ্যা আশ্বাস দিয়ে বিকাশ/নগদে যাতায়াত ভাড়ার দোহাই দিয়ে অগ্রিম টাকা নিয়ে মোবাইল বন্ধ করে দেয়। রক্তদান একটি মানবিক ও ফ্রি সেবা।" },
             { q: "৩. রক্তদানের সর্বনিম্ন এবং সর্বোচ্চ বয়স কত হওয়া উচিত?", a: "ডাব্লিউএইচও (WHO) অনুযায়ী, রক্তদাতার বয়স অবশ্যই ১৮ থেকে ৬০ বছরের মধ্যে হতে হবে। কিছু ক্ষেত্রে শারীরিক সুস্থতা সাপেক্ষে ৬৫ বছর পর্যন্ত রক্ত দেওয়া যেতে পারে।" },
             { q: "৪. কম ওজনের কেউ কি রক্ত দিতে পারেন? ওজনের সীমা কত?", a: "না, কম ওজনের কেউ রক্ত দিতে পারবেন না। রক্তদাতার সর্বনিম্ন ওজন পুরুষদের ক্ষেত্রে অবশ্যই ৫০ কেজি এবং নারীদের ক্ষেত্রে কমপক্ষে ৪৫ কেজি হতে হবে।" },
-            { q: "৫. একবার রক্ত দেওয়ার কতদিন পর পুনরায় রক্ত দেওয়া সম্পূর্ণ নিরাপদ?", a: "একজন সুস্থ পুরুষের ক্ষেত্রে প্রতি ৯০ দিন (৩ মাস) পর পর এবং সুস্থ নারীদের ক্ষেত্রে প্রতি ১২ো দিন (৪ মাস) পর পর রক্ত দেওয়া সম্পূর্ণ নিরাপদ।" },
+            { q: "৫. একবার রক্ত দেওয়ার কতদিন পর পুনরায় রক্ত দেওয়া সম্পূর্ণ নিরাপদ?", a: "একজন সুস্থ পুরুষের ক্ষেত্রে প্রতি ৯০ দিন (৩ মাস) পর পর এবং সুস্থ নারীদের ক্ষেত্রে প্রতি ১২০ দিন (৪ মাস) পর পর রক্ত দেওয়া সম্পূর্ণ নিরাপদ।" },
             { q: "৬. রক্ত দিলে কি শরীর দুর্বল হয়ে যায় বা কোনো ক্ষতি হয়?", a: "এটি একটি বড় ভুল ধারণা। রক্ত দেওয়ার পর কোনো ক্ষতি বা স্থায়ী দুর্বলতা হয় না। রক্তদানের পর তরল অংশটি মাত্র ২৪ থেকে ৪৮ ঘণ্টার মধ্যে পূরণ হয়ে যায় এবং লোহিত রক্তকণিকাগুলো ৪ থেকে ৮ সপ্তাহের মধ্যে তৈরি হয়।" },
             { q: "৭. রক্ত দেওয়ার আগে রক্তের কী কী টেস্ট করা বাধ্যতামূলক?", a: "রক্ত দেওয়ার আগে অবশ্যই ৫টি স্ক্রীনিং পরীক্ষা করা বাধ্যতামূলক: হেপাটাইটিস-বি, হেপাটাইটিস-সি, এইচআইভি (এইডস), সিফিলিস ও ম্যালেরিয়া। এছাড়াও রক্তদাতার রক্ত নেওয়ার পূর্বে হিমোগ্লোবিন ও রক্তচাপ পরীক্ষা করা হয়।" },
             { q: "৮. উচ্চ রক্তচাপ (High BP) বা প্রেশারের রোগী কি রক্ত দিতে পারবেন?", a: "উচ্চ রক্তচাপের রোগীরা রক্ত দিতে পারবেন যদি রক্তদানের সময় তাদের রক্তচাপ নিয়ন্ত্রণে থাকে (যেমন- সিস্টোলিক ১৬০ এর নিচে এবং ডায়াস্টোলিক ১০০ এর নিচে) এবং তারা যে ওষুধ খাচ্ছেন তা রক্তদানের জন্য ক্ষতিকর না হয়।" },
