@@ -138,8 +138,9 @@
         <!-- 🏷️ TAB 1: BLOOD SEARCH & FINDER SECTION -->
         <section id="search-tab" class="spa-tab-content space-y-6">
             <div class="glass p-5 md:p-7 rounded-3xl shadow-xl border border-white/40 dark:border-slate-800 relative overflow-hidden">
-                <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl"></div>
-                <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"></div>
+                <!-- pointer-events-none added to prevent background shapes from blocking clicks/touches -->
+                <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="text-center max-w-xl mx-auto mb-5">
                     <span class="bg-rose-100 dark:bg-rose-950/60 text-brand-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">রক্তদানই জীবন দান</span>
@@ -148,10 +149,10 @@
                 </div>
 
                 <!-- Complete BD Search Selector Panel -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 bg-slate-100/50 dark:bg-slate-800/40 p-3.5 rounded-2xl border border-slate-200/50 dark:border-slate-700/50">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 bg-slate-100/50 dark:bg-slate-800/40 p-3.5 rounded-2xl border border-slate-200/50 dark:border-slate-700/50 relative z-10">
                     <div class="space-y-1">
                         <label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">রক্তের গ্রুপ</label>
-                        <select id="searchBlood" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer">
+                        <select id="searchBlood" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer relative z-20">
                             <option value="">গ্রুপ সিলেক্ট করুন</option>
                             <option value="A+">A+ (এ পজিটিভ)</option>
                             <option value="A-">A- (এ নেগেটিভ)</option>
@@ -166,29 +167,29 @@
 
                     <div class="space-y-1">
                         <label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">বিভাগ</label>
-                        <select id="searchDivision" onchange="handleSearchDivisionChange()" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer">
+                        <select id="searchDivision" onchange="handleSearchDivisionChange()" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer relative z-20">
                             <option value="">বিভাগ সিলেক্ট করুন</option>
                         </select>
                     </div>
 
                     <div class="space-y-1">
                         <label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">জেলা</label>
-                        <select id="searchDistrict" onchange="handleSearchDistrictChange()" disabled class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed">
+                        <select id="searchDistrict" onchange="handleSearchDistrictChange()" disabled class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed relative z-20">
                             <option value="">প্রথমে বিভাগ সিলেক্ট করুন</option>
                         </select>
                     </div>
 
                     <div class="space-y-1">
                         <label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">উপজেলা/পৌরসভা/সিটি কর্পোরেশন</label>
-                        <select id="searchUpazila" disabled class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed">
+                        <select id="searchUpazila" disabled class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed relative z-20">
                             <option value="">প্রথমে জেলা সিলেক্ট করুন</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="mt-4 flex justify-center">
+                <div class="mt-4 flex justify-center relative z-10">
                     <button onclick="executeDonorSearch()" class="bg-brand-primary hover:bg-rose-700 text-white font-bold px-7 py-2.5 rounded-xl shadow-md transition flex items-center gap-2 text-xs md:text-sm">
-                        <i class="fa-solid fa-magnifying-glass"></i> রক্তদাতা খুঁজুন
+                        <i class="fa-solid fa-magnifying-glass"></i>  রক্তদাতা খুঁজুন
                     </button>
                 </div>
             </div>
@@ -271,13 +272,13 @@
                     <p class="text-xs text-slate-500 dark:text-slate-400">অ্যাপের সঠিক ব্যবহার এবং রক্তদানে সচেতনতা বাড়াতে নিচের ভিডিও নির্দেশিকাটি সম্পূর্ণ দেখুন।</p>
                 </div>
                 <!-- Premium Exit Button to Home -->
-                <button onclick="switchTab('search-tab')" class="bg-brand-primary hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow transition flex items-center gap-1">
+                <button onclick="switchTab('search-tab')" class="bg-brand-primary hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow transition flex items-center gap-1 shrink-0">
                     <i class="fa-solid fa-house"></i> হোমে ফিরে যান
                 </button>
             </div>
-            <!-- Full Height Video Display Container -->
+            <!-- Full Height Majestic Video Display Container -->
             <div class="glass p-3 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <div class="relative w-full h-[75vh] min-h-[500px] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
                     <iframe src="https://roktertan-veideo.vercel.app" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
@@ -313,14 +314,17 @@
         <!-- 🏷️ TAB 5: MY PROFILE / DASHBOARD SECTION -->
         <section id="profile-tab" class="spa-tab-content hidden space-y-6">
             <!-- NOT LOGGED IN VIEW -->
-            <div id="unauthProfileView" class="max-w-md mx-auto glass p-6 rounded-3xl shadow-xl border border-white/30 space-y-5">
-                <div class="text-center space-y-1.5">
+            <div id="unauthProfileView" class="max-w-md mx-auto glass p-6 rounded-3xl shadow-xl border border-white/30 relative overflow-hidden space-y-5">
+                <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center space-y-1.5 relative z-10">
                     <div class="text-blue-500 text-3xl"><i class="fa-solid fa-user-shield"></i></div>
                     <h3 class="text-md md:text-lg font-bold text-slate-900 dark:text-white">রক্তদাতা প্রোফাইল লগইন</h3>
                     <p class="text-xs text-slate-500">আপনার মোবাইল নম্বর দিয়ে ড্যাশবোর্ডে লগইন করুন।</p>
                 </div>
 
-                <div class="space-y-4 text-xs">
+                <div class="space-y-4 text-xs relative z-10">
                     <div class="space-y-1">
                         <label class="block font-bold text-slate-600 dark:text-slate-400 uppercase">নিবন্ধিত মোবাইল নম্বর</label>
                         <input type="tel" id="userMobileInput" placeholder="যেমন: 01700000000" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-brand-primary">
@@ -335,7 +339,7 @@
                     </button>
                 </div>
 
-                <div class="bg-amber-50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 p-3.5 rounded-2xl text-[11px] text-amber-800 dark:text-amber-300 leading-relaxed space-y-1">
+                <div class="bg-amber-50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 p-3.5 rounded-2xl text-[11px] text-amber-800 dark:text-amber-300 leading-relaxed space-y-1 relative z-10">
                     <p class="font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info"></i> আপনি কি ইতিমধ্যে ডেটাবেজে আছেন?</p>
                     <p>আমাদের প্ল্যাটফর্মের আগের ৯,০০০+ রক্তদাতারা তাদের মোবাইল নম্বরকে পাসওয়ার্ড এবং ইউজারনেম হিসেবে ব্যবহার করে প্রথমবার লগইন করতে পারবেন। কোনো জটিলতা ছাড়াই আপনার প্রোফাইল সিঙ্ক হয়ে যাবে!</p>
                 </div>
@@ -413,12 +417,12 @@
                 <!-- Right ID Card & Refer Section -->
                 <div class="lg:col-span-7 flex flex-col items-center justify-center space-y-5">
                     <h3 class="text-xs md:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1">
-                        <i class="fa-solid fa-id-badge text-brand-primary"></i> আপনার ডিজিটাল ডোনার আইডি কার্ড (PNG)
+                        <i class="fa-solid fa-id-badge text-brand-primary"></i>  আপনার ডিজিটাল ডোনার আইডি কার্ড (PNG)
                     </h3>
 
                     <div id="renderableIdCard" class="id-card-bg w-80 h-[480px] rounded-2xl shadow-2xl relative p-5 flex flex-col items-center justify-between text-center overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-rose-500/10 rounded-full blur-2xl"></div>
-                        <div class="absolute -left-10 -top-10 w-44 h-44 bg-amber-500/10 rounded-full blur-2xl"></div>
+                        <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-rose-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="absolute -left-10 -top-10 w-44 h-44 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
                         <div class="flex flex-col items-center space-y-1">
                             <div class="bg-rose-600 text-white p-2.5 rounded-full w-fit">
@@ -490,15 +494,18 @@
 
     <!-- 📌 MODAL 1: REGISTRATION MODAL FORM -->
     <div id="regModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-200/50 dark:border-slate-800 overflow-hidden transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
-            <div class="bg-brand-primary text-white p-4 flex items-center justify-between">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-200/50 dark:border-slate-800 overflow-hidden transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col relative">
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="bg-brand-primary text-white p-4 flex items-center justify-between relative z-10">
                 <h3 class="text-sm font-bold flex items-center gap-2">
                     <i class="fa-solid fa-user-plus"></i> রক্তদাতা হিসেবে নাম নিবন্ধন করুন
                 </h3>
                 <button onclick="closeRegistrationModal()" class="text-white hover:text-white/80 transition text-lg"><i class="fa-solid fa-xmark"></i></button>
             </div>
             
-            <div class="p-5 overflow-y-auto space-y-4 flex-grow text-xs md:text-sm">
+            <div class="p-5 overflow-y-auto space-y-4 flex-grow text-xs md:text-sm relative z-10">
                 <div class="space-y-1">
                     <label class="block font-bold text-slate-700 dark:text-slate-300">পুরো নাম (বাংলা অথবা ইংরেজিতে) <span class="text-rose-500">*</span></label>
                     <input type="text" id="regName" placeholder="যেমন: মো. সাব্বির রহমান" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-primary">
@@ -572,7 +579,7 @@
                 </div>
             </div>
 
-            <div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex flex-col sm:flex-row gap-2 text-xs">
+            <div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex flex-col sm:flex-row gap-2 text-xs relative z-10">
                 <button onclick="submitRegistration('whatsapp')" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
                     <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp-এ ভেরিফাই করুন
                 </button>
@@ -593,13 +600,14 @@
 
     <!-- CUSTOM NOTICE MODAL -->
     <div id="noticeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4">
-            <div class="text-rose-500 text-4xl"><i class="fa-solid fa-circle-exclamation animate-bounce"></i></div>
-            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white">গুরুত্বপূর্ণ নোটিশ</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4 relative">
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="text-rose-500 text-4xl relative z-10"><i class="fa-solid fa-circle-exclamation animate-bounce"></i></div>
+            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white relative z-10">গুরুত্বপূর্ণ নোটিশ</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed relative z-10">
                 রক্তের টান সম্পূর্ণ একটি স্বেচ্ছাসেবী অলাভজনক সেবা। কোনো রক্তদাতাকে রক্তদানের জন্য আর্থিক লেনদেন বা যাতায়াত ভাড়ার অগ্রিম কোনো টাকা বিকাশে পাঠাবেন না। যেকোনো প্রতারণা থেকে সতর্ক থাকুন।
             </p>
-            <button onclick="closeNoticeModal()" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md">
+            <button onclick="closeNoticeModal()" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md relative z-10">
                 আমি সতর্ক আছি ও সম্মত
             </button>
         </div>
@@ -607,16 +615,17 @@
 
     <!-- CUSTOM IMO GUIDE MODAL -->
     <div id="imoGuideModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4">
-            <div class="text-sky-500 text-4xl"><i class="fa-solid fa-comment-sms"></i></div>
-            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white">imo ভেরিফিকেশন নির্দেশিকা</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4 relative">
+            <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="text-sky-500 text-4xl relative z-10"><i class="fa-solid fa-comment-sms"></i></div>
+            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white relative z-10">imo ভেরিফিকেশন নির্দেশিকা</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left relative z-10">
                 imo-তে সরাসরি মেসেজ পাঠানোর সীমাবদ্ধতা থাকায় নিচের বাটনটি ক্লিক করে আপনার রেজিস্ট্রেশন মেসেজটি কপি করে নিন এবং আপনার imo অ্যাপের মাধ্যমে এডমিন নম্বরে পাঠিয়ে দিন।
                 <br><br>
                 <strong class="text-brand-primary">এডমিন imo নম্বর: +8801410603930</strong>
             </p>
-            <textarea id="imoTextToCopy" readonly class="w-full h-24 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-[10px] outline-none resize-none"></textarea>
-            <div class="flex gap-2">
+            <textarea id="imoTextToCopy" readonly class="w-full h-24 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-[10px] outline-none resize-none relative z-10"></textarea>
+            <div class="flex gap-2 relative z-10">
                 <button onclick="copyImoMessageAndClose()" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md">
                     মেসেজ কপি করুন ও বন্ধ করুন
                 </button>
@@ -633,14 +642,14 @@
         // 🗺️ Bangladesh Ultimate Geographic Database Map (Complete 8 Divisions, 64 Districts, & All Upazilas)
         const bdLocations = {
             "ঢাকা": {
-                "ঢাকা": ["মিরপুর", "বনানী", "সাভার", "গুলশান", "উত্তরা", "ধানমন্ডি", "মোহাম্মদপুর", "খিলগাঁও", "তেজগাঁও", "লালবাগ", "ঢাকা উত্তর CITY কর্পোরেশন", "ঢাকা দক্ষিণ CITY কর্পোরেশন", "ধামরাই", "কেরানীগঞ্জ", "দোহার", "নবাবগঞ্জ"],
+                "ঢাকা": ["মিরপুর", "বনানী", "সাভার", "গুলশান", "উত্তরা", "ধানমন্ডি", "মোহাম্মদপুর", "খিলগাঁও", "তেজগাঁও", "লালবাগ", "ঢাকা উত্তর সিটি কর্পোরেশন", "ঢাকা দক্ষিণ সিটি কর্পোরেশন", "ধামরাই", "কেরানীগঞ্জ", "দোহার", "নবাবগঞ্জ"],
                 "গাজীপুর": ["গাজীপুর সদর", "কালীগঞ্জ", "কালিয়াকৈড়", "শ্রীপুর", "কাপাসিয়া", "গাজীপুর সিটি কর্পোরেশন"],
                 "নারায়ণগঞ্জ": ["নারায়ণগঞ্জ সদর", "রূপগঞ্জ", "আড়াইহাজার", "সোনারগাঁও", "বন্দর", "নারায়ণগঞ্জ সিটি কর্পোরেশন"],
                 "নরসিংদী": ["নরসিংদী সদর", "বেলাবো", "মনোহরদী", "পলাশ", "রায়পুরা", "শিবপুর"],
                 "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "ঘাটাইল", "দেলদুয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "মধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
                 "মানিকগঞ্জ": ["মানিকগঞ্জ সদর", "সিংগাইর", "শিবালয়", "ঘিওর", "হরিরামপুর", "দৌলতপুর", "সাটুরিয়া"],
                 "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজদিখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
-                "ফریدপুর": ["ফریدপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালथा", "নগরকান্দা"],
+                "ফریدপুর": ["ফریدপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালথা", "নগরকান্দা"],
                 "রাজবাড়ী": ["রাজবাড়ী সদর", "গোয়ালন্দ", "পাংশা", "বালিয়াকান্দি", "কালুখালী"],
                 "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "مুকসুদপুর"],
                 "মাদারীপুর": ["মাদারীপুর সদর", "শিবচর", "কালকিনি", "রাজৈর"],
@@ -648,7 +657,7 @@
                 "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর", "কটিয়াদী", "ভৈরব", "বাজিতপুর", "নিকলী", "করিমগঞ্জ", "হোসেনপুর", "তাড়াইল", "পাকুন্দিয়া", "মিঠামইন", "ইটনা", "অষ্টগ্রাম", "কুলিয়ারচর"]
             },
             "চট্টগ্রাম": {
-                "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", " can_receive_O", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
+                "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
                 "কক্সবাজার": ["কক্সবাজার সদর", "চকরিয়া", "মহেশখালী", "টেকনাফ", "উখিয়া", "পেকুয়া", "কুতুবদিয়া", "রামু"],
                 "কুমিল্লা": ["কুমিল্লা আদর্শ সদর", "কুমিল্লা সদর দক্ষিণ", "চৌদ্দগ্রাম", "লাকসাম", "লাঙ্গলকোট", "বরুড়া", "দাউদকান্দি", "চান্দিনা", "দেবিদ্বার", "মুরাদনগর", "বুড়িচং", "ব্রাহ্মণপাড়া", "হোমনা", "মেঘনা", "তিতাস", "মনোহরগঞ্জ", "কুমিল্লা সিটি কর্পোরেশন"],
                 "ফেনী": ["ফেনী সদর", "ছাগলনাইয়া", "দাগনভূঞা", "সোনাগাজী", "পরশুরাম", "ফুলগাজী"],
@@ -667,7 +676,7 @@
                 "নওগাঁ": ["নওগাঁ সদর", "মহাদেবপুর", "বদলগাছী", "পত্নীতলা", "ধামইরহাট", "সাপাহার", "পোরশা", "নিয়ামতপুর", "মান্দা", "আত্রাই", "রানীনগর"],
                 "নাটোর": ["নাটোর সদর", "সিংড়া", "বাগাতিপাড়া", "লালপুর", "বড়াইগ্রাম", "গুরুদাসপুর", "নলডাঙ্গা"],
                 "পাবনা": ["পাবনা সদর", "ঈশ্বরদী", "চাটমোহর", "ভাঙ্গুড়া", "ফریدপুর", "সুজানগর", "বেড়া", "সাঁথিয়া", "আটঘরিয়া"],
-                "সিরাজগঞ্জ": ["সিরাজগঞ্জ সদর", "শাহজাদপুর", "উল্লাপাড়া", "বেলকুচি", "কামারখন্দ", "কাজীপুর", "রায়গঞ্জ", "তাড়াশ", "চৌহালী"],
+                "সিরাজগঞ্জ": ["সিরাজগঞ্জ সদর", "शाहजادপুর", "উল্লাপাড়া", "বেলকুচি", "কামারখন্দ", "কাজীপুর", "রায়গঞ্জ", "তাড়াশ", "চৌহালী"],
                 "চাঁপাইনবাবগঞ্জ": ["চাঁপাইনবাবগঞ্জ সদর", "শিবগঞ্জ", "গোমস্তাপুর", "নাচোল", "ভোলাহাট"]
             },
             "খুলনা": {
@@ -708,16 +717,16 @@
             },
             "ময়মনসিংহ": {
                 "ময়মনসিংহ": ["ময়মনসিংহ সিটি কর্পোরেশন", "ময়মনসিংহ সদর", "ভালুকা", "ত্রিশাল", "গফরগাঁও", "মুক্তাগাছা", "ঈশ্বরগঞ্জ", "নান্দাইল", "ফুলপুর", "তারাকান্দা", "হালুয়াঘাট", "ধোবাউড়া", "ফুলবাড়ীয়া"],
-                "নেত্রকোনা": ["নেত্রকোনা সদর", "মোহনগঞ্জ", "মদন", "খালিয়াজুরী", "পূর্বধলা", "দুর্গাপুর", "কলমাকান্দা", "বারহাট্টা", "আটপাড়া", "কেন্দুয়া"],
+                "নেত্রকোনা": ["নেত্রকোনা সদর", "মোহনগঞ্জ", "مদন", "খালিয়াজুরী", "পূর্বধলা", "দুর্গাপুর", "কলমাকান্দা", "বারহাট্টা", "আটপাড়া", "কেন্দুয়া"],
                 "শেরপুর": ["শেরপুর সদর", "নকলা", "নালিতাবাড়ী", "ঝিনাইগাতী", "শ্রীবরদী"],
-                "জামালপুর": ["জামালপুর সদর", "সরিষাবাড়ী", "মেলান্দহ", "ইসলামপুর", "দেওয়ানগঞ্জ", "বকশীগঞ্জ", "মাদারগঞ্জ"]
+                "জামালপুর": ["জামালপুর সদর", "সরিষাবাড়ী", "মেলান্দহ", "ইসলামপুর", "দেওয়ানগঞ্জ", "বকশীগঞ্জ", "مাদারগঞ্জ"]
             }
         };
 
         const districtMap = {
             "ঢাকা": "dhaka", "গাজীপুর": "gazipur", "নারায়ণগঞ্জ": "narayanganj", "নরসিংদী": "narsingdi", "টাঙ্গাইল": "tangail",
             "মানিকগঞ্জ": "manikganj", "মুন্সিগঞ্জ": "munshiganj", "ফরিদপুর": "faridpur", "রাজবাড়ী": "rajbari", "গোপালগঞ্জ": "gopalganj",
-            "মাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
+            "مাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
             "চট্টগ্রাম": "chittagong", "কক্সবাজার": "coxsbazar", "কুমিল্লা": "comilla", "ফেনী": "feni", "নোয়াখালী": "noakhali",
             "লক্ষ্মীপুর": "lakshmipur", "চাঁদপুর": "chandpur", "ব্রাহ্মণবাড়িয়া": "brahmanbaria", "রাঙ্গামাটি": "rangamati", "বান্দরবান": "bandarban", "খাগড়াছড়ি": "khagrachhari",
             "রাজশাহী": "rajshahi", "বগুড়া": "bogura", "জয়পুরহাট": "joypurhat", "নওগাঁ": "naogaon", "নাটোর": "natore", "পাবনা": "pabna", "সিরাজগঞ্জ": "sirajganj", "চাঁপাইনবাবগঞ্জ": "chapainawabganj",
@@ -1372,14 +1381,14 @@
             const virtualEmail = `${mobileInput}@roktertan.com`;
 
             try {
-                // Try logging in using the virtual email
+                // Try logging in using the virtual email first
                 await auth.signInWithEmailAndPassword(virtualEmail, passwordInput);
                 showCustomToast("সফলভাবে লগইন হয়েছে!", true);
                 authBtn.innerHTML = originalHTML;
                 authBtn.disabled = false;
             } catch (err) {
-                // If account not found in Auth but password matches mobile, search Firestore
-                if ((err.code === "auth/user-not-found" || err.code === "auth/wrong-password") && passwordInput === mobileInput) {
+                // Auto-sync for authorized Firestore database verified donors on first login (auth user not created yet)
+                if (err.code === "auth/user-not-found" || err.code === "auth/wrong-password") {
                     try {
                         const snapshot = await getDonorsCollection()
                             .where('mobile', '==', mobileInput)
@@ -1393,38 +1402,38 @@
                         });
 
                         if (matchedDoc) {
-                            const donorData = matchedDoc.data();
-                            const finalUsername = donorData.username || generateUniqueUsername(donorData.name);
-                            
-                            // Let's create account dynamically since they are a validated database donor
+                            // Automatically sync & register their custom password securely
                             try {
-                                await auth.createUserWithEmailAndPassword(virtualEmail, mobileInput);
+                                await auth.createUserWithEmailAndPassword(virtualEmail, passwordInput);
                             } catch (regErr) {
-                                // If they already existed in Auth, sign them in directly
                                 if (regErr.code !== 'auth/email-already-in-use') {
                                     throw regErr;
                                 }
                             }
-                            await auth.signInWithEmailAndPassword(virtualEmail, mobileInput);
+                            // Sign in immediately with newly created auth
+                            await auth.signInWithEmailAndPassword(virtualEmail, passwordInput);
+
+                            const donorData = matchedDoc.data();
+                            const finalUsername = donorData.username || generateUniqueUsername(donorData.name);
 
                             await getDonorsCollection().doc(matchedDoc.id).update({
                                 username: finalUsername,
                                 email: donorData.email || `${mobileInput}@roktertan.com`
                             });
 
-                            showCustomToast("স্বয়ংক্রিয়ভাবে প্রোফাইল সিঙ্ক হয়েছে! স্বাগতম!", true);
+                            showCustomToast("সফলভাবে লগইন ও প্রোফাইল সিঙ্ক সম্পন্ন হয়েছে!", true);
                             authBtn.innerHTML = originalHTML;
                             authBtn.disabled = false;
                         } else {
                             authBtn.innerHTML = originalHTML;
                             authBtn.disabled = false;
-                            showCustomToast("মোবাইল নম্বরটি আমাদের পূর্বে অনুমোদিত তালিকায় নেই। দয়া করে আগে রেজিস্টার করুন!", false);
+                            showCustomToast("মোবাইল নম্বরটি আমাদের ভেরিফাইড রক্তদাতার তালিকায় পাওয়া যায়নি। দয়া করে আগে নিবন্ধন করুন!", false);
                         }
                     } catch (dbErr) {
                         console.error(dbErr);
                         authBtn.innerHTML = originalHTML;
                         authBtn.disabled = false;
-                        showCustomToast("ডাটাবেজ সংযোগে সমস্যা হচ্ছে।", false);
+                        showCustomToast("ডাটাবেজ সংযোগে সমস্যা হচ্ছে। আপনার ফায়ারবেস কানেকশন চেক করুন।", false);
                     }
                 } else {
                     authBtn.innerHTML = originalHTML;
@@ -1659,7 +1668,7 @@
             { q: "৬. রক্ত দিলে কি শরীর দুর্বল হয়ে যায় বা কোনো ক্ষতি হয়?", a: "এটি একটি বড় ভুল ধারণা। রক্ত দেওয়ার পর কোনো ক্ষতি বা স্থায়ী দুর্বলতা হয় না। রক্তদানের পর তরল অংশটি মাত্র ২৪ থেকে ৪৮ ঘণ্টার মধ্যে পূরণ হয়ে যায় এবং লোহিত রক্তকণিকাগুলো ৪ থেকে ৮ সপ্তাহের মধ্যে তৈরি হয়।" },
             { q: "৭. রক্ত দেওয়ার আগে রক্তের কী কী টেস্ট করা বাধ্যতামূলক?", a: "রক্ত দেওয়ার আগে অবশ্যই ৫টি স্ক্রীনিং পরীক্ষা করা বাধ্যতামূলক: হেপাটাইটিস-বি, হেপাটাইটিস-সি, এইচআইভি (এইডস), সিফিলিস ও ম্যালেরিয়া। এছাড়াও রক্তদাতার রক্ত নেওয়ার পূর্বে হিমোগ্লোবিন ও রক্তচাপ পরীক্ষা করা হয়।" },
             { q: "৮. উচ্চ রক্তচাপ (High BP) বা প্রেশারের রোগী কি রক্ত দিতে পারবেন?", a: "উচ্চ রক্তচাপের রোগীরা রক্ত দিতে পারবেন যদি রক্তদানের সময় তাদের রক্তচাপ নিয়ন্ত্রণে থাকে (যেমন- সিস্টোলিক ১৬০ এর নিচে এবং ডায়াস্টোলিক ১০০ এর নিচে) এবং তারা যে ওষুধ খাচ্ছেন তা রক্তদানের জন্য ক্ষতিকর না হয়।" },
-            { q: "৯. ডায়াবেটিস থাকলে কি রক্ত দেওয়া যাবে?", a: "হ্যাঁ, ডায়াবেটিসের রোগীরা রক্ত দিতে পারেন যদি তাদের রক্তের সুগার নিয়ন্ত্রণে থাকে। তবে যারা সরাসরি ইনসুলিন (Insulin) গ্রহণ করেন, তারা সাধারণত রক্ত দিতে পারেন না।" },
+            { q: "৯. ডায়াবেটিস থাকলে কি রক্ত দেওয়া যাবে?", a: "হ্যাঁ, ডায়াবেতিসের রোগীরা রক্ত দিতে পারেন যদি তাদের রক্তের সুগার নিয়ন্ত্রণে থাকে। তবে যারা সরাসরি ইনসুলিন (Insulin) গ্রহণ করেন, তারা সাধারণত রক্ত দিতে পারেন না।" },
             { q: "১০. ধূমপান বা মদ্যপানের কত সময় পর রক্ত দেওয়া যায়?", a: "ধূমপানের পর অন্তত ৩ থেকে ৪ ঘণ্টা এবং মদ্যপানের পর অন্তত ২৪ ঘণ্টা অতিবাহিত না হওয়া পর্যন্ত রক্ত দেওয়া উচিত নয়।" },
             { q: "১১. ঋতুস্রাব (Periods) চলাকালীন নারীরা কি রক্ত দিতে পারবেন?", a: "ঋতুস্রাব চলাকালীন রক্ত দেওয়া উচিত নয়। পিরিয়ড শেষ হওয়ার পর কমপক্ষে ৭ দিন পার হওয়া এবং শরীরে হিমোগ্লোবিনের মাত্রা পরীক্ষা করে স্বাভাবিক থাকলে তবেই নারীরা রক্ত দান করতে পারেন।" },
             { q: "১২. সাধারণ ওষুধ (যেমন- প্যারাসিটামল বা ব্যথানাশক) খাওয়া অবস্থায় রক্ত দেওয়া যাবে?", a: "জ্বর বা ব্যথার জন্য প্যারাসিটামল খেলে ২৪ ঘণ্টা পর রক্ত দেওয়া যায়। তবে অ্যাসপিরিন বা পেইনকিলার খেয়ে থাকলে ওষুধ বন্ধের পর অন্তত ৭২ ঘণ্টা পার না হওয়া পর্যন্ত রক্ত দেওয়া যাবে না।" },
@@ -1670,7 +1679,7 @@
             { q: "১৭. হৃদরোগ (Heart disease) বা স্ট্রোকের ইতিহাস থাকলে কি রক্ত দেওয়া যাবে?", a: "না, হৃদরোগ, বাইপাস সার্জারি বা স্ট্রোকের ইতিহাস থাকলে রোগীর নিজের স্বাস্থ্যের নিরাপত্তার স্বার্থেই রক্তদান করা যাবে না।" },
             { q: "১৮. থাইরয়েড (Thyroid) রোগীরা কি রক্ত দিতে পারবেন?", a: "হ্যাঁ, থাইরয়েডের রোগীরা রক্ত দিতে পারবেন যদি তাদের হরমোনের মাত্রা ওষুধ ব্যবহারের মাধ্যমে সম্পূর্ণ নিয়ন্ত্রণে থাকে।" },
             { q: "১৯. ছোটখাটো অপারেশনের কতদিন পর রক্ত দেওয়া যাবে?", a: "যেকোনো ধরনের মাইনর সার্জারির পর ক্ষতস্থান পুরোপুরি শুকানো এবং সেলাই কাটার পর কমপক্ষে ৩ থেকে ৬ মাস অপেক্ষা করতে হবে।" },
-            { q: "২০. হেপাটাইটিস বি বা সি পজিটিভ হলে কি আজীবন রক্তদান বন্ধ?", a: "হ্যাঁ, হেপাটাইটিস-বি বা হেপাটাইটিস-সি তে একবার আক্রান্ত হলে বা টেস্টে পজিটিভ ধরা পড়লে তিনি আজীবনের জন্য রক্তদানের অনুপযুক্ত বলে বিবেচিত হবেন।" },
+            { q: "২০. হেপাটাইটিস বি বা সি পজিティブ হলে কি আজীবন রক্তদান বন্ধ?", a: "হ্যাঁ, হেপাটাইটিস-বি বা হেপাটাইটিস-সি তে একবার আক্রান্ত হলে বা টেস্টে পজিティブ ধরা পড়লে তিনি আজীবনের জন্য রক্তদানের অনুপযুক্ত বলে বিবেচিত হবেন।" },
             { q: "২১. ডেঙ্গু বা ম্যালেরিয়া জ্বর থেকে সুস্থ হওয়ার কতদিন পর রক্ত দেওয়া যাবে?", a: "ডেঙ্গু জ্বর থেকে সম্পূর্ণ সুস্থ হয়ে প্লাটিলেট স্বাভাবিক হওয়ার পর কমপক্ষে ৬ মাস অপেক্ষা করতে হবে। আর ম্যালেরিয়া জ্বর থেকে আরোগ্য লাভের পর অন্তত ৩ বছর পর রক্ত দান করা যাবে।" },
             { q: "২২. খালি পেটে কি রক্ত দান করা যাবে?", a: "কখনো খালি পেটে রক্ত দেবেন না। রক্তদানের অন্তত ৩ থেকে ৪ ঘণ্টা আগে একটি ভালো ও পুষ্টিকর খাবার এবং পর্যাপ্ত পরিমাণে পানি খেয়ে নেওয়া বাধ্যতামূলক।" },
             { q: "২৩. রক্ত দেওয়ার পর কি ভারী কাজ বা ব্যায়াম করা যাবে?", a: "রক্তদানের পর অন্তত ২৪ ঘণ্টা কোনো ধরনের ভারী কাজ, জিম বা অতিরিক্ত ব্যায়াম করা থেকে বিরত থাকতে হবে।" },
