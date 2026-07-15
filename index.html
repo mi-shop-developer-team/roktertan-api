@@ -16,8 +16,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- html2canvas Library for Premium PNG Generation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -53,152 +51,8 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
-        /* Premium ID Card styling - Inspired by Rahnuma Atma-Shuddhi Card */
-        .id-card-wrapper {
-            width: 500px;
-            height: 280px; /* Landscape aspect ratio */
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 25px 40px -5px rgba(0, 0, 0, 0.5), 0 15px 20px -5px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-            padding: 24px;
-        }
 
-        /* Solid and Bold Double Golden Borders (Brought inward to create outer margins) */
-        .id-card-border-outer {
-            position: absolute;
-            inset: 16px;
-            border: 2px dashed rgba(245, 158, 11, 0.9);
-            border-radius: 14px;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .id-card-border-inner {
-            position: absolute;
-            inset: 21px;
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            pointer-events: none;
-            z-index: 4;
-        }
-        
-        /* 10 Unique Elegant ID Card Themes (Solid layered & Deep majestic colors) */
-        .theme-1 { background: linear-gradient(135deg, #400414 0%, #150005 100%); } /* Dark Crimson Velvet */
-        .theme-2 { background: linear-gradient(135deg, #01142e 0%, #00030f 100%); } /* Dark Navy Royal */
-        .theme-3 { background: linear-gradient(135deg, #012b1b 0%, #000a06 100%); } /* Deep Emerald Jade */
-        .theme-4 { background: linear-gradient(135deg, #260a54 0%, #0a011a 100%); } /* Royal Violet Velvet */
-        .theme-5 { background: linear-gradient(135deg, #3d1502 0%, #120500 100%); } /* Premium Bronze */
-        .theme-6 { background: linear-gradient(135deg, #1b2635 0%, #090f19 100%); } /* Midnight Slate */
-        .theme-7 { background: linear-gradient(135deg, #0f4e5e 0%, #041f27 100%); } /* Dark Ocean Blue */
-        .theme-8 { background: linear-gradient(135deg, #5c1b60 0%, #2b0233 100%); } /* Royal Orchid Purple */
-        .theme-9 { background: linear-gradient(135deg, #141416 0%, #040404 100%); } /* Absolute Charcoal Dark */
-        .theme-10 { background: linear-gradient(135deg, #183018 0%, #041204 100%); } /* Forest Shadow */
-
-        /* Concentric circle and heartbeat line watermarks to fill gaps */
-        .card-concentric-circles {
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            border: 1.5px solid rgba(245, 158, 11, 0.12);
-            border-radius: 50%;
-            top: 50%;
-            left: 45%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            pointer-events: none;
-        }
-        .card-concentric-circles::before {
-            content: '';
-            position: absolute;
-            inset: 30px;
-            border: 1px dashed rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-        }
-
-        .watermark-bg {
-            position: absolute;
-            right: 170px;
-            bottom: -35px;
-            font-size: 160px;
-            opacity: 0.06;
-            color: #ffffff;
-            z-index: 1;
-            pointer-events: none;
-            transform: rotate(-15deg);
-        }
-
-        .heartbeat-waveform {
-            position: absolute;
-            left: 28px;
-            bottom: 75px;
-            width: 150px;
-            opacity: 0.08;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .card-grid-pattern {
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 14px 14px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Profile Photo Frame with Golden Dotted Rings */
-        .profile-photo-container {
-            width: 86px;
-            height: 86px;
-            border: 2px dashed rgba(245, 158, 11, 0.9);
-            border-radius: 50%; 
-            background-color: #0b0f17;
-            position: relative;
-            overflow: hidden;
-            cursor: grab;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-        }
-        .profile-photo-container::after {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            border: 1.5px solid #ffffff;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .profile-photo-container:active {
-            cursor: grabbing;
-        }
-        .profile-photo {
-            position: absolute;
-            transform-origin: center center;
-            will-change: transform;
-            pointer-events: none; 
-        }
-        
-        /* Dynamic scale container for mobile ID card view */
-        .id-card-scale-container {
-            width: 500px;
-            height: 280px;
-            transform-origin: top center;
-            transition: transform 0.2s ease-out;
-        }
-        
-        .id-card-scale-wrap {
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 10px 0;
-        }
-
-        /* Hide Scrollbar for theme selector */
+        /* Hide Scrollbar for customized elements */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -207,15 +61,15 @@
             scrollbar-width: none;  
         }
 
-        /* Remove default video padding for full screen */
-        .fullscreen-video {
+        /* Custom Full-Screen Style for Video Frame */
+        .fullscreen-video-container {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: 9999;
-            background: #000;
+            background: #000000;
         }
     </style>
 </head>
@@ -240,8 +94,7 @@
                 <button onclick="switchTab('search-tab')" class="nav-link search-tab-link text-brand-primary border-b-2 border-brand-primary pb-1 px-1 transition">রক্ত খুঁজুন</button>
                 <button onclick="switchTab('health-tab')" class="nav-link health-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">হেলথ টিপস</button>
                 <button onclick="switchTab('video-tab')" class="nav-link video-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">ভিডিও গাইড</button>
-                <button onclick="switchTab('leaderboard-tab')" class="nav-link leaderboard-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">টপ শেয়ারার</button>
-                <button onclick="switchTab('profile-tab')" class="nav-link profile-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">আমার প্রোফাইল</button>
+                <button onclick="switchTab('download-tab')" class="nav-link download-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition"><i class="fa-solid fa-mobile-screen-button mr-1 text-rose-500"></i> অ্যাপ ডাউনলোড</button>
             </nav>
 
             <!-- Mode Controls & Actions -->
@@ -263,8 +116,7 @@
             <button onclick="switchTab('search-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-brand-primary nav-link search-tab-link">রক্ত খুঁজুন</button>
             <button onclick="switchTab('health-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link health-tab-link">হেলথ টিপস</button>
             <button onclick="switchTab('video-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link video-tab-link">ভিডিও গাইড</button>
-            <button onclick="switchTab('leaderboard-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link leaderboard-tab-link">টপ শেয়ারার</button>
-            <button onclick="switchTab('profile-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link profile-tab-link">আমার প্রোফাইল</button>
+            <button onclick="switchTab('download-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link download-tab-link"><i class="fa-solid fa-mobile-screen-button mr-1 text-rose-500 animate-bounce"></i> অ্যাপ ডাউনলোড</button>
             <button onclick="switchTab('privacy-tab')" class="block w-full text-left py-2 text-slate-600 dark:text-slate-300 nav-link privacy-tab-link">প্রাইভেসি পলিসি</button>
         </div>
     </header>
@@ -280,7 +132,7 @@
                 <span>ইমারজেন্সি রক্ত লাগবে? রক্তের টানে বর্তমানে <span id="globalLiveCounter" class="font-extrabold text-sm text-slate-900 dark:text-white bg-rose-100 dark:bg-rose-900/60 px-2 py-0.5 rounded-md">৯,৫৩০+</span> জন ভেরিফাইড রক্তদাতা প্রস্তুত আছেন।</span>
             </div>
             <button onclick="openRegistrationModal()" class="text-[10px] font-extrabold bg-brand-primary text-white px-3 py-1 rounded-md hover:bg-rose-700 transition flex items-center gap-1 shrink-0">
-                <i class="fa-solid fa-id-card"></i> ফ্রিতে ডোনার কার্ড পেতে আজই নিবন্ধন করুন
+                <i class="fa-solid fa-user-plus"></i> ডোনার হিসেবে আজই ফ্রিতে নিবন্ধন করুন
             </button>
         </div>
     </div>
@@ -331,7 +183,7 @@
                     </div>
 
                     <div class="space-y-1">
-                        <label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">উপজেলা/পৌরসভা/সিটি কর্পোরেশন</label>
+                        <label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">উপজেলা/সিটি কর্পোরেশন</label>
                         <select id="searchUpazila" disabled class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-brand-primary cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed relative z-20">
                             <option value="">প্রথমে জেলা সিলেক্ট করুন</option>
                         </select>
@@ -350,7 +202,7 @@
                     <h3 class="text-sm md:text-md font-bold flex items-center gap-2 text-slate-950 dark:text-white">
                         <i class="fa-solid fa-list-check text-rose-500"></i>  রক্তদাতার তালিকা (<span id="resultsCount">০</span> জন পাওয়া গেছে)
                     </h3>
-                    <button onclick="resetSearchSection()" class="text-xs font-semibold text-slate-500 hover:text-slate-850 dark:hover:text-white flex items-center gap-1">
+                    <button onclick="resetSearchSection()" class="text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-white flex items-center gap-1">
                         <i class="fa-solid fa-circle-xmark"></i> তালিকা বন্ধ করুন
                     </button>
                 </div>
@@ -402,7 +254,7 @@
         <section id="health-tab" class="spa-tab-content hidden space-y-4">
             <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
                 <h3 class="text-md md:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="fa-solid fa-notes-medical text-brand-primary"></i> রক্তদানের সঠিক তথ্য, উপকারিতা ও নিয়মাবলী
+                    <i class="fa-solid fa-notes-medical text-brand-primary"></i>  রক্তদানের সঠিক তথ্য, উপকারিতা ও নিয়মাবলী
                 </h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400">রক্তদান সংক্রান্ত সকল ভ্রান্ত ধারণা দূর করতে এবং যেকোনো বিপদে সঠিক পদক্ষেপ নিতে গুরুত্বপূর্ণ প্রশ্নোত্তর নিচে সাজানো হলো:</p>
             </div>
@@ -411,269 +263,117 @@
             </div>
         </section>
 
-        <!-- 🏷️ TAB 3: VIDEO GUIDE TAB (FULLSCREEN FOCUS MODE) -->
-        <section id="video-tab" class="spa-tab-content hidden fullscreen-video">
-            <iframe src="https://roktertan-veideo.vercel.app" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- 🏷️ TAB 3: VIDEO GUIDE TAB (FULL-SCREEN EXPERIENCE WITH FORCE REFRESH) -->
+        <section id="video-tab" class="spa-tab-content hidden fullscreen-video-container">
+            <!-- Sleek Floating Refresh Button (No other layout cluttering buttons) -->
+            <button onclick="refreshVideoIframe()" class="fixed top-4 right-4 z-[10000] bg-white/20 hover:bg-white/40 text-white backdrop-blur-md w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-white/25 transition active:scale-90" title="রিফ্রেশ করুন">
+                <i class="fa-solid fa-arrows-rotate text-sm"></i>
+            </button>
+            <iframe id="videoGuideIframe" src="https://roktertan-veideo.vercel.app" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
-        <!-- 🏷️ TAB 4: LEADERBOARD SECTION -->
-        <section id="leaderboard-tab" class="spa-tab-content hidden space-y-6">
+        <!-- 🏷️ TAB 4: APP DOWNLOAD & INSTALLATION GUIDE TAB -->
+        <section id="download-tab" class="spa-tab-content hidden space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
-                <div class="text-amber-500 text-3xl animate-bounce"><i class="fa-solid fa-trophy"></i></div>
-                <h3 class="text-md md:text-xl font-bold text-slate-900 dark:text-white">রক্তের টান — টপ ১০ ভলান্টিয়ার ও শেয়ারার</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400">যারা আমাদের এই মহৎ উদ্যোগটি মানুষের দ্বারে দ্বারে পৌঁছে দিতে সবচেয়ে বেশি অবদান রেখেছেন, তাদের তালিকা। আপনার রেফারেল লিংক দিয়ে রক্তদাতা যুক্ত করে আপনিও চলে আসুন টপ টেন তালিকায়!</p>
+                <div class="bg-rose-100 dark:bg-rose-950/60 text-brand-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Rokter Tan Android App v1.1.0</div>
+                <h3 class="text-lg md:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-mobile-screen-button text-brand-primary"></i>  আমাদের অফিশিয়াল অ্যাপ ডাউনলোড করুন
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                    সহজে এবং এক ক্লিকে ব্যবহারের জন্য আমাদের লাইটওয়েট এবং অত্যন্ত প্রিমিয়াম নেটিভ অ্যান্ড্রয়েড অ্যাপটি ডাউনলোড করে আপনার ফোনে ইনস্টল করে নিন।
+                </p>
             </div>
 
-            <div class="glass p-5 rounded-3xl border border-white/30 max-w-2xl mx-auto shadow-md">
-                <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
-                    <table class="w-full text-xs text-left">
-                        <thead class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 uppercase font-bold text-[10px]">
-                            <tr>
-                                <th class="p-3.5 text-center">স্থান</th>
-                                <th class="p-3.5">রক্তদাতার নাম</th>
-                                <th class="p-3.5 text-center">রক্তের গ্রুপ</th>
-                                <th class="p-3.5 text-center">রেফার করা শেয়ার সংখ্যা</th>
-                            </tr>
-                        </thead>
-                        <tbody id="leaderboardTableBody" class="divide-y divide-slate-100 dark:divide-slate-800">
-                            <!-- Populated Dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🏷️ TAB 5: MY PROFILE / DASHBOARD SECTION -->
-        <section id="profile-tab" class="spa-tab-content hidden space-y-6">
-            <!-- NOT LOGGED IN VIEW (MOBILE NUMBER ONLY) -->
-            <div id="unauthProfileView" class="max-w-md mx-auto glass p-6 rounded-3xl shadow-xl border border-white/30 relative overflow-hidden space-y-5">
-                <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
-                
-                <div class="text-center space-y-1.5 relative z-10">
-                    <div class="text-blue-500 text-3xl"><i class="fa-solid fa-user-shield"></i></div>
-                    <h3 class="text-md md:text-lg font-bold text-slate-900 dark:text-white">রক্তদাতা প্রোফাইল লগইন</h3>
-                    <p class="text-xs text-slate-500">আপনার নিবন্ধিত মোবাইল নম্বর দিয়ে ড্যাশবোর্ডে লগইন করুন।</p>
-                </div>
-
-                <div class="space-y-4 text-xs relative z-10">
-                    <div class="space-y-1">
-                        <label class="block font-bold text-slate-600 dark:text-slate-400 uppercase">নিবন্ধিত মোবাইল নম্বর</label>
-                        <input type="tel" id="userMobileInput" placeholder="যেমন: 01700000000" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-3 outline-none focus:ring-2 focus:ring-brand-primary text-center font-bold tracking-widest text-lg">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-4xl mx-auto">
+                <!-- Left Column: Installation Guide and Features -->
+                <div class="lg:col-span-7 space-y-5">
+                    <!-- App Features Card -->
+                    <div class="glass p-5 rounded-2xl border border-white/30 space-y-3.5">
+                        <h4 class="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-sm border-b pb-2 border-slate-200 dark:border-slate-800">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-primary"></i>  অ্যাপের মূল বৈশিষ্ট্যসমূহ (Features)
+                        </h4>
+                        <ul class="space-y-3 text-xs leading-relaxed">
+                            <li class="flex gap-2.5 items-start">
+                                <span class="bg-rose-100 dark:bg-rose-950/50 text-rose-500 p-1.5 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <div>
+                                    <strong class="text-slate-800 dark:text-white">লাইভ ডোনার সার্চ:</strong> খুব সহজেই আপনার কাঙ্ক্ষিত ব্লাড গ্রুপের ডোনার খুঁজে বের করতে পারবেন।
+                                </div>
+                            </li>
+                            <li class="flex gap-2.5 items-start">
+                                <span class="bg-rose-100 dark:bg-rose-950/50 text-rose-500 p-1.5 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-bolt animate-pulse"></i></span>
+                                <div>
+                                    <strong class="text-slate-800 dark:text-white">স্মার্ট লোডিং স্ক্রিন:</strong>  অ্যাপ ওপেন করার সময় একটি প্রিমিয়াম এবং প্রফেশনাল অ্যানিমেটেড স্প্ল্যাশ স্ক্রিন দেখতে পাবেন।
+                                </div>
+                            </li>
+                            <li class="flex gap-2.5 items-start">
+                                <span class="bg-rose-100 dark:bg-rose-950/50 text-rose-500 p-1.5 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-wifi"></i></span>
+                                <div>
+                                    <strong class="text-slate-800 dark:text-white">অফলাইন/ইন্টারনেট ডিটেকশন:</strong>  ইন্টারনেট কানেকশন না থাকলে অ্যাপটি স্বয়ংক্রিয়ভাবে আপনাকে নোটিফিকেশন দেবে, ফলে ডেটা লসের কোনো ঝুঁকি নেই।
+                                </div>
+                            </li>
+                            <li class="flex gap-2.5 items-start">
+                                <span class="bg-rose-100 dark:bg-rose-950/50 text-rose-500 p-1.5 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-expand"></i></span>
+                                <div>
+                                    <strong class="text-slate-800 dark:text-white">ফুল-স্ক্রিন এক্সপেরিয়েন্স:</strong>  কোনো ব্রাউজার ইউআরএল বা বাড়তি ঝামেলা ছাড়াই একদম নেটিভ অ্যাপের মতো ফুল-স্ক্রিনে ওয়েবসাইটটি ব্যবহার করা যাবে।
+                                </div>
+                            </li>
+                        </ul>
                     </div>
 
-                    <button onclick="handleUserAuthentication()" id="authActionButton" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-bold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-1.5 text-sm">
-                        <i class="fa-solid fa-right-to-bracket"></i>  প্রোফাইলে প্রবেশ করুন
-                    </button>
-                </div>
+                    <!-- Installation Instruction Card -->
+                    <div class="glass p-5 rounded-2xl border border-white/30 space-y-3.5">
+                        <h4 class="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-sm border-b pb-2 border-slate-200 dark:border-slate-800">
+                            <i class="fa-solid fa-list-ol text-brand-primary"></i> 📱 ইনস্টলেশন নির্দেশিকা
+                        </h4>
+                        <ol class="space-y-3 text-xs text-slate-600 dark:text-slate-300 list-decimal pl-4 leading-relaxed">
+                            <li>ডানপাশে থাকা বা নিচের <strong class="text-brand-primary">"সরাসরি ডাইরেক্ট অ্যাপ ডাউনলোড"</strong> বাটন থেকে <code class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded font-mono text-rose-500 font-bold">.apk</code> ফাইলটি ডাউনলোড করুন।</li>
+                            <li>ডাউনলোড সম্পন্ন হলে নোটিফিকেশন বা ফাইল ম্যানেজার থেকে ফাইলটি ওপেন করে <strong class="text-slate-800 dark:text-white">Install</strong>-এ ক্লিক করুন।</li>
+                            <li>যদি আপনার ফোনে ইনস্টল করার সময় <em class="not-italic text-amber-500 font-bold">"Unknown Sources"</em> বা নিরাপত্তাজনিত নোটিশ দেখায়, তবে সেটিংস (Settings) এ গিয়ে অনুমতি (Allow) দিন।</li>
+                            <li>অ্যাপটি চালু করুন এবং ইন্টারনেটের সাথে যুক্ত থেকে সম্পূর্ণ প্রফেশনালভাবে দ্রুত রক্তদাতা খুঁজতে বা রেজিস্ট্রেশন করতে ব্যবহার করুন।</li>
+                        </ol>
+                    </div>
 
-                <div class="bg-amber-50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 p-3.5 rounded-2xl text-[11px] text-amber-800 dark:text-amber-300 leading-relaxed space-y-1 relative z-10">
-                    <p class="font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info"></i> আপনি কি ইতিমধ্যে ডেটাবেজে আছেন?</p>
-                    <p>আমাদের প্ল্যাটফর্মে লগইন করতে কোনো পাসওয়ার্ড লাগে না। শুধুমাত্র আপনার নিবন্ধিত সঠিক মোবাইল নম্বরটি দিলেই আপনি আপনার ড্যাশবোর্ড ও আইডি কার্ড দেখতে পাবেন।</p>
-                </div>
-            </div>
-
-            <!-- LOGGED IN VIEW -->
-            <div id="authProfileView" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <!-- Left Control Panel -->
-                <div class="lg:col-span-5 space-y-5">
-                    <div class="glass p-5 rounded-3xl border border-white/30 space-y-4 text-xs">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-rose-100 dark:bg-rose-950/50 text-rose-500 p-2.5 rounded-full"><i class="fa-solid fa-user-circle text-xl"></i></div>
-                            <div>
-                                <h4 id="dashUserName" class="font-bold text-sm text-slate-900 dark:text-white">লোড হচ্ছে...</h4>
-                                <p class="text-[10px] text-emerald-500 font-semibold"><i class="fa-solid fa-circle-check"></i>  রক্তের টান ভেরিফাইড মেম্বার</p>
-                            </div>
-                        </div>
-
-                        <div class="divide-y divide-slate-100 dark:divide-slate-800/60 pt-2 space-y-2 text-[11px]">
-                            <div class="flex justify-between py-1">
-                                <span class="text-slate-400">রক্তের গ্রুপ:</span>
-                                <span id="dashUserBlood" class="font-bold text-rose-500 text-xs">A+</span>
-                            </div>
-                            <div class="flex justify-between py-1.5">
-                                <span class="text-slate-400">ইউনিক ইউজারনেম (কোড):</span>
-                                <span id="dashUserUniqueName" class="font-bold text-amber-500 font-mono">---</span>
-                            </div>
-                            <div class="flex justify-between py-1.5">
-                                <span class="text-slate-400">মোবাইল নম্বর:</span>
-                                <span id="dashUserPhone" class="font-bold">01700000000</span>
-                            </div>
-                            <div class="flex justify-between py-1.5">
-                                <span class="text-slate-400">মোট রেফারেল বা শেয়ার:</span>
-                                <span id="dashUserShares" class="font-extrabold text-amber-500">০ বার</span>
-                            </div>
-                        </div>
-
-                        <!-- Update donation date -->
-                        <div class="bg-slate-100/50 dark:bg-slate-800/40 p-3 rounded-2xl space-y-2 border border-slate-200/50 dark:border-slate-700/50">
-                            <label class="block font-bold text-slate-600 dark:text-slate-400 text-[10px] uppercase">সর্বশেষ রক্তদানের তারিখ</label>
-                            <input type="date" id="dashLastDonationInput" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-1.5 text-xs outline-none focus:ring-2 focus:ring-brand-primary">
-                            <button onclick="updateLastDonationDate()" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-bold py-2 rounded-xl transition">তারিখ আপডেট করুন</button>
-                        </div>
-
-                        <button onclick="handleSignOut()" class="w-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold py-2.5 rounded-xl transition">
-                            লগআউট করুন
-                        </button>
+                    <!-- Beautiful Bengali Quote Banner -->
+                    <div class="bg-rose-500/10 border border-rose-500/20 p-4 rounded-2xl text-center">
+                        <p class="text-xs text-brand-primary font-bold italic">"রক্ত দিন, জীবন বাঁচান। আপনার একটি সঠিক সিদ্ধান্ত কেড়ে নিতে পারে একটি মুমূর্ষু প্রাণের অকাল বিদায়।" 🩸</p>
                     </div>
                 </div>
 
-                <!-- Right ID Card Section (Landscape & Themes with Adaptive Scaling) -->
-                <div class="lg:col-span-7 flex flex-col items-center justify-start space-y-5 w-full">
-                    <h3 class="text-xs md:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1">
-                        <i class="fa-solid fa-id-badge text-brand-primary"></i>  ডিজিটাল ডোনার আইডিカード 
-                    </h3>
-
-                    <!-- Mobile Responsive Scaler Wrapper -->
-                    <div class="id-card-scale-wrap" id="idCardWrapperContainer">
-                        <div id="idCardScaler" class="id-card-scale-container">
-                            <div id="renderableIdCard" class="id-card-wrapper theme-1 text-white flex flex-row items-center relative">
-                                
-                                <!-- Concentric circle geometry / patterns & Golden Double Borders (Deep & Spacious Margin) -->
-                                <div class="card-grid-pattern"></div>
-                                <div class="card-concentric-circles"></div>
-                                <div class="id-card-border-outer"></div>
-                                <div class="id-card-border-inner"></div>
-                                <i class="fa-solid fa-droplet watermark-bg"></i>
-                                
-                                <!-- Decorative Heartbeat waveform icon in BG to fill gaps -->
-                                <svg class="heartbeat-waveform" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 15H30L35 5L42 25L48 10L52 18L56 15H100" stroke="rgba(245, 158, 11, 0.28)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-
-                                <!-- Left Area: Avatar & Details (Wider, Spacious, Multi-layered) -->
-                                <div class="relative z-10 flex flex-row items-center justify-between w-[320px] h-full pl-7 pr-2 select-none">
-                                    <div class="flex flex-col justify-between h-full py-4.5">
-                                        <!-- Logo & Brand Header -->
-                                        <div class="flex items-center gap-2 mb-1 shrink-0">
-                                            <div class="bg-rose-600 text-white p-1 rounded-full flex items-center justify-center w-6 h-6 shadow-md border border-white/20">
-                                                <i class="fa-solid fa-droplet text-[10px] animate-pulse"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="text-[13px] font-black tracking-wider text-amber-400 uppercase leading-none">রক্তের টান</h4>
-                                                <span class="text-[8px] text-white/80 block font-bold tracking-tight">RokterTan — ডোনার কার্ড</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Rahnuma Grid Detailed List (With safe spacing to prevent name clipping) -->
-                                        <div class="space-y-2 text-left pt-2 flex-grow">
-                                            <div class="space-y-0.5">
-                                                <span class="text-[8px] uppercase font-bold text-amber-400 block tracking-wider leading-none">রক্তদাতা:</span>
-                                                <h2 class="text-[15px] font-extrabold text-white tracking-wide truncate max-w-[190px] leading-snug whitespace-nowrap" id="cardUserName">লোড হচ্ছে...</h2>
-                                            </div>
-
-                                            <div class="space-y-0.5">
-                                                <span class="text-[8px] uppercase font-bold text-amber-400 block tracking-wider leading-none">অর্জিত উপাধি:</span>
-                                                <span id="cardUserRank" class="text-[11.5px] font-black text-amber-100 leading-none block whitespace-nowrap">নতুন রক্তদাতা</span>
-                                            </div>
-
-                                            <div class="space-y-0.5">
-                                                <span class="text-[8px] uppercase font-bold text-amber-400 block tracking-wider leading-none">সর্বশেষ দান:</span>
-                                                <span id="cardLastDonationDateText" class="text-[10px] font-bold text-white/95 leading-none block whitespace-nowrap">কখনো রক্ত দেননি</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Beautiful Golden Quote / Tagline to fill horizontal empty spaces -->
-                                        <div class="text-left mt-1 max-w-[200px] shrink-0">
-                                            <p class="text-[8.5px] font-extrabold italic text-amber-200/95 leading-tight whitespace-nowrap">"একটি রক্তবিন্দু, মানবতার এক মহান সিন্ধু — রক্তের টানে হোক রক্তদান"</p>
-                                        </div>
-
-                                        <!-- Web Address URL -->
-                                        <div class="pt-1.5 flex items-center gap-1.5 shrink-0">
-                                            <i class="fa-solid fa-globe text-amber-400 text-[9px]"></i>
-                                            <span class="text-[9px] text-white/90 font-black tracking-tight whitespace-nowrap">emergencyroktolagbe.vercel.app</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Right Area: Golden Ring Photo Frame & Premium Counter Box (Rahnuma Style) -->
-                                <div class="relative z-10 flex-grow h-full flex flex-col justify-between items-center py-5 pr-7 pl-1 select-none">
-                                    <!-- Photo Container (Centered perfectly) -->
-                                    <div class="flex flex-col items-center">
-                                        <div id="idCardPhotoContainer" class="profile-photo-container">
-                                            <img id="idCardImage" class="profile-photo" src="https://via.placeholder.com/100x120?text=Photo" style="top: 0px; left: 0px; transform: scale(1.0);">
-                                        </div>
-                                    </div>
-
-                                    <!-- Right Box: Success Counter Block (Rahnuma Style) -->
-                                    <div class="w-full bg-black/45 border border-amber-500/40 p-2.5 rounded-xl text-center backdrop-blur-md relative mt-2.5">
-                                        <!-- Top subtle tagline -->
-                                        <span class="text-[8px] uppercase font-extrabold text-amber-400 tracking-widest block leading-none mb-1">রক্তের গ্রুপ</span>
-                                        <!-- Highlight Counter / Blood group text -->
-                                        <span id="cardBloodGroup" class="text-2.5xl font-black text-rose-500 leading-none drop-shadow-md">O+</span>
-                                        <!-- Verification subtag -->
-                                        <span class="text-[7.5px] font-black text-emerald-400 uppercase tracking-wider block mt-1"><i class="fa-solid fa-circle-check"></i>  ভেরিফাইড ডোনার</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card bottom invitation message & serial ID (To invite people to our website) -->
-                                <div class="absolute bottom-2.5 left-7 z-20 text-[7px] text-white/65 font-extrabold tracking-wide select-none max-w-[200px] truncate">
-                                    ফ্রি ডোনার কার্ড করতে আজই আমাদের সাইটে আসুন।
-                                </div>
-                                <div class="absolute bottom-2.5 right-7 z-20 text-[7.5px] text-amber-400/80 font-mono tracking-widest select-none">
-                                    <span id="cardVerificationID">RT-VERIFIED-XXXX</span>
-                                </div>
-
-                            </div>
+                <!-- Right Column: Direct Download Link & Scan QR Code options -->
+                <div class="lg:col-span-5 flex flex-col justify-start space-y-5">
+                    <!-- Direct Download Block -->
+                    <div class="glass p-6 rounded-2xl border border-white/30 text-center space-y-4">
+                        <div class="text-5xl text-brand-primary animate-bounce"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+                        <div>
+                            <h4 class="font-bold text-md text-slate-900 dark:text-white">মেথড ১: ডাইরেক্ট ডাউনলোড</h4>
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">সবচেয়ে সহজ এবং এক ক্লিকে সরাসরি ডাউনলোড লিঙ্ক থেকে ফাইলটি পেতে নিচের বড় বাটনটি ব্যবহার করুন।</p>
                         </div>
-                    </div>
-
-                    <!-- Card Controls (Upload, Zoom, Themes, Download) -->
-                    <div class="w-full max-w-lg space-y-4 text-xs">
                         
-                        <div class="bg-slate-100 dark:bg-slate-800 p-3.5 rounded-2xl border border-slate-200/70 dark:border-slate-700 space-y-3">
-                            <p class="font-bold text-slate-800 dark:text-slate-200"><i class="fa-solid fa-camera"></i> প্রোফাইল ছবি যুক্ত করুন ও পজিশন ঠিক করুন</p>
-                            
-                            <input type="file" id="photoUpload" accept="image/*" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-brand-primary file:text-white hover:file:bg-rose-700 transition cursor-pointer">
-                            
-                            <!-- Google/Facebook style Interactive Zoom Slider -->
-                            <div class="space-y-1 pt-1">
-                                <div class="flex justify-between items-center text-[10px] text-slate-500 font-bold">
-                                    <span><i class="fa-solid fa-magnifying-glass-minus"></i> জুম আউট</span>
-                                    <span id="zoomPercentVal">১০০%</span>
-                                    <span><i class="fa-solid fa-magnifying-glass-plus"></i> জুম ইন</span>
-                                </div>
-                                <input type="range" id="photoZoomSlider" min="0.5" max="3" step="0.02" value="1" class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-rose-600">
-                            </div>
+                        <!-- Extra Big & Prominent Direct Download Button -->
+                        <a href="https://tinyurl.com/RokterTanApp" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-primary hover:bg-rose-700 text-white font-black py-4 px-6 rounded-xl shadow-lg hover:shadow-rose-500/20 transition duration-300 flex items-center justify-center gap-2.5 text-md tracking-wider border-2 border-white/20 active:scale-95 transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-download text-lg"></i> সরাসরি ডাইরেক্ট অ্যাপ ডাউনলোড
+                        </a>
+                    </div>
 
-                            <p class="text-[10px] text-slate-500 leading-relaxed"><i class="fa-solid fa-hand-pointer"></i> ছবি আপলোড করার পর গোল ফ্রেমের ভেতর মাউস বা হাত দিয়ে চেপে ধরে যেকোনো দিকে (উপরে, নিচে, ডানে বা বামে) সরিয়ে পজিশন ঠিক করতে পারবেন এবং স্লাইডার দিয়ে নিখুঁত ফোকাস করতে পারবেন।</p>
+                    <!-- QR Code Download Block -->
+                    <div class="glass p-6 rounded-2xl border border-white/30 text-center space-y-4">
+                        <div class="text-xs uppercase tracking-widest font-extrabold text-amber-500"><i class="fa-solid fa-qrcode mr-1"></i> মেথড ২: কিউআর কোড স্ক্যানার</div>
+                        
+                        <!-- Beautiful Scan Frame Container -->
+                        <div class="inline-block p-3.5 bg-white rounded-2xl shadow-inner border border-slate-200">
+                            <!-- QR Code Live Image from Host link provided by user -->
+                            <img src="https://mishop-image-drive.vercel.app/Rokter-Tan-App.png" alt="[কিউআর কোড স্ক্যানার]" class="w-40 h-40 object-contain mx-auto">
                         </div>
-
-                        <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-2xl border border-slate-200 dark:border-slate-700">
-                            <p class="font-bold text-slate-800 dark:text-slate-200 mb-2"><i class="fa-solid fa-palette"></i>  আইডি কার্ডের ডিজাইন নির্বাচন করুন</p>
-                            <div class="flex gap-2 overflow-x-auto p-1 no-scrollbar">
-                                <button onclick="setCardTheme(1)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-1"></button>
-                                <button onclick="setCardTheme(2)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-2"></button>
-                                <button onclick="setCardTheme(3)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-3"></button>
-                                <button onclick="setCardTheme(4)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-4"></button>
-                                <button onclick="setCardTheme(5)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-5"></button>
-                                <button onclick="setCardTheme(6)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-6"></button>
-                                <button onclick="setCardTheme(7)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-7"></button>
-                                <button onclick="setCardTheme(8)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-8"></button>
-                                <button onclick="setCardTheme(9)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-9"></button>
-                                <button onclick="setCardTheme(10)" class="w-8 h-8 rounded-full shrink-0 border-2 border-white shadow-md theme-10"></button>
-                            </div>
-                        </div>
-
-                        <button onclick="downloadPngIdCard()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center gap-1.5 text-sm">
-                            <i class="fa-solid fa-cloud-arrow-down"></i> আইডি কার্ডটি গ্যালারিতে সেভ করুন (PNG)
-                        </button>
-
-                        <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 text-xs space-y-2 w-full text-center">
-                            <p class="font-bold text-slate-800 dark:text-slate-200 text-[11px]"><i class="fa-solid fa-share-nodes text-brand-primary animate-pulse"></i> আপনার রেফারেল লিংক (টপ শেয়ারার হওয়ার সুযোগ)</p>
-                            <p class="text-[10px] text-slate-500 dark:text-slate-400">নিচের লিংকটি কপি করে বন্ধুদের পাঠান। কেউ এই লিংকে এসে রেজিস্টার করলে আপনার আইডি কার্ডের শেয়ার কাউন্ট বৃদ্ধি পাবে এবং আপনি টপ ১০ তালিকায় ও নতুন র‍্যাংক অর্জন করতে পারবেন!</p>
-                            
-                            <div class="flex gap-2">
-                                <input type="text" id="referralLinkInput" readonly class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 outline-none select-all text-[10px]">
-                                <button onclick="copyReferralLinkToClipboard(this)" class="bg-brand-primary hover:bg-rose-700 text-white font-bold px-3 py-1.5 rounded-lg shrink-0">কপি</button>
-                            </div>
-                        </div>
+                        
+                        <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed px-2">
+                            আপনার মোবাইল ফোনের ক্যামেরা বা যেকোনো কিউআর কোড স্ক্যানার অ্যাপ দিয়ে উপরের কোডটি স্ক্যান করুন এবং সরাসরি আপনার মোবাইলে ডাউনলোড করুন।
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 🏷️ TAB 6: PRIVACY POLICY & TERMS -->
+        <!-- 🏷️ TAB 5: PRIVACY POLICY & TERMS -->
         <section id="privacy-tab" class="spa-tab-content hidden space-y-6">
             <div class="glass p-6 md:p-8 rounded-3xl shadow-md border border-white/30 text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-4">
                 <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white mb-4 border-b pb-2 border-slate-200 dark:border-slate-700"><i class="fa-solid fa-shield-halved text-brand-primary"></i>  টার্মস অ্যান্ড কন্ডিশনস ও প্রাইভেসি পলিসি</h2>
@@ -683,21 +383,18 @@
                 <h3 class="font-bold text-slate-900 dark:text-white mt-4">১. আমরা কী কী তথ্য সংগ্রহ করি?</h3>
                 <ul class="list-disc pl-5 space-y-1">
                     <li>আপনার নাম, রক্তের গ্রুপ এবং বয়স।</li>
-                    <li>যোগাযোগের জন্য মোবাইল নম্বর এবং ইমেইল।</li>
+                    <li>যোগাযোগের জন্য মোবাইল নম্বর এবং ইমেল।</li>
                     <li>আপনার বর্তমান ঠিকানা (বিভাগ, জেলা, উপজেলা, বিস্তারিত ঠিকানা) যাতে স্থানীয় রক্তগ্রহীতারা আপনাকে দ্রুত খুঁজে পেতে পারে।</li>
                     <li>আপনার সর্বশেষ রক্তদানের তারিখ।</li>
                 </ul>
 
                 <h3 class="font-bold text-slate-900 dark:text-white mt-4">২. সংগৃহীত তথ্য কী কাজে ব্যবহৃত হয়?</h3>
-                <p>আপনার দেওয়া সম্পূর্ণ তথ্য শুধুমাত্র মুমূর্ষু রোগীর রক্তের সন্ধানের জন্য ব্যবহৃত হয়। যখন কারো রক্তের প্রয়োজন হয়, তারা আমাদের ওয়েবসাইট ব্যবহার করে নির্দিষ্ট এলাকার রক্তদাতাকে খুঁজে বের করে এবং সরাসরি মোবাইল নম্বরে যোগাযোগ করে। <strong class="text-rose-500">আমরা কোনো প্রকার মার্কেটিং, বিজ্ঞাপন বা অন্য কোনো ব্যবসায়িক বা খারাপ উদ্দেশ্যে আপনাদের তথ্য ব্যবহার করি না এবং কখনো কারো কাছে বিক্রিও করি না।</strong></p>
+                <p>আপনার দেওয়া সম্পূর্ণ তথ্য শুধুমাত্র মুমূর্ষু রোগীর রক্তের সন্ধানের জন্য ব্যবহৃত হয়। যখন কারো রক্তের প্রয়োজন হয়, তারা আমাদের ওয়েবসাইট ব্যবহার করে নির্দিষ্ট এলাকার রক্তদাতাকে খুঁজে বের করে এবং সরাসরি মোবাইল নম্বরে যোগাযোগ করে। <strong class="text-rose-500">আমরা কোনো প্রকার মার্কেটিং, বিজ্ঞাপন বা অন্য কোনো ব্যবসায়িক বা বাণিজ্যিক উদ্দেশ্যে আপনাদের তথ্য ব্যবহার করি না এবং কখনো কারো কাছে বিক্রিও করি না।</strong></p>
 
                 <h3 class="font-bold text-slate-900 dark:text-white mt-4">৩. রক্তদান ও আর্থিক লেনদেন (সতর্কতা)</h3>
-                <p>রক্তদান সম্পূর্ণ একটি নিঃস্বার্থ কাজ। রক্তের বিনিময়ে কোনো আর্থিক লেনদেন করা আইনত দণ্ডনীয় অপরাধ। কেউ যদি রক্ত দেওয়ার কথা বলে অগ্রিম যাতায়াত ভাড়া বা টাকা দাবি করে, তবে তার সাথে যোগাযোগ বন্ধ করুন। এই ধরনের কোনো আর্থিক প্রতারণার জন্য "রক্তের টান" কর্তৃপক্ষ দায়ী থাকবে না।</p>
+                <p>রক্তদান সম্পূর্ণ একটি নিঃস্বার্থ কাজ। রক্তের বিনিময়ে কোনো আর্থিক লেনদেন করা আইনত দণ্ডনীয় অপরাধ। কেউ যদি রক্ত দেওয়ার কথা বলে অগ্রিম যাতায়াত ভাড়া বা টাকা দাবি করে, তবে তার সাথে যোগাযোগ বন্ধ করুন। এই ধরনের কোনো আর্থিক প্রতারণার জন্য "রক্তের টান" কর্তৃপক্ষ দায়ী থাকবে না।</p>
 
-                <h3 class="font-bold text-slate-900 dark:text-white mt-4">৪. আইডি কার্ড ও ছবি</h3>
-                <p>প্রোফাইলে আপলোড করা আপনার ছবিটি শুধুমাত্র আপনার ডিভাইসের (ব্রাউজারের) লোকাল স্টোরেজেই সেভ থাকে। আমরা এই ছবি আমাদের কোনো সার্ভারে আপলোড করি না। এটি সম্পূর্ণ আপনার ব্যক্তিগত নিরাপত্তার মধ্যে সীমাবদ্ধ।</p>
-
-                <h3 class="font-bold text-slate-900 dark:text-white mt-4">৫. অ্যাকাউন্ট বাতিল বা পরিবর্তন</h3>
+                <h3 class="font-bold text-slate-900 dark:text-white mt-4">৪. অ্যাকাউন্ট বাতিল বা পরিবর্তন</h3>
                 <p>যেকোনো সময় আপনি আপনার তথ্য আপডেট করতে পারবেন। কোনো কারণে রক্তদানে অক্ষম হলে বা তথ্য মুছতে চাইলে আমাদের ফেসবুক পেজে মেসেজ দিয়ে জানাতে পারবেন।</p>
 
                 <div class="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/40 mt-6">
@@ -710,6 +407,23 @@
 
     <!-- 🌟 CORE FOOTER -->
     <footer id="main-footer" class="bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 px-4 mt-12 text-xs transition-all duration-300">
+        <!-- App Promotional Link Banner inside Footer -->
+        <div class="max-w-4xl mx-auto mb-6 bg-gradient-to-r from-rose-600 to-rose-700 text-white rounded-2xl p-5 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4 border border-white/10">
+            <div class="flex items-center gap-3 text-center md:text-left">
+                <div class="bg-white/15 p-2.5 rounded-full shrink-0">
+                    <i class="fa-solid fa-mobile-screen-button text-2xl text-amber-300 animate-pulse"></i>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-sm tracking-wide">আমাদের অফিশিয়াল অ্যান্ড্রয়েড অ্যাপ ইনস্টল করুন!</h4>
+                    <p class="text-[11px] text-white/80 mt-0.5">সবচেয়ে নিরাপদ ও দ্রুততম সময়ে আপনার ফোন থেকে সরাসরি রক্তদাতাদের সন্ধান করতে অ্যাপ ডাউনলোড করুন।</p>
+                </div>
+            </div>
+            <!-- Interactive Action Button to redirect to the Download Tab within SPA -->
+            <button onclick="switchTab('download-tab')" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-5 py-2.5 rounded-xl transition duration-300 flex items-center gap-1.5 shrink-0 shadow shadow-amber-400/30 transform active:scale-95 text-xs">
+                <i class="fa-solid fa-download text-xs"></i> অফিশিয়াল অ্যাপ ডাউনলোড করুন
+            </button>
+        </div>
+
         <div class="max-w-5xl mx-auto space-y-4 text-center text-slate-500 dark:text-slate-400">
             <div class="flex justify-center gap-4 mb-2">
                 <button onclick="switchTab('privacy-tab')" class="hover:text-brand-primary underline font-bold transition">প্রাইভেসি পলিসি ও শর্তাবলি</button>
@@ -727,7 +441,7 @@
 
             <div class="bg-brand-primary text-white p-4 flex items-center justify-between relative z-10">
                 <h3 class="text-sm font-bold flex items-center gap-2">
-                    <i class="fa-solid fa-user-plus"></i> রক্তদাতা হিসেবে নাম নিবন্ধন করুন
+                    <i class="fa-solid fa-user-plus"></i>  রক্তদাতা হিসেবে নাম নিবন্ধন করুন
                 </h3>
                 <button onclick="closeRegistrationModal()" class="text-white hover:text-white/80 transition text-lg"><i class="fa-solid fa-xmark"></i></button>
             </div>
@@ -741,7 +455,6 @@
                 <div class="space-y-1">
                     <label class="block font-bold text-slate-700 dark:text-slate-300">মোবাইল নম্বর (১১ ডিজিট) <span class="text-rose-500">*</span></label>
                     <input type="tel" id="regMobile" placeholder="যেমন: 01700000000" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-primary">
-                    <p class="text-[10px] text-brand-primary font-bold mt-1">লগইন করার সময় কোনো পাসওয়ার্ড লাগবে না, শুধু এই মোবাইল নম্বরটি দিলেই হবে।</p>
                 </div>
 
                 <div class="space-y-1">
@@ -778,7 +491,7 @@
                         </select>
                     </div>
                     <div class="space-y-1">
-                        <label class="block font-bold text-slate-700 dark:text-slate-300">উপজেলা/পৌরসভা/সিটি কর্পোরেশন <span class="text-rose-500">*</span></label>
+                        <label class="block font-bold text-slate-700 dark:text-slate-300">উপজেলা/সিটি কর্পোরেশন <span class="text-rose-500">*</span></label>
                         <select id="regUpazila" disabled class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 outline-none focus:ring-2 focus:ring-brand-primary disabled:opacity-60 disabled:cursor-not-allowed">
                             <option value="">উপজেলা</option>
                         </select>
@@ -806,15 +519,12 @@
                     <input type="date" id="regLastDate" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-brand-primary">
                 </div>
                 
-                <p class="text-[10px] text-slate-500 text-center">নিবন্ধন বাটনে ক্লিক করার মাধ্যমে আপনি আমাদের <a href="#" onclick="closeRegistrationModal(); switchTab('privacy-tab');" class="text-brand-primary underline">প্রাইভেসি পলিসি</a> এর সাথে একমত পোষণ করছেন।</p>
+                <p class="text-[10px] text-slate-500 text-center">নিবন্ধন বাটনে ক্লিক করার মাধ্যমে আপনি আমাদের <a href="#" onclick="closeRegistrationModal(); switchTab('privacy-tab');" class="text-brand-primary underline">প্রাইভেসি পলিসি</a>-এর সাথে একমত পোষণ করছেন।</p>
             </div>
 
-            <div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex flex-col sm:flex-row gap-2 text-xs relative z-10">
-                <button onclick="submitRegistration('whatsapp')" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
-                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp-এ ভেরিফাই করুন
-                </button>
-                <button onclick="submitRegistration('imo')" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
-                    <i class="fa-solid fa-comment-sms text-sm"></i> imo-তে ভেরিফাই করুন
+            <div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex flex-col gap-2 text-xs relative z-10">
+                <button onclick="submitRegistration('whatsapp')" class="w-full bg-green-650 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-sm animate-pulse"></i> WhatsApp-এ তথ্য ভেরিফাই করুন ও নিবন্ধন সম্পন্ন করুন
                 </button>
             </div>
         </div>
@@ -843,45 +553,25 @@
         </div>
     </div>
 
-    <!-- CUSTOM IMO GUIDE MODAL -->
-    <div id="imoGuideModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl p-6 border border-slate-200 dark:border-slate-800 text-center space-y-4 relative">
-            <div class="absolute -left-12 -top-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="text-sky-500 text-4xl relative z-10"><i class="fa-solid fa-comment-sms"></i></div>
-            <h3 class="text-md md:text-lg font-extrabold text-slate-950 dark:text-white relative z-10">imo ভেরিফিকেশন নির্দেশিকা</h3>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left relative z-10">
-                imo-তে সরাসরি মেসেজ পাঠানোর সীমাবদ্ধতা থাকায় নিচের বাটনটি ক্লিক করে আপনার রেজিস্ট্রেশন মেসেজটি কপি করে নিন এবং আপনার imo অ্যাপের মাধ্যমে এডমিন নম্বরে পাঠিয়ে দিন।
-                <br><br>
-                <strong class="text-brand-primary">এডমিন imo নম্বর: +8801410603930</strong>
-            </p>
-            <textarea id="imoTextToCopy" readonly class="w-full h-24 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-[10px] outline-none resize-none relative z-10"></textarea>
-            <div class="flex gap-2 relative z-10">
-                <button onclick="copyImoMessageAndClose()" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-md">
-                    মেসেজ কপি করুন ও বন্ধ করুন
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- 🎛️ CORE SCRIPTS & DATABASE ROUTINE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
     <script>
-        // 🗺️ Bangladesh Ultimate Geographic Database Map (Pure Bengali Corrected)
+        // 🗺️ Bangladesh Ultimate Geographic Database Map (100% Correct Bengali spelling)
         const bdLocations = {
             "ঢাকা": {
                 "ঢাকা": ["মিরপুর", "বনানী", "সাভার", "গুলশান", "উত্তরা", "ধানমন্ডি", "মোহাম্মদপুর", "খিলগাঁও", "তেজগাঁও", "লালবাগ", "ঢাকা উত্তর সিটি কর্পোরেশন", "ঢাকা দক্ষিণ সিটি কর্পোরেশন", "ধামরাই", "কেরানীগঞ্জ", "দোহার", "নবাবগঞ্জ"],
                 "গাজীপুর": ["গাজীপুর সদর", "কালীগঞ্জ", "কালিয়াকৈড়", "শ্রীপুর", "কাপাসিয়া", "গাজীপুর সিটি কর্পোরেশন"],
                 "নারায়ণগঞ্জ": ["নারায়ণগঞ্জ সদর", "রূপগঞ্জ", "আড়াইহাজার", "সোনারগাঁও", "বন্দর", "নারায়ণগঞ্জ সিটি কর্পোরেশন"],
                 "নরসিংদী": ["নরসিংদী সদর", "বেলাবো", "মনোহরদী", "পলাশ", "রায়পুরা", "শিবপুর"],
-                "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "ঘাটাইল", "দেলদুয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "مধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
+                "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "ঘাটাইল", "দেলদয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "মধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
                 "মানিকগঞ্জ": ["মানিকগঞ্জ সদর", "সিংগাইর", "শিবালয়", "ঘিওর", "হরিরামপুর", "দৌলতপুর", "সাটুরিয়া"],
-                "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজдиখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
+                "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজডিখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
                 "ফরিদপুর": ["ফরিদপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালথা", "নগরকান্দা"],
                 "রাজবাড়ী": ["রাজবাড়ী সদর", "গোয়ালন্দ", "পাংশা", "বালিয়াকান্দি", "কালুখালী"],
-                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "مुकসুদপুর"],
+                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "মকসুদপুর"],
                 "মাদারীপুর": ["মাদারীপুর সদর", "শিবচর", "কালকিনি", "রাজৈর"],
                 "শরীয়তপুর": ["শরীয়তপুর সদর", "ডামুড্যা", "নড়িয়া", "জাজিরা", "ভেদরগঞ্জ", "গোসাইরহাট"],
                 "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর", "কটিয়াদী", "ভৈরব", "বাজিতপুর", "নিকলী", "করিমগঞ্জ", "হোসেনপুর", "তাড়াইল", "পাকুন্দিয়া", "মিঠামইন", "ইটনা", "অষ্টগ্রাম", "কুলিয়ারচর"]
@@ -889,11 +579,11 @@
             "চট্টগ্রাম": {
                 "চট্টগ্রাম": ["চট্টগ্রাম সিটি কর্পোরেশন", "হাটহাজারী", "পটিয়া", "সন্দ্বীপ", "রাঙ্গুনিয়া", "রাউজান", "বোয়ালখালী", "আনোয়ারা", "চন্দনাইশ", "বাঁশখালী", "সাতকানিয়া", "লোহাগাড়া", "ফটিকছড়ি", "মীরসরাই", "সীতাকুণ্ড"],
                 "কক্সবাজার": ["কক্সবাজার সদর", "চকরিয়া", "মহেশখালী", "টেকনাফ", "উখিয়া", "পেকুয়া", "কুতুবদিয়া", "রামু"],
-                "কুমিল্লা": ["কুমিল্লা आदर्श সদর", "কুমিল্লা সদর দক্ষিণ", "চৌদ্দগ্রাম", "লাকসাম", "লাঙ্গলকোট", "বরুড়া", "দাউদকান্দি", "চান্দিনা", "দেবিদ্বার", "মুরাদনগর", "বুড়িচং", "ব্রাহ্মণপাড়া", "হোমনা", "মেঘনা", "তিতাস", "মনোহরগঞ্জ", "কুমিল্লা সিটি কর্পোরেশন"],
+                "কুমিল্লা": ["কুমিল্লা আদর্শ সদর", "কুমিল্লা সদর দক্ষিণ", "চৌদ্দগ্রাম", "লাকসাম", "লাঙ্গলকোট", "বরুড়া", "দাউদকান্দি", "চান্দিনা", "দেবিদ্বার", "মুরাদনগর", "বুড়িচং", "ব্রাহ্মণপাড়া", "হোমনা", "মেঘনা", "তিতাস", "মনোহরগঞ্জ", "কুমিল্লা সিটি কর্পোরেশন"],
                 "ফেনী": ["ফেনী সদর", "ছাগলনাইয়া", "দাগনভূঞা", "সোনাগাজী", "পরশুরাম", "ফুলগাজী"],
                 "নোয়াখালী": ["নোয়াখালী সদর", "বেগমগঞ্জ", "সেনবাগ", "চাটখিল", "কোম্পানীগঞ্জ", "হাতিয়া", "সুবর্ণচর", "সোনাইমুড়ী", "কবিরহাট"],
                 "লক্ষ্মীপুর": ["লক্ষ্মীপুর সদর", "রায়পুর", "রামগঞ্জ", "রামগতি", "কমলনগর"],
-                "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "شاہরাস্তি", "কচুয়া", "ফরিদগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
+                "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "শাহরাস্তি", "কচুয়া", "ফরিদগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
                 "ব্রাহ্মণবাড়িয়া": ["ব্রাহ্মণবাড়িয়া সদর", "আশুগঞ্জ", "সরাইল", "নাসিরনগর", "বাঞ্ছারামপুর", "নবীনগর", "কসবা", "আখাউড়া", "বিজয়নগর"],
                 "রাঙ্গামাটি": ["রাঙ্গামাটি সদর", "কাপ্তাই", "কাউখালী", "বাঘাইছড়ি", "লংগদু", "নানিয়ারচর", "রাজস্থলী", "জুরাছড়ি", "বিলাইছড়ি", "বরকল"],
                 "বান্দরবান": ["বান্দরবান সদর", "রুমা", "থানচি", "রোয়াংছড়ি", "লামা", "আলীকদম", "নাইক্ষ্যংছড়ি"],
@@ -912,11 +602,11 @@
             "খুলনা": {
                 "খুলনা": ["খুলনা সিটি কর্পোরেশন", "রূপসা", "বটিয়াঘাটা", "ডুমুরিয়া", "তেরখাদা", "দিঘলিয়া", "ফুলতলা", "পাইকগাছা", "কয়রা", "দাকোপ"],
                 "যশোর": ["যশোর সদর", "ঝিকরগাছা", "শার্ষা", "অভয়নগর", "বাগআঁচড়া", "মনিরামপুর", "কেশবপুর", "চৌগাছা", "বাঘারপাড়া"],
-                "বাগেরহাট": ["বাগেরহাট সদর", "মোংলা", "চিতলমারী", "ফকিরহাট", "কচুয়া", "مোল্লাহাট", "রামপাল", "শরণখোলা", "মোড়লগঞ্জ"],
+                "বাগেরহাট": ["বাগেরহাট সদর", "মোংলা", "চিতলমারী", "ফকিরহাট", "কচুয়া", "মোল্লাহাট", "রামপাল", "শরণখোলা", "মোড়লগঞ্জ"],
                 "সাতক্ষীরা": ["সাতক্ষীরা সদর", "কলারোয়া", "তালা", "দেবহাটা", "কালীগঞ্জ", "শ্যামনগর", "আশাশুনি"],
                 "ঝিনাইদহ": ["ঝিনাইদহ সদর", "শৈলকুপা", "হরিণাকুণ্ডু", "কালীগঞ্জ", "কোটচাঁদপুর", "মহেশপুর"],
                 "কুষ্টিয়া": ["কুষ্টিয়া সদর", "কুমারখালী", "খোকসা", "মিরপুর", "ভেড়ামারা", "দৌলতপুর"],
-                "মাগুরা": ["মাগুরা সদর", "শ্রীপুর", "শালিখা", "মোহাম্মদপুর"],
+                "মাগুরা": ["মাগুرا সদর", "শ্রীপুর", "শালিখা", "মোহাম্মদপুর"],
                 "নড়াইল": ["নড়াইল সদর", "লোহাগড়া", "কালিয়া"],
                 "মেহেরপুর": ["মেহেরপুর সদর", "গাংনী", "মুজিবনগর"],
                 "চুয়াডাঙ্গা": ["চুয়াডাঙ্গা সদর", "আলমডাঙ্গা", "দামুড়হুদা", "জীবননগর"]
@@ -924,8 +614,8 @@
             "বরিশাল": {
                 "বরিশাল": ["বরিশাল সিটি কর্পোরেশন", "বরিশাল সদর", "বাকেরগঞ্জ", "বাবুগঞ্জ", "উজিরপুর", "বানারীপাড়া", "গৌরনদী", "মুলাদী", "হিজলা", "মেহেন্দিগঞ্জ", "কাউখালী"],
                 "পটুয়াখালী": ["পটুয়াখালী সদর", "গলাচিপা", "বাউফল", "কলাপাড়া", "দুমকি", "মির্জাগঞ্জ", "দশমিনা", "রঙ্গাবালী"],
-                "ভোলা": ["ভোলা সদর", "দৌলতখান", "বোরহানউদ্দিন", "তজুমদ্দিন", "লালমোহন", "চরফ্যাশন", "মনপুরা"],
-                "পিরোজপুর": ["পিরোজপুর সদর", "ভান্ডারিয়া", "مঠবাড়িয়া", "নেচারাবাদ", "নাজিরপুর", "কাউখালী", "ইন্দুরকানী"],
+                "ভোলা": ["ভোলা সদর", "দৌলতখান", "বোরهانউদ্দিন", "তজুমদ্দিন", "লালমোহন", "চরফ্যাশন", "মনপুরা"],
+                "পিরোজপুর": ["পিরোজপুর সদর", "ভান্ডারিয়া", "মঠবাড়িয়া", "নেছারাবাদ", "নাজিরপুর", "কাউখালী", "ইন্দুরকানী"],
                 "বরগুনা": ["বরগুনা সদর", "আমতলী", "পাথরঘাটা", "বেতাগী", "বামনা", "তালতলী"],
                 "ঝালকাঠি": ["ঝালকাঠি সদর", "নলছিটি", "রাজাপুর", "কাঠালিয়া"]
             },
@@ -949,20 +639,20 @@
                 "ময়মনসিংহ": ["ময়মনসিংহ সিটি কর্পোরেশন", "ময়মনসিংহ সদর", "ভালুকা", "ত্রিশাল", "গফরগাঁও", "মুক্তাগাছা", "ঈশ্বরগঞ্জ", "নান্দাইল", "ফুলপুর", "তারাকান্দা", "হালুয়াঘাট", "ধোবাউড়া", "ফুলবাড়ীয়া"],
                 "নেত্রকোনা": ["নেত্রকোনা সদর", "মোহনগঞ্জ", "মদন", "খালিয়াজুরী", "পূর্বধলা", "দুর্গাপুর", "কলমাকান্দা", "বারহাট্টা", "আটপাড়া", "কেন্দুয়া"],
                 "শেরপুর": ["শেরপুর সদর", "নকলা", "নালিতাবাড়ী", "ঝিনাইগাতী", "শ্রীবরদী"],
-                "জামালপুর": ["জামালপুর সদর", "সরিষাবাড়ী", "মেলান্দহ", "ইসলামপুর", "দেওয়ানগঞ্জ", "বকশীগঞ্জ", "مাদারগঞ্জ"]
+                "জামালপুর": ["জামালপুর সদর", "সরিষাবাড়ী", "মেলান্দহ", "ইসলামপুর", "দেওয়ানগঞ্জ", "বকশীগঞ্জ", "মাদারগঞ্জ"]
             }
         };
 
         const districtMap = {
             "ঢাকা": "dhaka", "গাজীপুর": "gazipur", "নারায়ণগঞ্জ": "narayanganj", "নরসিংদী": "narsingdi", "টাঙ্গাইল": "tangail",
-            "মানিকগঞ্জ": "manikganj", "মুन्সিগঞ্জ": "munshiganj", "ফরিদপুর": "faridpur", "রাজবাড়ী": "rajbari", "গোপালগঞ্জ": "gopalganj",
+            "মানিকগঞ্জ": "manikganj", "মুন্সিগঞ্জ": "munshiganj", "ফরিদপুর": "faridpur", "রাজবাড়ী": "rajbari", "গোপালগঞ্জ": "gopalganj",
             "মাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
             "চট্টগ্রাম": "chittagong", "কক্সবাজার": "coxsbazar", "কুমিল্লা": "comilla", "ফেনী": "feni", "নোয়াখালী": "noakhali",
             "লক্ষ্মীপুর": "lakshmipur", "চাঁদপুর": "chandpur", "ব্রাহ্মণবাড়িয়া": "brahmanbaria", "রাঙ্গামাটি": "rangamati", "বান্দরবান": "bandarban", "খাগড়াছড়ি": "khagrachhari",
             "রাজশাহী": "rajshahi", "বগুড়া": "bogura", "জয়পুরহাট": "joypurhat", "নওগাঁ": "naogaon", "নাটোর": "natore", "পাবনা": "pabna", "সিরাজগঞ্জ": "sirajganj", "চাঁপাইনবাবগঞ্জ": "chapainawabganj",
             "খুলনা": "khulna", "যশোর": "jashore", "বাগেরহাট": "bagerhat", "সাতক্ষীরা": "satkhira", "ঝিনাইদহ": "jhenaidah", "কুষ্টিয়া": "kushtia", "মাগুরা": "magura", "নড়াইল": "narail", "মেহেরপুর": "meherpur", "চুয়াডাঙ্গা": "chuadanga",
             "বরিশাল": "barisal", "পটুয়াখালী": "patuakhali", "ভোলা": "bhola", "পিরোজপুর": "pirojpur", "বরগুনা": "barguna", "ঝালকাঠি": "jhalokathi",
-            "সিলেট": "sylhet", "মৌলভীবাজার": "moulvibazar", "হবিগঞ্জ": "habiganj", "সুনামগঞ্জ": "sunamganj", "রংপুর": "rangpur", "দিনাজপুর": "dinajpur", "কুড়িগ্রাম": "kurigram", "গাইবান্ধা": "gaibandha", "নীলফামারী": "nilphamari", "লালমনিরহাট": "lalmonirhat", "পঞ্চগড়": "panchagarh", "ঠাকুরগাঁও": "thakurgaon", "ময়মনসিংহ": "mymensingh", "নেত্রকোনা": "netrokona", "শেরপুর": "sherpur", "জামালপুর": "jamalpur"
+            "সিলেট": "sylhet", "মৌলভীবাজার": "moulvibazar", "হবিগঞ্জ": "habiganj", "sুনামগঞ্জ": "sunamganj", "রংপুর": "rangpur", "দিনাজপুর": "dinajpur", "কুড়িগ্রাম": "kurigram", "গাইবান্ধা": "gaibandha", "নীলফামারী": "nilphamari", "লালমনিরহাট": "lalmonirhat", "পঞ্চগড়": "panchagarh", "ঠাকুরগাঁও": "thakurgaon", "ময়মনসিংহ": "mymensingh", "নেত্রকোনা": "netrokona", "শেরপুর": "sherpur", "জামালপুর": "jamalpur"
         };
 
         const isPreviewEnv = (typeof __app_id !== 'undefined');
@@ -988,17 +678,8 @@
             }
         };
 
-        let currentActiveUserDoc = null;
-        let localUserSession = null; 
-
         const initAuthAndApp = async () => {
             try {
-                const savedUserStr = localStorage.getItem('roktertan_local_session');
-                if (savedUserStr) {
-                    localUserSession = JSON.parse(savedUserStr);
-                    syncProfileView(localUserSession);
-                }
-
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                     await auth.signInWithCustomToken(__initial_auth_token);
                 } else {
@@ -1051,23 +732,16 @@
             document.getElementById('noticeModal').classList.remove('flex');
         }
 
-        function openImoModal(msg) {
-            document.getElementById('imoTextToCopy').value = msg;
-            document.getElementById('imoGuideModal').classList.remove('hidden');
-            document.getElementById('imoGuideModal').classList.add('flex');
+        // Force reload function for Fullscreen Iframe
+        function refreshVideoIframe() {
+            const iframe = document.getElementById('videoGuideIframe');
+            if(iframe) {
+                iframe.src = iframe.src; 
+                showCustomToast("ভিডিও গাইড রিফ্রেশ করা হয়েছে।", true);
+            }
         }
 
-        // Copy functionality using iframe-compatible fallback
-        function copyImoMessageAndClose() {
-            const textToCopy = document.getElementById('imoTextToCopy');
-            textToCopy.select();
-            document.execCommand('copy');
-            showCustomToast("রেজিস্ট্রেশন মেসেজটি কপি করা হয়েছে! imo-তে পাঠান।", true);
-            document.getElementById('imoGuideModal').classList.add('hidden');
-            document.getElementById('imoGuideModal').classList.remove('flex');
-        }
-
-        // 🗺 History API and Full Screen Logic for Tabs
+        // SPA Navigation Core
         function switchTab(tabId, pushHistory = true) {
             document.querySelectorAll('.spa-tab-content').forEach(el => el.classList.add('hidden'));
             const target = document.getElementById(tabId);
@@ -1089,7 +763,7 @@
             });
             document.getElementById('mobileNavMenu').classList.add('hidden');
 
-            // Handling Full Screen Video specifically
+            // Handle Dynamic System state based on Tab selection
             if (tabId === 'video-tab') {
                 document.getElementById('main-header').style.display = 'none';
                 document.getElementById('main-footer').style.display = 'none';
@@ -1105,15 +779,16 @@
             }
 
             if (pushHistory) {
+                // We save tab selection state into window history to handle mobile hard back button smoothly
                 history.pushState({ tab: tabId }, '', `#${tabId}`);
             }
         }
 
         function toggleMobileNavMenu() {
-            document.getElementById('mobileNavMenu').classList.toggle('toggle');
             document.getElementById('mobileNavMenu').classList.toggle('hidden');
         }
 
+        // Back-button navigation logic (Returns to the Homepage on Back Click)
         window.addEventListener('popstate', (e) => {
             if (e.state && e.state.tab) {
                 switchTab(e.state.tab, false);
@@ -1143,7 +818,7 @@
                     container.appendChild(el);
                 });
             } catch (e) {
-                console.error("Health Tips loading error:", e);
+                console.error("Health Tips error: ", e);
             }
         }
 
@@ -1165,59 +840,6 @@
                 });
                 content.style.maxHeight = content.scrollHeight + 'px';
                 icon.style.transform = 'rotate(180deg)';
-            }
-        }
-
-        async function fetchLeaderboardData() {
-            const tableBody = document.getElementById('leaderboardTableBody');
-            tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-slate-400">লিডারবোর্ড তথ্য লোড হচ্ছে...</td></tr>`;
-            try {
-                const snapshot = await getDonorsCollection().get();
-                if (snapshot.empty) {
-                    tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-amber-500 font-semibold">কোনো রক্তদাতা এখনো শেয়ার করেননি। আপনার আইডি কার্ডটি শেয়ার করুন!</td></tr>`;
-                    return;
-                }
-
-                let donors = [];
-                snapshot.forEach(doc => {
-                    const data = doc.data();
-                    if (data.status === 'Verified' || data.status === 'ভেরিফাইড') {
-                        donors.push({
-                            name: data.name,
-                            bloodGroup: data.bloodGroup,
-                            shares: parseInt(data.shares || 0)
-                        });
-                    }
-                });
-
-                donors.sort((a, b) => b.shares - a.shares);
-                const topTen = donors.slice(0, 10);
-
-                if (topTen.length === 0) {
-                    tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-amber-500 font-semibold">কোনো রক্তদাতা এখনো শেয়ার করেননি।</td></tr>`;
-                    return;
-                }
-
-                tableBody.innerHTML = "";
-                topTen.forEach((donor, idx) => {
-                    let trophyHTML = `<span class="font-bold text-slate-500">${idx + 1}</span>`;
-                    if (idx === 0) trophyHTML = `<i class="fa-solid fa-trophy text-amber-500 text-sm"></i>`;
-                    else if (idx === 1) trophyHTML = `<i class="fa-solid fa-medal text-slate-400 text-sm"></i>`;
-                    else if (idx === 2) trophyHTML = `<i class="fa-solid fa-medal text-amber-700 text-sm"></i>`;
-
-                    const row = document.createElement('tr');
-                    row.className = "hover:bg-slate-50 dark:hover:bg-slate-800/30 transition text-slate-700 dark:text-slate-200";
-                    row.innerHTML = `
-                        <td class="p-3 text-center font-bold">${trophyHTML}</td>
-                        <td class="p-3 font-semibold">${donor.name}</td>
-                        <td class="p-3 text-center"><span class="bg-rose-600 text-white font-extrabold text-[10px] px-2 py-0.5 rounded">${donor.bloodGroup}</span></td>
-                        <td class="p-3 text-center font-black text-amber-500">${donor.shares} বার</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } catch (err) {
-                console.warn("Leaderboard failed:", err);
-                tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-red-500 font-semibold">ত্রুটি: লিডারবোর্ড তথ্য লোড করা যায়নি।</td></tr>`;
             }
         }
 
@@ -1268,7 +890,7 @@
             const district = document.getElementById('searchDistrict').value;
             const upazilaSel = document.getElementById('searchUpazila');
 
-            upazilaSel.innerHTML = '<option value="">উপজেলা/পৌরসভা/সিটি কর্পোরেশন সিলেক্ট করুন</option>';
+            upazilaSel.innerHTML = '<option value="">উপজেলা/সিটি কর্পোরেশন সিলেক্ট করুন</option>';
 
             if (!division || !district || !bdLocations[division] || !bdLocations[division][district]) {
                 upazilaSel.disabled = true;
@@ -1312,7 +934,7 @@
             const district = document.getElementById('regDistrict').value;
             const upazilaSel = document.getElementById('regUpazila');
 
-            upazilaSel.innerHTML = '<option value="">উপজেলা/পৌরসভা/সিটি কর্পোরেশন</option>';
+            upazilaSel.innerHTML = '<option value="">উপজেলা/সিটি কর্পোরেশন</option>';
 
             if (!division || !district || !bdLocations[division] || !bdLocations[division][district]) {
                 upazilaSel.disabled = true;
@@ -1438,7 +1060,7 @@
                     grid.innerHTML = `
                         <div class="col-span-full bg-amber-50 dark:bg-amber-950/15 border border-amber-200/50 dark:border-amber-900/30 p-8 rounded-2xl text-center text-amber-800 dark:text-amber-300">
                             <i class="fa-solid fa-face-frown text-2xl mb-2 block"></i>
-                            <p class="font-bold">দুঃখিত, কোনো ভেরিফাইড রক্তদাতা পাওয়া যায়নি।</p>
+                            <p class="font-bold">দুঃখিত, আপনার ফিল্টার করা এলাকায় কোনো ভেরিফাইড রক্তদাতা পাওয়া যায়নি।</p>
                         </div>`;
                     return;
                 }
@@ -1450,7 +1072,7 @@
                     if (statusCheck.eligible) {
                         badgeHTML = `<span class="bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1"><i class="fa-solid fa-circle text-[5px] animate-pulse"></i> প্রস্তুত</span>`;
                     } else {
-                        badgeHTML = `<span class="bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[9px] font-bold px-2 py-0.5 rounded-full">অনুপযুক্ত (${statusCheck.daysLeft} দিন)</span>`;
+                        badgeHTML = `<span class="bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[9px] font-bold px-2 py-0.5 rounded-full">অনুপযুক্ত (${statusCheck.daysLeft} দিন বাকি)</span>`;
                     }
 
                     const card = document.createElement('div');
@@ -1480,7 +1102,7 @@
             } catch (err) {
                 console.error("Donor query failure: ", err);
                 spinner.classList.add('hidden');
-                grid.innerHTML = `<p class="text-center text-red-500 col-span-full">ত্রুটি ঘটেছে: ডাটাবেজ সংযোগে সমস্যা হচ্ছে। আপনার ফায়ারবেস সেটিংস চেক করুন।</p>`;
+                grid.innerHTML = `<p class="text-center text-red-500 col-span-full">ত্রুটি ঘটেছে: ডাটাবেজ সংযোগে সমস্যা হচ্ছে।</p>`;
             }
         }
 
@@ -1512,8 +1134,7 @@
             document.getElementById('compatDisplay').classList.remove('hidden');
         }
 
-        // 🌟 ১০ অক্ষরের প্রফেশনাল ইউনিক কোড জেনারেশন (rt_ প্রিপিক্স সহ)
-        function generate10CharReferralCode() {
+        function generateUniqueReferralCode() {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let referralCode = 'rt_'; 
             for (let i = 0; i < 7; i++) {
@@ -1545,9 +1166,9 @@
                 return;
             }
 
-            const generatedUsername = generate10CharReferralCode();
+            const generatedUsername = generateUniqueReferralCode();
 
-            // Referrer Tracking Points Addition
+            // Referrer Tracker Processing
             const referrerCode = sessionStorage.getItem('roktertan_referrer_code');
             if (referrerCode) {
                 try {
@@ -1560,7 +1181,7 @@
                         sessionStorage.removeItem('roktertan_referrer_code');
                     }
                 } catch (e) {
-                    console.error("Referrer point update error:", e);
+                    console.error("Referrer process error: ", e);
                 }
             }
 
@@ -1588,409 +1209,7 @@
                 const url = `https://wa.me/${adminNo}?text=${encodeURIComponent(formattedMessage)}`;
                 window.open(url, '_blank');
                 closeRegistrationModal();
-            } else if (medium === 'imo') {
-                openImoModal(formattedMessage);
-                closeRegistrationModal();
             }
-        }
-
-        // 🔐 ডিরেক্ট মোবাইল নম্বর ভিত্তিক লগইন সিস্টেম
-        async function handleUserAuthentication() {
-            const mobileInput = document.getElementById('userMobileInput').value.trim();
-
-            if (!mobileInput || !isValidBDPhone(mobileInput)) {
-                showCustomToast("১১ ডিজিটের সঠিক মোবাইল নম্বরটি লিখুন।", false);
-                return;
-            }
-
-            const authBtn = document.getElementById('authActionButton');
-            const originalHTML = authBtn.innerHTML;
-            authBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> ভেরিফাই করা হচ্ছে...`;
-            authBtn.disabled = true;
-
-            try {
-                const snapshot = await getDonorsCollection()
-                    .where('mobile', '==', mobileInput)
-                    .get();
-
-                let matchedDoc = null;
-                snapshot.forEach(doc => {
-                    matchedDoc = doc;
-                });
-
-                if (matchedDoc) {
-                    const donorData = matchedDoc.data();
-                    const finalUsername = donorData.username || generate10CharReferralCode();
-                    
-                    if (!donorData.username) {
-                        await getDonorsCollection().doc(matchedDoc.id).update({
-                            username: finalUsername
-                        });
-                        donorData.username = finalUsername;
-                    }
-
-                    localUserSession = {
-                        id: matchedDoc.id,
-                        ...donorData
-                    };
-
-                    localStorage.setItem('roktertan_local_session', JSON.stringify(localUserSession));
-                    
-                    syncProfileView(localUserSession);
-                    showCustomToast("সফলভাবে প্রোফাইলে প্রবেশ করেছেন!", true);
-                } else {
-                    showCustomToast("মোবাইল নম্বরটি আমাদের ডাটাবেজে পাওয়া যায়নি। দয়া করে আগে নিবন্ধন করুন!", false);
-                    setTimeout(() => {
-                        openRegistrationModal();
-                        document.getElementById('regMobile').value = mobileInput;
-                    }, 1500);
-                }
-                
-                authBtn.innerHTML = originalHTML;
-                authBtn.disabled = false;
-
-            } catch (err) {
-                console.error("Authentication check error: ", err);
-                authBtn.innerHTML = originalHTML;
-                authBtn.disabled = false;
-                showCustomToast("সংযোগ সমস্যা! ইন্টারনেট কানেকশন চেক করুন।", false);
-            }
-        }
-
-        function syncProfileView(data) {
-            if (!data) return;
-            currentActiveUserDoc = data;
-
-            document.getElementById('unauthProfileView').classList.add('hidden');
-            document.getElementById('authProfileView').classList.remove('hidden');
-
-            document.getElementById('dashUserName').textContent = data.name;
-            document.getElementById('dashUserBlood').textContent = data.bloodGroup;
-            document.getElementById('dashUserPhone').textContent = data.mobile;
-            
-            const shareCount = parseInt(data.shares || 0);
-            document.getElementById('dashUserShares').textContent = `${shareCount} বার`;
-            
-            const uniqueUsername = data.username || generate10CharReferralCode();
-            document.getElementById('dashUserUniqueName').textContent = uniqueUsername;
-
-            if (data.lastDonationDate) {
-                document.getElementById('dashLastDonationInput').value = data.lastDonationDate;
-            }
-
-            // Updated Website Vercel Domain URL
-            const referralUrl = `https://emergencyroktolagbe.vercel.app?ref=${uniqueUsername}`;
-            document.getElementById('referralLinkInput').value = referralUrl;
-
-            // Rahnuma Card View Syncing
-            document.getElementById('cardBloodGroup').textContent = data.bloodGroup;
-            document.getElementById('cardUserName').textContent = data.name;
-            document.getElementById('cardLastDonationDateText').textContent = formatDateToBengali(data.lastDonationDate);
-            
-            // Set dynamic Verification ID 
-            document.getElementById('cardVerificationID').textContent = `RT-${uniqueUsername.toUpperCase()}`;
-
-            const rankData = getRankDetails(shareCount);
-            const rankEl = document.getElementById('cardUserRank');
-            rankEl.textContent = rankData.title;
-            rankEl.className = `text-[11.5px] font-black leading-none block ${rankData.color}`;
-            
-            setTimeout(adjustIdCardScaling, 100);
-        }
-
-        // Ranks Logic Based on Share Count
-        function getRankDetails(shares) {
-            if(shares == 0) return { title: "নতুন রক্তদাতা", color: "text-slate-300" };
-            if(shares <= 10) return { title: "উদীয়মান রক্তদাতা", color: "text-amber-200" };
-            if(shares <= 50) return { title: "ব্রোঞ্জ ভলান্টিয়ার", color: "text-[#cd7f32]" };
-            if(shares <= 100) return { title: "সিলভার হিরো", color: "text-slate-350" };
-            if(shares <= 200) return { title: "গোল্ডেন সেভিয়ার", color: "text-yellow-400" };
-            if(shares <= 300) return { title: "প্লাটিনাম লিজেন্ড", color: "text-[#e5e4e2]" };
-            if(shares <= 400) return { title: "ডায়মন্ড প্রোটেক্টর", color: "text-cyan-300" };
-            if(shares <= 500) return { title: "ক্রাউন এম্বাসেডর", color: "text-purple-300" };
-            if(shares <= 700) return { title: "লাইফ সেভিয়ার মাস্টার", color: "text-rose-300" };
-            if(shares <= 900) return { title: "গ্র্যান্ডমাস্টার ডোনার", color: "text-emerald-300" };
-            return { title: "সুপ্রিম হিউম্যানিটি", color: "text-yellow-300" };
-        }
-
-        async function handleSignOut() {
-            try {
-                localStorage.removeItem('roktertan_local_session');
-                localUserSession = null;
-                currentActiveUserDoc = null;
-                
-                document.getElementById('unauthProfileView').classList.remove('hidden');
-                document.getElementById('authProfileView').classList.add('hidden');
-                
-                showCustomToast("সফলভাবে লগআউট করা হয়েছে।", true);
-            } catch (e) {
-                console.error(e);
-            }
-        }
-
-        async function updateLastDonationDate() {
-            const newDate = document.getElementById('dashLastDonationInput').value;
-            if (!newDate) {
-                showCustomToast("অনুগ্রহ করে একটি সঠিক তারিখ নির্বাচন করুন!", false);
-                return;
-            }
-
-            if (currentActiveUserDoc && currentActiveUserDoc.id) {
-                try {
-                    await getDonorsCollection().doc(currentActiveUserDoc.id).update({
-                        lastDonationDate: newDate
-                    });
-                    
-                    currentActiveUserDoc.lastDonationDate = newDate;
-                    localStorage.setItem('roktertan_local_session', JSON.stringify(currentActiveUserDoc));
-                    
-                    showCustomToast("রক্তদানের তারিখ আপডেট করা হয়েছে!", true);
-                    syncProfileView(currentActiveUserDoc);
-                } catch (e) {
-                    showCustomToast("তারিখ আপডেট করা যায়নি।", false);
-                }
-            }
-        }
-
-        // 🎨 Card Theme setup
-        function setCardTheme(themeNum) {
-            const card = document.getElementById('renderableIdCard');
-            for(let i=1; i<=10; i++){
-                card.classList.remove(`theme-${i}`);
-            }
-            card.classList.add(`theme-${themeNum}`);
-            localStorage.setItem('roktertan_card_theme', themeNum);
-        }
-
-        // 📸 Profile Picture Drag, Pinch-to-Zoom & Focus Logic (Google/Facebook style)
-        const photoUpload = document.getElementById('photoUpload');
-        const imgEl = document.getElementById('idCardImage');
-        const photoContainer = document.getElementById('idCardPhotoContainer');
-        const zoomSlider = document.getElementById('photoZoomSlider');
-        const zoomPercentVal = document.getElementById('zoomPercentVal');
-        
-        let isDragging = false;
-        let startX = 0;
-        let startY = 0;
-        let currentImgX = 0;
-        let currentImgY = 0;
-        let scaleVal = 1.0;
-
-        function updateImageTransform() {
-            imgEl.style.transform = `translate(${currentImgX}px, ${currentImgY}px) scale(${scaleVal})`;
-        }
-
-        // Handle File Upload
-        photoUpload.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    const base64Str = event.target.result;
-                    imgEl.src = base64Str;
-                    
-                    currentImgX = 0;
-                    currentImgY = 0;
-                    scaleVal = 1.0;
-                    zoomSlider.value = 1.0;
-                    zoomPercentVal.textContent = "১০০%";
-                    
-                    imgEl.onload = function() {
-                        const containerSize = 86;
-                        if (imgEl.naturalWidth > imgEl.naturalHeight) {
-                            imgEl.style.height = containerSize + "px";
-                            imgEl.style.width = "auto";
-                        } else {
-                            imgEl.style.width = containerSize + "px";
-                            imgEl.style.height = "auto";
-                        }
-                    };
-
-                    updateImageTransform();
-                    saveImageStateToLocalStorage();
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Zoom Slider Handler
-        zoomSlider.addEventListener('input', (e) => {
-            scaleVal = parseFloat(e.target.value);
-            zoomPercentVal.textContent = Math.round(scaleVal * 100) + "%";
-            updateImageTransform();
-            saveImageStateToLocalStorage();
-        });
-
-        // Drag/Pan Events: Mouse
-        photoContainer.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.clientX - currentImgX;
-            startY = e.clientY - currentImgY;
-            photoContainer.style.cursor = 'grabbing';
-        });
-
-        window.addEventListener('mouseup', () => {
-            if(isDragging) {
-                isDragging = false;
-                photoContainer.style.cursor = 'grab';
-                saveImageStateToLocalStorage();
-            }
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            if(!isDragging) return;
-            currentImgX = e.clientX - startX;
-            currentImgY = e.clientY - startY;
-            updateImageTransform();
-        });
-
-        // Drag/Pan Events: Mobile Touch
-        photoContainer.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            startX = e.touches[0].clientX - currentImgX;
-            startY = e.touches[0].clientY - currentImgY;
-        });
-
-        window.addEventListener('touchend', () => {
-            if(isDragging) {
-                isDragging = false;
-                saveImageStateToLocalStorage();
-            }
-        });
-
-        photoContainer.addEventListener('touchmove', (e) => {
-            if(!isDragging) return;
-            e.preventDefault(); 
-            currentImgX = e.touches[0].clientX - startX;
-            currentImgY = e.touches[0].clientY - startY;
-            updateImageTransform();
-        });
-
-        function saveImageStateToLocalStorage() {
-            localStorage.setItem('roktertan_id_photo', imgEl.src);
-            localStorage.setItem('roktertan_id_photo_x', currentImgX);
-            localStorage.setItem('roktertan_id_photo_y', currentImgY);
-            localStorage.setItem('roktertan_id_photo_scale', scaleVal);
-        }
-
-        // Restore image & theme from local storage
-        function loadSavedPreferences() {
-            const savedPhoto = localStorage.getItem('roktertan_id_photo');
-            const savedPhotoX = localStorage.getItem('roktertan_id_photo_x');
-            const savedPhotoY = localStorage.getItem('roktertan_id_photo_y');
-            const savedPhotoScale = localStorage.getItem('roktertan_id_photo_scale');
-            const savedTheme = localStorage.getItem('roktertan_card_theme');
-
-            if(savedPhoto) {
-                imgEl.src = savedPhoto;
-                
-                imgEl.onload = function() {
-                    const containerSize = 86;
-                    if (imgEl.naturalWidth > imgEl.naturalHeight) {
-                        imgEl.style.height = containerSize + "px";
-                        imgEl.style.width = "auto";
-                    } else {
-                        imgEl.style.width = containerSize + "px";
-                        imgEl.style.height = "auto";
-                    }
-                };
-
-                if(savedPhotoX) currentImgX = parseFloat(savedPhotoX);
-                if(savedPhotoY) currentImgY = parseFloat(savedPhotoY);
-                if(savedPhotoScale) {
-                    scaleVal = parseFloat(savedPhotoScale);
-                    zoomSlider.value = scaleVal;
-                    zoomPercentVal.textContent = Math.round(scaleVal * 100) + "%";
-                }
-                updateImageTransform();
-            }
-            if(savedTheme) {
-                setCardTheme(savedTheme);
-            }
-        }
-
-        // 📱 Adaptive ID Card Scaler based on Wrapper Width
-        function adjustIdCardScaling() {
-            const container = document.getElementById('idCardWrapperContainer');
-            const scaler = document.getElementById('idCardScaler');
-            if(!container || !scaler) return;
-
-            const containerWidth = container.offsetWidth;
-            const cardDefaultWidth = 500; 
-            const cardDefaultHeight = 280;
-
-            if (containerWidth < cardDefaultWidth) {
-                const scaleFactor = containerWidth / cardDefaultWidth;
-                scaler.style.transform = `scale(${scaleFactor})`;
-                container.style.height = (cardDefaultHeight * scaleFactor) + 'px';
-            } else {
-                scaler.style.transform = 'scale(1)';
-                container.style.height = cardDefaultHeight + 'px';
-            }
-        }
-
-        window.addEventListener('resize', adjustIdCardScaling);
-
-        // 🪪 ID CARD DOWNLOAD ENGINE (Scaled to ~300KB output with maximum legibility)
-        function downloadPngIdCard() {
-            const cardEl = document.getElementById('renderableIdCard');
-            showCustomToast("আইডি কার্ড প্রসেস হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...", true);
-
-            const scaler = document.getElementById('idCardScaler');
-            const container = document.getElementById('idCardWrapperContainer');
-            const originalTransform = scaler.style.transform;
-            const originalContainerHeight = container.style.height;
-
-            // Reset layout temporarily during render
-            scaler.style.transform = 'scale(1)';
-            container.style.height = '280px';
-
-            // Custom configuration to ensure the download is exceptionally sharp (~300KB target)
-            html2canvas(cardEl, {
-                scale: 2.2, // Perfect balance for sharp details and ~300KB output size
-                useCORS: true,
-                allowTaint: true,
-                backgroundColor: null,
-                logging: false,
-                imageTimeout: 0,
-                onclone: (clonedDoc) => {
-                    const clonedCard = clonedDoc.getElementById('renderableIdCard');
-                    if (clonedCard) {
-                        clonedCard.style.boxShadow = 'none';
-                        clonedCard.style.borderRadius = '20px';
-                    }
-                }
-            }).then(canvas => {
-                const image = canvas.toDataURL("image/png");
-                const link = document.createElement('a');
-                link.download = `RokterTan_Donor_Card_${document.getElementById('cardUserName').textContent}.png`;
-                link.href = image;
-                link.click();
-                showCustomToast("আইডি কার্ড সফলভাবে ডাউনলোড হয়েছে!", true);
-                
-                adjustIdCardScaling();
-            }).catch(err => {
-                console.error(err);
-                showCustomToast("ডাউনলোড করতে সমস্যা হচ্ছে। আবার ট্রাই করুন।", false);
-                adjustIdCardScaling();
-            });
-        }
-
-        // Copy referral link utility
-        function copyReferralLinkToClipboard(btn) {
-            const input = document.getElementById('referralLinkInput');
-            input.select();
-            document.execCommand('copy');
-
-            const origText = btn.textContent;
-            btn.textContent = "কপিড!";
-            btn.className = "bg-green-600 text-white font-bold px-3 py-1.5 rounded-lg shrink-0";
-            
-            setTimeout(() => {
-                btn.textContent = origText;
-                btn.className = "bg-brand-primary hover:bg-rose-700 text-white font-bold px-3 py-1.5 rounded-lg shrink-0";
-            }, 1800);
-            showCustomToast("রেফারেল লিংক ক্লিপবোর্ডে কপি করা হয়েছে।", true);
         }
 
         async function initializeGlobalDonorCounter() {
@@ -2004,7 +1223,7 @@
         }
 
         const healthFaqData = [
-            { q: "১. রক্ত দিতে রাজি হওয়া ডোনারের যাতায়াত ভাড়ার দায়িত্ব কার?", a: "একজন রক্তদাতা সম্পূর্ণ নিজের ইচ্ছায়, স্বেচ্ছায় রক্ত দিতে আসছেন। তাই তার যাতায়াতের জন্য রিকশা, সিএনজি বা প্রয়োজনীয় যাতায়াত ভাড়া (Conveyance) বহন করা রক্তগ্রহীতার (পেশেন্টের পরিবারের) অত্যন্ত গুরুত্বপূর্ণ মানবিক দায়িত্ব।" },
+            { q: "১. রক্ত দিতে রাজি হওয়া ডোনারের যাতায়াত ভাড়ার দায়িত্ব কার?", a: "একজন রক্তদাতা সম্পূর্ণ নিজের ইচ্ছায়, স্বেচ্ছায় রক্ত দিতে আসছেন। তাই তার যাতায়াতের জন্য রিকশা, সিএনজি বা প্রয়োজনীয় যাতায়াত ভাড়া (Conveyance) বহন করা রক্তগ্রহীতার (রোগীর পরিবারের) অত্যন্ত গুরুত্বপূর্ণ মানবিক দায়িত্ব।" },
             { q: "২. রক্ত দেওয়ার আগে কোনো ডোনার টাকা বা কোনো লেনদেন দাবি করলে কী করবেন?", a: "কখনো কোনো ডোনারকে রক্তদানের আগে অগ্রিম টাকা দেবেন না। আজকাল অনেক প্রতারক চক্র বা দালাল সোশ্যাল মিডিয়ায় রক্ত দেওয়ার মিথ্যা আশ্বাস দিয়ে বিকাশ/নগদে যাতায়াত ভাড়ার দোহাই দিয়ে অগ্রিম টাকা নিয়ে মোবাইল বন্ধ করে দেয়। রক্তদান একটি মানবিক ও ফ্রি সেবা।" },
             { q: "৩. রক্তদানের সর্বনিম্ন এবং সর্বোচ্চ বয়স কত হওয়া উচিত?", a: "ডাব্লিউএইচও (WHO) অনুযায়ী, রক্তদাতার বয়স অবশ্যই ১৮ থেকে ৬০ বছরের মধ্যে হতে হবে। কিছু ক্ষেত্রে শারীরিক সুস্থতা সাপেক্ষে ৬৫ বছর পর্যন্ত রক্ত দেওয়া যেতে পারে।" },
             { q: "৪. কম ওজনের কেউ কি রক্ত দিতে পারেন? ওজনের সীমা কত?", a: "না, কম ওজনের কেউ রক্ত দিতে পারবেন না। রক্তদাতার সর্বনিম্ন ওজন পুরুষদের ক্ষেত্রে অবশ্যই ৫০ কেজি এবং নারীদের ক্ষেত্রে কমপক্ষে ৪৫ কেজি হতে হবে।" },
@@ -2023,10 +1242,10 @@
             { q: "১৭. হৃদরোগ (Heart disease) বা স্ট্রোকের ইতিহাস থাকলে কি রক্ত দেওয়া যাবে?", a: "না, হৃদরোগ, বাইপাস সার্জারি বা স্ট্রোকের ইতিহাস থাকলে রোগীর নিজের স্বাস্থ্যের নিরাপত্তার স্বার্থেই রক্তদান করা যাবে না।" },
             { q: "১৮. থাইরয়েড (Thyroid) রোগীরা কি রক্ত দিতে পারবেন?", a: "হ্যাঁ, থাইরয়েডের রোগীরা রক্ত দিতে পারবেন যদি তাদের হরমোনের মাত্রা ওষুধ ব্যবহারের মাধ্যমে সম্পূর্ণ নিয়ন্ত্রণে থাকে।" },
             { q: "১৯. ছোটখাটো অপারেশনের কতদিন পর রক্ত দেওয়া যাবে?", a: "যেকোনো ধরনের মাইনর সার্জারির পর ক্ষতস্থান পুরোপুরি শুকানো এবং সেলাই কাটার পর কমপক্ষে ৩ থেকে ৬ মাস অপেক্ষা করতে হবে।" },
-            { q: "২০. হেপাটাইটিস বি বা সি পজিティブ হলে কি আজীবন রক্তদান বন্ধ?", a: "হ্যাঁ, হেপাটাইটিস-বি বা হেপাটাইটিস-সি তে একবার আক্রান্ত হলে বা টেস্টে পজিティブ ধরা পড়লে তিনি আজীবনের জন্য রক্তদানের অনুপযুক্ত বলে বিবেচিত হবেন।" },
+            { q: "২০. হেপাটাইটিস বি বা সি পজিটিভ হলে কি আজীবন রক্তদান বন্ধ?", a: "হ্যাঁ, হেপাটাইটিস-বি বা হেপাটাইটিস-সি তে একবার আক্রান্ত হলে বা টেস্টে পজিটিভ ধরা পড়লে তিনি আজীবনের জন্য রক্তদানের অনুপযুক্ত বলে বিবেচিত হবেন।" },
             { q: "২১. ডেঙ্গু বা ম্যালেরিয়া জ্বর থেকে সুস্থ হওয়ার কতদিন পর রক্ত দেওয়া যাবে?", a: "ডেঙ্গু জ্বর থেকে সম্পূর্ণ সুস্থ হয়ে প্লাটিলেট স্বাভাবিক হওয়ার পর কমপক্ষে ৬ মাস অপেক্ষা করতে হবে। আর ম্যালেরিয়া জ্বর থেকে আরোগ্য লাভের পর অন্তত ৩ বছর পর রক্ত দান করা যাবে।" },
             { q: "২২. খালি পেটে কি রক্ত দান করা যাবে?", a: "কখনো খালি পেটে রক্ত দেবেন না। রক্তদানের অন্তত ৩ থেকে ৪ ঘণ্টা আগে একটি ভালো ও পুষ্টিকর খাবার এবং পর্যাপ্ত পরিমাণে পানি খেয়ে নেওয়া বাধ্যতামূলক।" },
-            { q: "২৩. রক্ত দেওয়ার পর কি ভারী কাজ বা ব্যায়াম করা যাবে?", a: "রক্তদানের পর অন্তত ২৪ ঘণ্টা কোনো ধরনের ভারী কাজ, জিম বা অতিরিক্ত ব্যায়াম করা থেকে বিরত থাকতে হবে।" },
+            { q: "২৩. রক্ত দেওয়ার পর কি ভারী কাজ বা ব্যায়াম করা যাবে?", a: "রক্তদানের পর অন্তত ২৪ ঘণ্টা কোনো ধরনের ভারী কাজ বা অতিরিক্ত ব্যায়াম করা থেকে বিরত থাকতে হবে।" },
             { q: "২৪. রক্ত দিলে কি ওজন কমে বা রক্তদানের কারণে কি স্থূলতা বাড়ে?", a: "রক্তদানের সাথে ওজন কমা বা বাড়ার সরাসরি কোনো বৈজ্ঞানিক সম্পর্ক নেই।" },
             { q: "২৫. থ্যালাসেমিয়া (Thalassemia) রোগের বাহক হলে কি রক্ত দান করা সম্ভব?", a: "থ্যালাসেমিয়া রোগের বাহক বা মাইনর যাদের হিমোগ্লোবিনের মাত্রা সম্পূর্ণ স্বাভাবিক সীমার মধ্যে থাকে, তারা বিশেষ ক্ষেত্রে রক্ত দিতে পারেন।" }
         ];
@@ -2036,6 +1255,9 @@
             const hash = window.location.hash.replace('#', '');
             if (hash) {
                 switchTab(hash, false);
+            } else {
+                // Default fallback to Search tab on initiation
+                switchTab('search-tab', false);
             }
 
             await initAuthAndApp();
@@ -2043,16 +1265,12 @@
             renderHealthTipsAccordion();
             loadDivisionDropdown('searchDivision');
             loadDivisionDropdown('regDivision');
-            loadSavedPreferences(); 
 
             await initializeGlobalDonorCounter();
-            await fetchLeaderboardData();
             trackReferralClick();
 
             setTimeout(() => { openNoticeModal(); }, 800);
             setInterval(() => { openNoticeModal(); }, 180000);
-            
-            adjustIdCardScaling();
         });
     </script>
 </body>
