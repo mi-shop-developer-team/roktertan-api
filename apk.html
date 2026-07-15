@@ -94,7 +94,6 @@
                 <button onclick="switchTab('search-tab')" class="nav-link search-tab-link text-brand-primary border-b-2 border-brand-primary pb-1 px-1 transition">রক্ত খুঁজুন</button>
                 <button onclick="switchTab('health-tab')" class="nav-link health-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">হেলথ টিপস</button>
                 <button onclick="switchTab('video-tab')" class="nav-link video-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">ভিডিও গাইড</button>
-                <button onclick="switchTab('leaderboard-tab')" class="nav-link leaderboard-tab-link text-slate-600 dark:text-slate-300 hover:text-brand-primary pb-1 px-1 transition">টপ শেয়ারার</button>
             </nav>
 
             <!-- Mode Controls & Actions -->
@@ -116,7 +115,6 @@
             <button onclick="switchTab('search-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-brand-primary nav-link search-tab-link">রক্ত খুঁজুন</button>
             <button onclick="switchTab('health-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link health-tab-link">হেলথ টিপস</button>
             <button onclick="switchTab('video-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link video-tab-link">ভিডিও গাইড</button>
-            <button onclick="switchTab('leaderboard-tab')" class="block w-full text-left py-2 border-b border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 nav-link leaderboard-tab-link">টপ শেয়ারার</button>
             <button onclick="switchTab('privacy-tab')" class="block w-full text-left py-2 text-slate-600 dark:text-slate-300 nav-link privacy-tab-link">প্রাইভেসি পলিসি</button>
         </div>
     </header>
@@ -272,34 +270,7 @@
             <iframe id="videoGuideIframe" src="https://roktertan-veideo.vercel.app" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
-        <!-- 🏷️ TAB 4: LEADERBOARD SECTION -->
-        <section id="leaderboard-tab" class="spa-tab-content hidden space-y-6">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <div class="text-amber-500 text-3xl animate-bounce"><i class="fa-solid fa-trophy"></i></div>
-                <h3 class="text-md md:text-xl font-bold text-slate-900 dark:text-white">রক্তের টান — টপ ১০ ভলান্টিয়ার ও শেয়ারার</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400">যারা আমাদের এই মহৎ উদ্যোগটি মানুষের দ্বারে দ্বারে পৌঁছে দিতে সবচেয়ে বেশি অবদান রেখেছেন, তাদের তালিকা। আপনার রেফারেল লিংক দিয়ে রক্তদাতা যুক্ত করে আপনিও চলে আসুন টপ টেন তালিকায়!</p>
-            </div>
-
-            <div class="glass p-5 rounded-3xl border border-white/30 max-w-2xl mx-auto shadow-md">
-                <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
-                    <table class="w-full text-xs text-left">
-                        <thead class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 uppercase font-bold text-[10px]">
-                            <tr>
-                                <th class="p-3.5 text-center">স্থান</th>
-                                <th class="p-3.5">রক্তদাতার নাম</th>
-                                <th class="p-3.5 text-center">রক্তের গ্রুপ</th>
-                                <th class="p-3.5 text-center">রেফার করা শেয়ার সংখ্যা</th>
-                            </tr>
-                        </thead>
-                        <tbody id="leaderboardTableBody" class="divide-y divide-slate-100 dark:divide-slate-800">
-                            <!-- Populated Dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🏷️ TAB 5: PRIVACY POLICY & TERMS -->
+        <!-- 🏷️ TAB 4: PRIVACY POLICY & TERMS -->
         <section id="privacy-tab" class="spa-tab-content hidden space-y-6">
             <div class="glass p-6 md:p-8 rounded-3xl shadow-md border border-white/30 text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-4">
                 <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white mb-4 border-b pb-2 border-slate-200 dark:border-slate-700"><i class="fa-solid fa-shield-halved text-brand-primary"></i>  টার্মস অ্যান্ড কন্ডিশনস ও প্রাইভেসি পলিসি</h2>
@@ -318,7 +289,7 @@
                 <p>আপনার দেওয়া সম্পূর্ণ তথ্য শুধুমাত্র মুমূর্ষু রোগীর রক্তের সন্ধানের জন্য ব্যবহৃত হয়। যখন কারো রক্তের প্রয়োজন হয়, তারা আমাদের ওয়েবসাইট ব্যবহার করে নির্দিষ্ট এলাকার রক্তদাতাকে খুঁজে বের করে এবং সরাসরি মোবাইল নম্বরে যোগাযোগ করে। <strong class="text-rose-500">আমরা কোনো প্রকার মার্কেটিং, বিজ্ঞাপন বা অন্য কোনো ব্যবসায়িক বা বাণিজ্যিক উদ্দেশ্যে আপনাদের তথ্য ব্যবহার করি না এবং কখনো কারো কাছে বিক্রিও করি না।</strong></p>
 
                 <h3 class="font-bold text-slate-900 dark:text-white mt-4">৩. রক্তদান ও আর্থিক লেনদেন (সতর্কতা)</h3>
-                <p>রক্তদান সম্পূর্ণ একটি নিঃস্বার্থ কাজ। রক্তের বিনিময়ে কোনো আর্থিক লেনদেন করা আইনত দণ্ডনীয় অপরাধ। কেউ যদি রক্ত দেওয়ার কথা বলে অগ্রিম যাতায়াত ভাড়া বা টাকা দাবি করে, তবে তার সাথে যোগাযোগ বন্ধ করুন। এই ধরনের কোনো আর্থিক প্রতারণার জন্য "রক্তের টান" কর্তৃপক্ষ দায়ী থাকবে না।</p>
+                <p>রক্তদান সম্পূর্ণ একটি নিঃসার্থ কাজ। রক্তের বিনিময়ে কোনো আর্থিক লেনদেন করা আইনত দণ্ডনীয় অপরাধ। কেউ যদি রক্ত দেওয়ার কথা বলে অগ্রিম যাতায়াত ভাড়া বা টাকা দাবি করে, তবে তার সাথে যোগাযোগ বন্ধ করুন। এই ধরনের কোনো আর্থিক প্রতারণার জন্য "রক্তের টান" কর্তৃপক্ষ দায়ী থাকবে না।</p>
 
                 <h3 class="font-bold text-slate-900 dark:text-white mt-4">৪. অ্যাকাউন্ট বাতিল বা পরিবর্তন</h3>
                 <p>যেকোনো সময় আপনি আপনার তথ্য আপডেট করতে পারবেন। কোনো কারণে রক্তদানে অক্ষম হলে বা তথ্য মুছতে চাইলে আমাদের ফেসবুক পেজে মেসেজ দিয়ে জানাতে পারবেন।</p>
@@ -350,7 +321,7 @@
 
             <div class="bg-brand-primary text-white p-4 flex items-center justify-between relative z-10">
                 <h3 class="text-sm font-bold flex items-center gap-2">
-                    <i class="fa-solid fa-user-plus"></i> রক্তদাতা হিসেবে নাম নিবন্ধন করুন
+                    <i class="fa-solid fa-user-plus"></i>  রক্তদাতা হিসেবে নাম নিবন্ধন করুন
                 </h3>
                 <button onclick="closeRegistrationModal()" class="text-white hover:text-white/80 transition text-lg"><i class="fa-solid fa-xmark"></i></button>
             </div>
@@ -358,7 +329,7 @@
             <div class="p-5 overflow-y-auto space-y-4 flex-grow text-xs md:text-sm relative z-10">
                 <div class="space-y-1">
                     <label class="block font-bold text-slate-700 dark:text-slate-300">পুরো নাম (বাংলা অথবা ইংরেজিতে) <span class="text-rose-500">*</span></label>
-                    <input type="text" id="regName" placeholder="যেমন: মো. সাব্বির রহমান" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-primary">
+                    <input type="text" id="regName" placeholder="যেমন: মো. ওমর ফারুক " class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-primary">
                 </div>
                 
                 <div class="space-y-1">
@@ -432,8 +403,8 @@
             </div>
 
             <div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex flex-col gap-2 text-xs relative z-10">
-                <button onclick="submitRegistration('whatsapp')" class="w-full bg-green-650 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
-                    <i class="fa-brands fa-whatsapp text-sm animate-pulse"></i> WhatsApp-এ তথ্য ভেরিফাই করুন ও নিবন্ধন সম্পন্ন করুন
+                <button onclick="submitRegistration('whatsapp')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-sm animate-pulse"></i>  WhatsApp-এ তথ্য ভেরিফাই করুন ও নিবন্ধন সম্পন্ন করুন
                 </button>
             </div>
         </div>
@@ -478,9 +449,9 @@
                 "টাঙ্গাইল": ["টাঙ্গাইল সদর", "মির্জাপুর", "কালিহাতী", "ঘাটাইল", "দেলদয়ার", "গোপালপুর", "বাসাইল", "ভূঞাপুর", "মধুপুর", "নাগরপুর", "সখিপুর", "ধনবাড়ী"],
                 "মানিকগঞ্জ": ["মানিকগঞ্জ সদর", "সিংগাইর", "শিবালয়", "ঘিওর", "হরিরামপুর", "দৌলতপুর", "সাটুরিয়া"],
                 "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর", "শ্রীনগর", "সিরাজডিখান", "লৌহজং", "গজারিয়া", "টংগিবাড়ী"],
-                "ফরিদপুর": ["ফরিদপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালথা", "নগরকান্দা"],
+                "ফরিদপুর": ["ফরিদপুর সদর", "বোয়ালমারী", "আলফাডাঙ্গা", "মধুখালী", "ভাঙ্গা", "চরভদ্রাসন", "সদরপুর", "সালथा", "নগরকান্দা"],
                 "রাজবাড়ী": ["রাজবাড়ী সদর", "গোয়ালন্দ", "পাংশা", "বালিয়াকান্দি", "কালুখালী"],
-                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "মুকসুদপুর"],
+                "গোপালগঞ্জ": ["গোপালগঞ্জ সদর", "টুঙ্গিপাড়া", "কোটালীপাড়া", "কাশিয়ানী", "মকসুদপুর"],
                 "মাদারীপুর": ["মাদারীপুর সদর", "শিবচর", "কালকিনি", "রাজৈর"],
                 "শরীয়তপুর": ["শরীয়তপুর সদর", "ডামুড্যা", "নড়িয়া", "জাজিরা", "ভেদরগঞ্জ", "গোসাইরহাট"],
                 "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর", "কটিয়াদী", "ভৈরব", "বাজিতপুর", "নিকলী", "করিমগঞ্জ", "হোসেনপুর", "তাড়াইল", "পাকুন্দিয়া", "মিঠামইন", "ইটনা", "অষ্টগ্রাম", "কুলিয়ারচর"]
@@ -495,7 +466,7 @@
                 "চাঁদপুর": ["চাঁদপুর সদর", "হাজীগঞ্জ", "শাহরাস্তি", "কচুয়া", "ফরিদগঞ্জ", "মতলব উত্তর", "মতলব দক্ষিণ", "হাইমচর"],
                 "ব্রাহ্মণবাড়িয়া": ["ব্রাহ্মণবাড়িয়া সদর", "আশুগঞ্জ", "সরাইল", "নাসিরনগর", "বাঞ্ছারামপুর", "নবীনগর", "কসবা", "আখাউড়া", "বিজয়নগর"],
                 "রাঙ্গামাটি": ["রাঙ্গামাটি সদর", "কাপ্তাই", "কাউখালী", "বাঘাইছড়ি", "লংগদু", "নানিয়ারচর", "রাজস্থলী", "জুরাছড়ি", "বিলাইছড়ি", "বরকল"],
-                "বান্দরবান": ["বান্দরবান সদর", "রুমা", "থানচি", "রোয়াংছড়ি", "লামা", "আলীকদম", "নাইক্ষ্যংছড়ি"],
+                "বান্দরবান": ["বান্দরবান সদর", "রুমা", "থানচি", "রোয়াংছড়ি", "লামา", "আলীকদম", "নাইক্ষ্যংছড়ি"],
                 "খাগড়াছড়ি": ["খাগড়াছড়ি সদর", "দীঘিনালা", "পানছড়ি", "মাটিরাঙ্গা", "মহালছড়ি", "মানিকছড়ি", "রামগড়", "গুইমারা", "লক্ষ্মীছড়ি"]
             },
             "রাজশাহী": {
@@ -510,12 +481,12 @@
             },
             "খুলনা": {
                 "খুলনা": ["খুলনা সিটি কর্পোরেশন", "রূপসা", "বটিয়াঘাটা", "ডুমুরিয়া", "তেরখাদা", "দিঘলিয়া", "ফুলতলা", "পাইকগাছা", "কয়রা", "দাকোপ"],
-                "যه‌ها": ["যশোর সদর", "ঝিকরগাছা", "শার্ষা", "অভয়নগর", "বাগআঁচড়া", "মনিরামপুর", "কেশবপুর", "চৌগাছা", "বাঘারপাড়া"],
+                "যশোর": ["যশোর সদর", "ঝিকরগাছা", "শার্ষা", "অভয়নগর", "বাগআঁচড়া", "মনিরামপুর", "কেশবপুর", "চৌগাছা", "বাঘারপাড়া"],
                 "বাগেরহাট": ["বাগেরহাট সদর", "মোংলা", "চিতলমারী", "ফকিরহাট", "কচুয়া", "মোল্লাহাট", "রামপাল", "শরণখোলা", "মোড়লগঞ্জ"],
                 "সাতক্ষীরা": ["সাতক্ষীরা সদর", "কলারোয়া", "তালা", "দেবহাটা", "কালীগঞ্জ", "শ্যামনগর", "আশাশুনি"],
                 "ঝিনাইদহ": ["ঝিনাইদহ সদর", "শৈলকুপা", "হরিণাকুণ্ডু", "কালীগঞ্জ", "কোটচাঁদপুর", "মহেশপুর"],
                 "কুষ্টিয়া": ["কুষ্টিয়া সদর", "কুমারখালী", "খোকসা", "মিরপুর", "ভেড়ামারা", "দৌলতপুর"],
-                "মাগুরা": ["মাগুরা সদর", "শ্রীপুর", "শালিখা", "মোহাম্মদপুর"],
+                "maগুরা": ["মাগুরা সদর", "শ্রীপুর", "শালিখা", "মোহাম্মদপুর"],
                 "নড়াইল": ["নড়াইল সদর", "লোহাগড়া", "কালিয়া"],
                 "মেহেরপুর": ["মেহেরপুর সদর", "গাংনী", "মুজিবনগর"],
                 "চুয়াডাঙ্গা": ["চুয়াডাঙ্গা সদর", "আলমডাঙ্গা", "দামুড়হুদা", "জীবননগর"]
@@ -541,7 +512,7 @@
                 "গাইবান্ধা": ["গাইবান্ধা সদর", "গোবিন্দগঞ্জ", "পলাশবাড়ী", "সাদুল্লাপুর", "সুন্দরগঞ্জ", "সাঘাটা", "ফুলছড়ি"],
                 "নীলফামারী": ["নীলফামারী সদর", "সৈয়দপুর", "ডোমার", "ডিমলা", "জলঢাকা", "কিশোরগঞ্জ"],
                 "লালমনিরহাট": ["লালমনিরহাট সদর", "পাটগ্রাম", "হাতীবান্ধা", "কালীগঞ্জ", "আদিতমারী"],
-                "পঞ্চগড়": ["পঞ্চগড় সদর", "teঁতুলিয়া", "দেবীগঞ্জ", "বোদা", "আটোয়ারী"],
+                "পঞ্চগড়": ["পঞ্চগড় সদর", "তেঁতুলিয়া", "দেবীগঞ্জ", "বোদা", "আটোয়ারী"],
                 "ঠাকুরগাঁও": ["ঠাকুরগাঁও সদর", "পীরগঞ্জ", "বালীয়াডাঙ্গী", "রাণীশংকৈল", "হরিপুর"]
             },
             "ময়মনসিংহ": {
@@ -555,7 +526,7 @@
         const districtMap = {
             "ঢাকা": "dhaka", "গাজীপুর": "gazipur", "নারায়ণগঞ্জ": "narayanganj", "নরসিংদী": "narsingdi", "টাঙ্গাইল": "tangail",
             "মানিকগঞ্জ": "manikganj", "মুন্সিগঞ্জ": "munshiganj", "ফরিদপুর": "faridpur", "রাজবাড়ী": "rajbari", "গোপালগঞ্জ": "gopalganj",
-            "مাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
+            "মাদারীপুর": "madaripur", "শরীয়তপুর": "shariatpur", "কিশোরগঞ্জ": "kishoreganj",
             "চট্টগ্রাম": "chittagong", "কক্সবাজার": "coxsbazar", "কুমিল্লা": "comilla", "ফেনী": "feni", "নোয়াখালী": "noakhali",
             "লক্ষ্মীপুর": "lakshmipur", "চাঁদপুর": "chandpur", "ব্রাহ্মণবাড়িয়া": "brahmanbaria", "রাঙ্গামাটি": "rangamati", "বান্দরবান": "bandarban", "খাগড়াছড়ি": "khagrachhari",
             "রাজশাহী": "rajshahi", "বগুড়া": "bogura", "জয়পুরহাট": "joypurhat", "নওগাঁ": "naogaon", "নাটোর": "natore", "পাবনা": "pabna", "সিরাজগঞ্জ": "sirajganj", "চাঁপাইনবাবগঞ্জ": "chapainawabganj",
@@ -749,67 +720,6 @@
                 });
                 content.style.maxHeight = content.scrollHeight + 'px';
                 icon.style.transform = 'rotate(180deg)';
-            }
-        }
-
-        async function fetchLeaderboardData() {
-            const tableBody = document.getElementById('leaderboardTableBody');
-            tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-slate-400">লিডারবোর্ড তথ্য লোড হচ্ছে...</td></tr>`;
-            try {
-                const snapshot = await getDonorsCollection().get();
-                if (snapshot.empty) {
-                    tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-amber-500 font-semibold">কোনো রক্তদাতা এখনো শেয়ার করেননি।</td></tr>`;
-                    return;
-                }
-
-                let donors = [];
-                snapshot.forEach(doc => {
-                    const data = doc.data();
-                    if (data.status === 'Verified' || data.status === 'ভেরিফাইড') {
-                        donors.push({
-                            name: data.name,
-                            bloodGroup: data.bloodGroup,
-                            shares: parseInt(data.shares || 0)
-                        });
-                    }
-                });
-
-                donors.sort((a, b) => b.shares - a.shares);
-                const topTen = donors.slice(0, 10);
-
-                if (topTen.length === 0) {
-                    tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-amber-500 font-semibold">কোনো রক্তদাতা এখনো শেয়ার করেননি।</td></tr>`;
-                    return;
-                }
-
-                tableBody.innerHTML = "";
-                topTen.forEach((donor, idx) => {
-                    let trophyHTML = `<span class="font-bold text-slate-500">${idx + 1}</span>`;
-                    if (idx === 0) trophyHTML = `<i class="fa-solid fa-trophy text-amber-500 text-sm"></i>`;
-                    else if (idx === 1) trophyHTML = `<i class="fa-solid fa-medal text-slate-400 text-sm"></i>`;
-                    else if (idx === 2) trophyHTML = `<i class="fa-solid fa-medal text-amber-700 text-sm"></i>`;
-
-                    const row = document.createElement('tr');
-                    row.className = "hover:bg-slate-50 dark:hover:bg-slate-800/30 transition text-slate-700 dark:text-slate-200";
-                    row.innerHTML = `
-                        <td class="p-3 text-center font-bold">${trophyHTML}</td>
-                        <td class="p-3 font-semibold">${donor.name}</td>
-                        <td class="p-3 text-center"><span class="bg-rose-600 text-white font-extrabold text-[10px] px-2 py-0.5 rounded">${donor.bloodGroup}</span></td>
-                        <td class="p-3 text-center font-black text-amber-500">${donor.shares} বার</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } catch (err) {
-                console.warn("Leaderboard failed: ", err);
-                tableBody.innerHTML = `<tr><td colspan="4" class="p-6 text-center text-red-500 font-semibold">ত্রুটি: লিডারবোর্ড তথ্য লোড করা যায়নি।</td></tr>`;
-            }
-        }
-
-        function trackReferralClick() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const refCode = urlParams.get('ref');
-            if (refCode) {
-                sessionStorage.setItem('roktertan_referrer_code', refCode);
             }
         }
 
@@ -1096,15 +1006,6 @@
             document.getElementById('compatDisplay').classList.remove('hidden');
         }
 
-        function generateUniqueReferralCode() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            let referralCode = 'rt_'; 
-            for (let i = 0; i < 7; i++) {
-                referralCode += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            return referralCode; 
-        }
-
         async function submitRegistration(medium) {
             const name = document.getElementById('regName').value.trim();
             const mobile = document.getElementById('regMobile').value.trim();
@@ -1128,30 +1029,10 @@
                 return;
             }
 
-            const generatedUsername = generateUniqueReferralCode();
-
-            // Referrer Tracker Processing
-            const referrerCode = sessionStorage.getItem('roktertan_referrer_code');
-            if (referrerCode) {
-                try {
-                    const refSnap = await getDonorsCollection().where('username', '==', referrerCode).get();
-                    if (!refSnap.empty) {
-                        const refDocId = refSnap.docs[0].id;
-                        await getDonorsCollection().doc(refDocId).update({
-                            shares: firebase.firestore.FieldValue.increment(1)
-                        });
-                        sessionStorage.removeItem('roktertan_referrer_code');
-                    }
-                } catch (e) {
-                    console.error("Referrer process error: ", e);
-                }
-            }
-
             const formattedMessage = `আসসালামু আলাইকুম। আমি "রক্তের টান" প্ল্যাটফর্মে রক্তদাতা হিসেবে নাম নিবন্ধন করতে ইচ্ছুক।
 
 📝 আমার নিবন্ধনের বিবরণ:
 • নাম: ${name}
-• রেফারেল কোড: ${generatedUsername}
 • মোবাইল নম্বর: ${mobile}
 • ইমেইল: ${email}
 • রক্তের গ্রুপ: ${blood}
@@ -1193,7 +1074,7 @@
             { q: "৬. রক্ত দিলে কি শরীর দুর্বল হয়ে যায় বা কোনো ক্ষতি হয়?", a: "এটি একটি বড় ভুল ধারণা। রক্ত দেওয়ার পর কোনো ক্ষতি বা স্থায়ী দুর্বলতা হয় না। রক্তদানের পর তরল অংশটি মাত্র ২৪ থেকে ৪৮ ঘণ্টার মধ্যে পূরণ হয়ে যায় এবং লোহিত রক্তকণিকাগুলো ৪ থেকে ৮ সপ্তাহের মধ্যে তৈরি হয়।" },
             { q: "৭. রক্ত দেওয়ার আগে রক্তের কী কী টেস্ট করা বাধ্যতামূলক?", a: "রক্ত দেওয়ার আগে অবশ্যই ৫টি স্ক্রীনিং পরীক্ষা করা বাধ্যতামূলক: হেপাটাইটিস-বি, হেপাটাইটিস-সি, এইচআইভি (এইডস), সিফিলিস ও ম্যালেরিয়া। এছাড়াও রক্তদাতার রক্ত নেওয়ার পূর্বে হিমোগ্লোবিন ও রক্তচাপ পরীক্ষা করা হয়।" },
             { q: "৮. উচ্চ রক্তচাপ (High BP) বা প্রেশারের রোগী কি রক্ত দিতে পারবেন?", a: "উচ্চ রক্তচাপের রোগীরা রক্ত দিতে পারবেন যদি রক্তদানের সময় তাদের রক্তচাপ নিয়ন্ত্রণে থাকে (যেমন- সিস্টোলিক ১৬০ এর নিচে এবং ডায়াস্টোলিক ১০০ এর নিচে) এবং তারা যে ওষুধ খাচ্ছেন তা রক্তদানের জন্য ক্ষতিকর না হয়।" },
-            { q: "৯. ডায়াবেটিস থাকলে কি রক্ত দেওয়া যাবে?", a: "হ্যাঁ, ডায়াবেটিসের রোগীরা রক্ত দিতে পারেন যদি তাদের রক্তের সুগার নিয়ন্ত্রণে থাকে। তবে যারা সরাসরি ইনসুলিন (Insulin) গ্রহণ করেন, তারা সাধারণত রক্ত দিতে পারেন না।" },
+            { q: "৯. ডায়াবেটিস থাকলে কি রক্ত দেওয়া যাবে?", a: "হ্যাঁ, ডায়াবেতিসের রোগীরা রক্ত দিতে পারেন যদি তাদের রক্তের সুগার নিয়ন্ত্রণে থাকে। তবে যারা সরাসরি ইনসুলিন (Insulin) গ্রহণ করেন, তারা সাধারণত রক্ত দিতে পারেন না।" },
             { q: "১০. ধূমপান বা মদ্যপানের কত সময় পর রক্ত দেওয়া যায়?", a: "ধূমপানের পর অন্তত ৩ থেকে ৪ ঘণ্টা এবং মদ্যপানের পর অন্তত ২৪ ঘণ্টা অতিবাহিত না হওয়া পর্যন্ত রক্ত দেওয়া উচিত নয়।" },
             { q: "১১. ঋতুস্রাব (Periods) চলাকালীন নারীরা কি রক্ত দিতে পারবেন?", a: "ঋতুস্রাব চলাকালীন রক্ত দেওয়া উচিত নয়। পিরিয়ড শেষ হওয়ার পর কমপক্ষে ৭ দিন পার হওয়া এবং শরীরে হিমোগ্লোবিনের মাত্রা পরীক্ষা করে স্বাভাবিক থাকলে তবেই নারীরা রক্ত দান করতে পারেন।" },
             { q: "১২. সাধারণ ওষুধ (যেমন- প্যারাসিটামল বা ব্যথানাশক) খাওয়া অবস্থায় রক্ত দেওয়া যাবে?", a: "জ্বর বা ব্যথার জন্য প্যারাসিটামল খেলে ২৪ ঘণ্টা পর রক্ত দেওয়া যায়। তবে অ্যাসপিরিন বা পেইনকিলার খেয়ে থাকলে ওষুধ বন্ধের পর অন্তত ৭২ ঘণ্টা পার না হওয়া পর্যন্ত রক্ত দেওয়া যাবে না।" },
@@ -1204,10 +1085,10 @@
             { q: "১৭. হৃদরোগ (Heart disease) বা স্ট্রোকের ইতিহাস থাকলে কি রক্ত দেওয়া যাবে?", a: "না, হৃদরোগ, বাইপাস সার্জারি বা স্ট্রোকের ইতিহাস থাকলে রোগীর নিজের স্বাস্থ্যের নিরাপত্তার স্বার্থেই রক্তদান করা যাবে না।" },
             { q: "১৮. থাইরয়েড (Thyroid) রোগীরা কি রক্ত দিতে পারবেন?", a: "হ্যাঁ, থাইরয়েডের রোগীরা রক্ত দিতে পারবেন যদি তাদের হরমোনের মাত্রা ওষুধ ব্যবহারের মাধ্যমে সম্পূর্ণ নিয়ন্ত্রণে থাকে।" },
             { q: "১৯. ছোটখাটো অপারেশনের কতদিন পর রক্ত দেওয়া যাবে?", a: "যেকোনো ধরনের মাইনর সার্জারির পর ক্ষতস্থান পুরোপুরি শুকানো এবং সেলাই কাটার পর কমপক্ষে ৩ থেকে ৬ মাস অপেক্ষা করতে হবে।" },
-            { q: "২০. হেপাটাইটিস বি বা সি পজিティブ হলে কি আজীবন রক্তদান বন্ধ?", a: "হ্যাঁ, হেপাটাইটিস-বি বা হেপাটাইটিস-সি তে একবার আক্রান্ত হলে বা টেস্টে পজিティブ ধরা পড়লে তিনি আজীবনের জন্য রক্তদানের অনুপযুক্ত বলে বিবেচিত হবেন।" },
+            { q: "২০. হেপাটাইটিস বি বা সি পজিটিভ হলে কি আজীবন রক্তদান বন্ধ?", a: "হ্যাঁ, হেপাটাইটিস-বি বা হেপাটাইটিস-সি তে একবার আক্রান্ত হলে বা টেস্টে পজিটিভ ধরা পড়লে তিনি আজীবনের জন্য রক্তদানের অনুপযুক্ত বলে বিবেচিত হবেন।" },
             { q: "২১. ডেঙ্গু বা ম্যালেরিয়া জ্বর থেকে সুস্থ হওয়ার কতদিন পর রক্ত দেওয়া যাবে?", a: "ডেঙ্গু জ্বর থেকে সম্পূর্ণ সুস্থ হয়ে প্লাটিলেট স্বাভাবিক হওয়ার পর কমপক্ষে ৬ মাস অপেক্ষা করতে হবে। আর ম্যালেরিয়া জ্বর থেকে আরোগ্য লাভের পর অন্তত ৩ বছর পর রক্ত দান করা যাবে।" },
             { q: "২২. খালি পেটে কি রক্ত দান করা যাবে?", a: "কখনো খালি পেটে রক্ত দেবেন না। রক্তদানের অন্তত ৩ থেকে ৪ ঘণ্টা আগে একটি ভালো ও পুষ্টিকর খাবার এবং পর্যাপ্ত পরিমাণে পানি খেয়ে নেওয়া বাধ্যতামূলক।" },
-            { q: "২৩. রক্ত দেওয়ার পর কি ভারী কাজ বা ব্যায়াম করা যাবে?", a: "রক্তদানের পর অন্তত ২৪ ঘণ্টা কোনো ধরনের ভারী কাজ, জিম বা অতিরিক্ত ব্যায়াম করা থেকে বিরত থাকতে হবে।" },
+            { q: "২৩. রক্ত দেওয়ার পর কি ভারী কাজ বা ব্যায়াম করা যাবে?", a: "রক্তদানের পর অন্তত ২৪ ঘণ্টা কোনো ধরনের ভারী কাজ বা অতিরিক্ত ব্যায়াম করা থেকে বিরত থাকতে হবে।" },
             { q: "২৪. রক্ত দিলে কি ওজন কমে বা রক্তদানের কারণে কি স্থূলতা বাড়ে?", a: "রক্তদানের সাথে ওজন কমা বা বাড়ার সরাসরি কোনো বৈজ্ঞানিক সম্পর্ক নেই।" },
             { q: "২৫. থ্যালাসেমিয়া (Thalassemia) রোগের বাহক হলে কি রক্ত দান করা সম্ভব?", a: "থ্যালাসেমিয়া রোগের বাহক বা মাইনর যাদের হিমোগ্লোবিনের মাত্রা সম্পূর্ণ স্বাভাবিক সীমার মধ্যে থাকে, তারা বিশেষ ক্ষেত্রে রক্ত দিতে পারেন।" }
         ];
@@ -1229,8 +1110,6 @@
             loadDivisionDropdown('regDivision');
 
             await initializeGlobalDonorCounter();
-            await fetchLeaderboardData();
-            trackReferralClick();
 
             setTimeout(() => { openNoticeModal(); }, 800);
             setInterval(() => { openNoticeModal(); }, 180000);
